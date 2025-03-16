@@ -498,7 +498,7 @@
 	if(. && on && !light_on)
 		helmet.toggle_light()
 
-
+//Military
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/military
 	name = "black-red hardsuit helmet"
 	desc = "An military version of the syndicate helmet designed for active combat operations, with improved armour and fire shielding. It is in travel mode. Property of Gorlex Marauders."
