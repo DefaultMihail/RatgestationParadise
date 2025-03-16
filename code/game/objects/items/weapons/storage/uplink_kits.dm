@@ -38,7 +38,7 @@
 	new /obj/item/tank/jetpack/oxygen/harness(src)
 
 /obj/item/storage/box/syndie_kit/hardsuit
-	name = "Boxed Blood Red Suit and Helmet"
+	name = "Boxed Blood Red Hardsuit"
 	can_hold = list(/obj/item/clothing/suit/space/hardsuit/syndi, /obj/item/tank/internals/emergency_oxygen/engi/syndi, /obj/item/clothing/mask/gas/syndicate)
 	max_w_class = WEIGHT_CLASS_NORMAL
 
@@ -429,3 +429,14 @@ To apply, hold the injector a short distance away from the outer thigh before ap
 	new /obj/item/reagent_containers/food/snacks/croissant/throwing(src)
 	new /obj/item/reagent_containers/food/snacks/croissant/throwing(src)
 	new /obj/item/book/granter/crafting_recipe/combat_baking(src)
+
+/obj/item/storage/box/syndie_kit/military_hardsuit
+	name = "Boxed Black Red Hardsuit"
+	can_hold = list(/obj/item/clothing/suit/space/hardsuit/syndi/military, /obj/item/tank/internals/emergency_oxygen/engi/syndi, /obj/item/clothing/shoes/magboots/syndie, /obj/item/clothing/mask/gas/syndicate)
+	max_w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/syndie_kit/combat_baking/populate_contents()
+	new /obj/item/clothing/suit/space/hardsuit/syndi(src)
+	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
+	new /obj/item/clothing/shoes/magboots/syndie(src)
+	new /obj/item/clothing/mask/gas/syndicate(src)
