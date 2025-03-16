@@ -677,6 +677,15 @@
 	cost = 10
 	race = list(SPECIES_HUMAN)
 
+/datum/uplink_item/racial/military_hardsuit
+	name = "Military Syndicate Hardsuit"
+	desc = "An military hardsuit made for active combat operations, with superior armor \
+			and fire-proofing. This one was made specially for \
+			Gorlex Marauders agents. Also contains blood-red magboots"
+	item = /obj/item/storage/box/syndie_kit/military_hardsuit
+	cost = 40
+	race = list(SPECIES_HUMAN)
+
 //Grey
 
 /datum/uplink_item/racial/agent_belt

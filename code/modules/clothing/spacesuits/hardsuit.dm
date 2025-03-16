@@ -499,6 +499,30 @@
 		helmet.toggle_light()
 
 
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/military
+	name = "black-red hardsuit helmet"
+	desc = "An military version of the syndicate helmet designed for active combat operations, with improved armour and fire shielding. It is in travel mode. Property of Gorlex Marauders."
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 40, "energy" = 35, "bomb" = 45, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 90)
+	icon_state = "hardsuit0-syndimilitary"
+	item_color = "syndimilitary"
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	combat_rad = 60
+
+/obj/item/clothing/suit/space/hardsuit/syndi/military
+	name = "black-red hardsuit"
+	desc = "An military version of the syndicate hardsuit designed for active combat operations, with improved armour and fire shielding. It is in travel mode."
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 40, "energy" = 35, "bomb" = 45, "bio" = 100, "rad" = 60, "fire" = 100, "acid" = 90)
+	icon_state = "hardsuit0-syndimilitary"
+	item_state = "syndie_military"
+	item_color = "syndimilitary"
+	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS|TAIL
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/military
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_SKELETON, SPECIES_NUCLEATION, SPECIES_MACNINEPERSON)
+
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
 	name = "elite syndicate hardsuit helmet"
