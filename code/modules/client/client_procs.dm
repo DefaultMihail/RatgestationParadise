@@ -202,6 +202,8 @@
 		last_message_time = world.time
 	if(CONFIG_GET(flag/automute_on) && !check_rights(R_ADMIN, 0) && last_message == message)
 		last_message_count++
+		if(SEND_SIGNAL(mob, COMSIG_MOB_AUTOMUTE_CHECK, src, last_message, mute_type) & WAIVE_AUTOMUTE_CHECK)
+			return FALSE
 		if(last_message_count >= SPAM_TRIGGER_AUTOMUTE)
 			to_chat(src, "<span class='danger'>You have exceeded the spam filter limit for identical messages. An auto-mute was applied.</span>", confidential=TRUE)
 			cmd_admin_mute(mob, mute_type, 1)
@@ -386,6 +388,8 @@
 	if(!tooltips)
 		tooltips = new /datum/tooltip(src)
 
+	loot_panel = new(src)
+
 	Master.UpdateTickRate()
 
 	// Check total playercount
@@ -435,13 +439,13 @@
 		movingmob.client_mobs_in_contents -= mob
 		UNSETEMPTY(movingmob.client_mobs_in_contents)
 
-	if(obj_window)
-		QDEL_NULL(obj_window)
 
 	SSambience.remove_ambience_client(src)
 	SSping.currentrun -= src
 	QDEL_LIST(parallax_layers_cached)
 	QDEL_NULL(void)
+	QDEL_NULL(tooltips)
+	QDEL_NULL(loot_panel)
 	parallax_layers = null
 	seen_messages = null
 	Master.UpdateTickRate()
@@ -1463,12 +1467,6 @@
 		if("Set-Tab")
 			stat_tab = payload["tab"]
 			SSstatpanels.immediate_send_stat_data(src)
-		if("Listedturf-Scroll")
-			if(payload["min"] == payload["max"])
-				// Not properly loaded yet, send the default set.
-				SSstatpanels.refresh_client_obj_view(src)
-			else
-				SSstatpanels.refresh_client_obj_view(src, payload["min"], payload["max"])
 		// Uncomment to enable log_debug in stat panel code.
 		// Disabled normally due to HREF exploit concerns.
 		//if("Statpanel-Debug")

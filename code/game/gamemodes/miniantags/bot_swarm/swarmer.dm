@@ -51,6 +51,11 @@
 	new /obj/item/deactivated_swarmer(get_turf(src))
 	qdel(src)
 
+/obj/effect/mob_spawn/swarmer/create(mob/plr, flavour, name, prefs, _mob_name, _mob_gender, _mob_species)
+	. = ..()
+	var/mob/mob = .
+	SSticker.mode.swarmers |= mob.mind
+
 ////The Mob itself////
 
 /mob/living/simple_animal/hostile/swarmer
@@ -90,7 +95,7 @@
 	mob_size = MOB_SIZE_SMALL
 	ventcrawler_trait = TRAIT_VENTCRAWLER_ALWAYS
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam/disabler
+	projectiletype = /obj/projectile/beam/disabler
 	ranged_cooldown_time = 20
 	projectilesound = 'sound/weapons/taser2.ogg'
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/ore/bluespace_crystal)
@@ -168,7 +173,7 @@
 
 /mob/living/simple_animal/hostile/swarmer/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(istype(mover, /obj/item/projectile/beam/disabler) || isswarmer(mover))//Allows for swarmers to fight as a group without wasting their shots hitting each other
+	if(istype(mover, /obj/projectile/beam/disabler) || isswarmer(mover))//Allows for swarmers to fight as a group without wasting their shots hitting each other
 		return TRUE
 
 
@@ -710,7 +715,7 @@
 
 /obj/structure/swarmer/blockade/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(istype(mover, /obj/item/projectile/beam/disabler) || isswarmer(mover))
+	if(istype(mover, /obj/projectile/beam/disabler) || isswarmer(mover))
 		return TRUE
 
 

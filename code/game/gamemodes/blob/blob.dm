@@ -117,6 +117,7 @@
 		blob_objective.critical_mass = legit_blobs.len
 		blob_objective.needed_critical_mass = blob_win_count
 		blob_objective.set_target()
+		blob_objective.owner = src
 
 
 /datum/game_mode/proc/blob_died()
@@ -139,8 +140,6 @@
 	switch(report_number)
 		if (BLOB_DEATH_REPORT_FIRST)
 			send_intercept(BLOB_THIRD_REPORT)
-		if (BLOB_DEATH_REPORT_SECOND)
-			SSshuttle?.stop_lockdown()
 		if (BLOB_DEATH_REPORT_THIRD)
 			if(!off_auto_gamma && GLOB.security_level == SEC_LEVEL_GAMMA)
 				set_security_level(SEC_LEVEL_RED)
@@ -204,7 +203,7 @@
 		blob_stage = BLOB_STAGE_FIRST
 		send_intercept(BLOB_FIRST_REPORT)
 		SSshuttle?.emergency?.cancel()
-		SSshuttle?.lockdown_escape()
+		SSshuttle?.add_hostile_environment(GLOB.blob_cores)
 
 	if(blob_stage == BLOB_STAGE_FIRST && legit_blobs.len >= min(SECOND_STAGE_COEF * blob_win_count, SECOND_STAGE_THRESHOLD))
 		blob_stage = BLOB_STAGE_SECOND

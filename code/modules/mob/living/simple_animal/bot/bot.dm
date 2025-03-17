@@ -522,7 +522,7 @@
 	)
 
 
-/mob/living/simple_animal/bot/bullet_act(obj/item/projectile/Proj)
+/mob/living/simple_animal/bot/bullet_act(obj/projectile/Proj)
 	if(Proj && (Proj.damage_type == BRUTE || Proj.damage_type == BURN))
 		if(prob(75) && Proj.damage > 0)
 			do_sparks(5, 1, src)
@@ -883,7 +883,7 @@ Pass the desired type path itself, declaring a temporary var beforehand is not r
 			to_chat(src, span_warningbig("НАЧАТЬ ПАТРУЛИРОВАНИЕ"))
 		if("summon")
 			var/area/our_area = get_area(user_turf)
-			to_chat(src, span_warningbig(">ПРИОРИТЕТНОЕ ОПОВЕЩЕНИЕ: [user] в локации [our_area.name]!"))
+			to_chat(src, span_warningbig(">ПРИОРИТЕТНОЕ Оповещение: [user] в локации [our_area.name]!"))
 		if("home")
 			to_chat(src, span_warningbig("ВЕРНУТЬСЯ ДОМОЙ!"))
 		if("ejectpai")

@@ -250,7 +250,7 @@
 /datum/vampire_passive/dissection_cap/on_apply(datum/antagonist/vampire/vampire)
 	vampire.subclass.dissect_cap++
 	vampire.subclass.crit_organ_cap += 2
-	gain_desc = "Теперь вы можете извлекать еще один орган у одной и той же жертвы, но не более чем <b>[vampire.subclass.dissect_cap]</b>. Помимо того, новый предел для извлечения критических органов - <b>[vampire.subclass.crit_organ_cap]</b>."
+	gain_desc = "Теперь вы можете извлекать ещё один орган у одной и той же жертвы, но не более чем <b>[vampire.subclass.dissect_cap]</b>. Помимо того, новый предел для извлечения критических органов - <b>[vampire.subclass.crit_organ_cap]</b>."
 
 
 /datum/vampire_passive/dissection_cap/two
@@ -638,12 +638,12 @@
     PREPOSITIONAL = "гильзе для черепного пистолета"
 	)
 	icon_state = "skulls"
-	projectile_type = /obj/item/projectile/skull_projectile
+	projectile_type = /obj/projectile/skull_projectile
 	muzzle_flash_effect = null
 	caliber = "skulls"
 
 
-/obj/item/projectile/skull_projectile
+/obj/projectile/skull_projectile
 	name = "infected skull"
 	ru_names = list(
         NOMINATIVE = "заражённый череп",
@@ -664,14 +664,14 @@
 	hitsound = null
 
 
-/obj/item/projectile/skull_projectile/Destroy()
+/obj/projectile/skull_projectile/Destroy()
 	QDEL_NULL(chain)
 	return ..()
 
 
-/obj/item/projectile/skull_projectile/fire(setAngle)
+/obj/projectile/skull_projectile/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "sendbeam", time = INFINITY, maxdistance = INFINITY, beam_sleep_time = 1)
+		chain = firer.Beam(src, icon_state = "sendbeam", time = INFINITY, maxdistance = INFINITY)
 
 		var/obj/item/gun/magic/skull_gun/skull_gun = locate() in firer
 		if(skull_gun)
@@ -688,7 +688,7 @@
 	return ..()
 
 
-/obj/item/projectile/skull_projectile/on_hit(atom/target, blocked = 0, hit_zone)
+/obj/projectile/skull_projectile/on_hit(atom/target, blocked = 0, hit_zone)
 	. = ..()
 	var/datum/antagonist/vampire/vampire = firer?.mind?.has_antag_datum(/datum/antagonist/vampire)
 	if(!vampire || QDELETED(vampire.subclass))

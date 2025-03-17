@@ -14,6 +14,7 @@
 /obj/item/card
 	name = "card"
 	desc = "A card."
+	gender = MALE
 	icon = 'icons/obj/card.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	pickup_sound = 'sound/items/handling/card_pickup.ogg'
@@ -73,8 +74,16 @@
 	A.emag_act(user)
 
 /obj/item/card/cmag
-	desc = "It's a card coated in a slurry of electromagnetic bananium."
+	desc = "Это карта, покрытая жидкостью из электромагнитного бананиума."
 	name = "jestographic sequencer"
+	ru_names = list(
+		NOMINATIVE = "шутографический считыватель",
+		GENITIVE = "шутографического считывателя",
+		DATIVE = "шутографическому считывателю",
+		ACCUSATIVE = "шутографический считыватель",
+		INSTRUMENTAL = "шутографическим считывателем",
+		PREPOSITIONAL = "шутографическом считывателе"
+	)
 	icon_state = "cmag"
 	item_state = "card-id"
 	origin_tech = "magnets=2;syndicate=2"
@@ -326,6 +335,7 @@
 	data["fprint_hash"] = fingerprint_hash
 	data["access"] = access
 	data["job"] = assignment
+	data["rank"] = rank
 	data["account"] = associated_account_number
 	data["owner"] = registered_name
 	data["mining"] = mining_points
@@ -340,6 +350,7 @@
 	fingerprint_hash = data["fprint_hash"]
 	access = data["access"] // No need for a copy, the list isn't getting touched
 	assignment = data["job"]
+	rank = data["rank"]
 	associated_account_number = data["account"]
 	registered_name = data["owner"]
 	mining_points = data["mining"]
@@ -837,6 +848,7 @@
 	var/datum/job/captain/J = new/datum/job/captain
 	access = J.get_access()
 	. = ..()
+	AddElement(/datum/element/high_value_item)
 
 /obj/item/card/id/admin
 	name = "admin ID card"

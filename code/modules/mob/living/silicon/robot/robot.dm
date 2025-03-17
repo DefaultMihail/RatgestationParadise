@@ -718,7 +718,7 @@ GLOBAL_LIST_INIT(robot_verbs_default, list(
 				apply_damage(30)
 
 
-/mob/living/silicon/robot/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/silicon/robot/bullet_act(var/obj/projectile/Proj)
 	..(Proj)
 
 	if(prob(75) && Proj.damage > 0)
@@ -1773,6 +1773,11 @@ GLOBAL_LIST_INIT(robot_verbs_default, list(
 		notify_ai(ROBOT_NOTIFY_AI_CONNECTED)
 		sync()
 
+/mob/living/silicon/robot/can_perform_action(atom/target, action_bitflags)
+	if(lockcharge || low_power_mode)
+		to_chat(src, span_warning("You can't do that right now!"))
+		return FALSE
+	return ..()
 
 /mob/living/silicon/robot/adjustOxyLoss(
 	amount = 0,
@@ -1832,7 +1837,7 @@ GLOBAL_LIST_INIT(robot_verbs_default, list(
 	ear_protection = HEARING_PROTECTION_MINOR // Immunity to the audio part of flashbangs
 	damage_protection = 10 // Reduce all incoming damage by this number
 	brute_mod = 0.5 // Пулевые орудия наносят на 50%+5ед меньше урона. Теперь полная обойма ружейных пуль не убьет киборга(но заставит потерять 2 модуля и броню)
-	burn_mod = 0.5 // Забавно, у киборга отряда смерти отражение лазерных снарядов, впрочем все еще снижает урон от взрывов, и позволяет пережить более чем одну ракету из SRM8.
+	burn_mod = 0.5 // Забавно, у киборга отряда смерти отражение лазерных снарядов, впрочем все ещё снижает урон от взрывов, и позволяет пережить более чем одну ракету из SRM8.
 	emp_protection = TRUE // Это киборг отряда смерти, он не должен быть остановим обычной импульсной винтовкой.
 	allow_rename = FALSE
 	modtype = "Commando"
@@ -1857,9 +1862,9 @@ GLOBAL_LIST_INIT(robot_verbs_default, list(
 	radio.recalculateChannels()
 	playsound(loc, 'sound/mecha/nominalsyndi.ogg', 75, 0)
 
-/mob/living/silicon/robot/deathsquad/bullet_act(obj/item/projectile/P)
+/mob/living/silicon/robot/deathsquad/bullet_act(obj/projectile/P)
 	if(istype(P) && P.is_reflectable(REFLECTABILITY_ENERGY) && P.starting)
-		visible_message(span_danger("The [P.name] gets reflected by [src]!"), span_userdanger("The [P.name] gets reflected by [src]!"))
+		visible_message(span_danger("The [P.name] gets reflected by [src]!"), span_userdanger("The [P.name] gets reflected by [src]!"), projectile_message = TRUE)
 		P.reflect_back(src)
 		return -1
 
@@ -1940,7 +1945,7 @@ GLOBAL_LIST_INIT(robot_verbs_default, list(
 	ear_protection = HEARING_PROTECTION_MINOR // Immunity to the audio part of flashbangs
 	emp_protection = TRUE // Immunity to EMP, due to heavy shielding
 	brute_mod = 0.5 // Пулевые орудия наносят на 50%+5ед меньше урона. Теперь полная обойма ружейных пуль не убьет киборга(но заставит потерять 2 модуля и броню)
-	burn_mod = 0.5 // Забавно, у киборга отряда смерти отражение лазерных снарядов, впрочем все еще снижает урон от взрывов, и позволяет пережить более чем одну ракету из SRM8.
+	burn_mod = 0.5 // Забавно, у киборга отряда смерти отражение лазерных снарядов, впрочем все ещё снижает урон от взрывов, и позволяет пережить более чем одну ракету из SRM8.
 	damage_protection = 20 // Reduce all incoming damage by this number. Very high in the case of /destroyer borgs, since it is an admin-only borg.
 	faction = list("nanotrasen")
 	is_emaggable = FALSE
@@ -1972,9 +1977,9 @@ GLOBAL_LIST_INIT(robot_verbs_default, list(
 	radio.recalculateChannels()
 	playsound(loc, 'sound/mecha/nominalsyndi.ogg', 75, 0)
 
-/mob/living/silicon/robot/destroyer/bullet_act(obj/item/projectile/P)
+/mob/living/silicon/robot/destroyer/bullet_act(obj/projectile/P)
 	if(istype(P) && P.is_reflectable(REFLECTABILITY_ENERGY) && P.starting && !(istype(module_active, /obj/item/borg/destroyer/mobility)))
-		visible_message(span_danger("The [P.name] gets reflected by [src]!"), span_userdanger("The [P.name] gets reflected by [src]!"))
+		visible_message(span_danger("The [P.name] gets reflected by [src]!"), span_userdanger("The [P.name] gets reflected by [src]!"), projectile_message = TRUE)
 		P.reflect_back(src)
 		return -1
 

@@ -129,7 +129,7 @@ GLOBAL_LIST_INIT(ai_verbs_default, list(
 	announcement.title = "Оповещение ИИ"
 	announcement.announcement_type = "Оповещение ИИ"
 	announcement.announcer = name
-	announcement.newscast = 0
+	announcement.newscast = FALSE
 
 	var/list/possibleNames = GLOB.ai_names
 
@@ -217,6 +217,7 @@ GLOBAL_LIST_INIT(ai_verbs_default, list(
 /mob/living/silicon/ai/Initialize(mapload)
 	. = ..()
 	add_traits(list(TRAIT_PULL_BLOCKED, TRAIT_HANDS_BLOCKED), ROUNDSTART_TRAIT)
+	AddElement(/datum/element/high_value_item)
 
 
 /mob/living/silicon/ai/proc/on_mob_init()
@@ -813,7 +814,7 @@ GLOBAL_LIST_INIT(ai_verbs_default, list(
 		if(target)
 			open_nearest_door(target)
 
-/mob/living/silicon/ai/bullet_act(var/obj/item/projectile/Proj)
+/mob/living/silicon/ai/bullet_act(var/obj/projectile/Proj)
 	..(Proj)
 	return 2
 
@@ -1342,6 +1343,12 @@ GLOBAL_LIST_INIT(ai_verbs_default, list(
 		to_chat(src, "You have been downloaded to a mobile storage device. Remote device connection severed.")
 		to_chat(user, "<span class='boldnotice'>Transfer successful</span>: [name] ([rand(1000,9999)].exe) removed from host terminal and stored within local memory.")
 
+/mob/living/silicon/ai/can_perform_action(atom/target, action_bitflags)
+	if(control_disabled)
+		to_chat(src, span_warning("You can't do that right now!"))
+		return FALSE
+	action_bitflags &= ~NEED_HANDS
+	return can_see(target) && ..() //stop AIs from leaving windows open and using then after they lose vision
 
 /mob/living/silicon/ai/switch_to_camera(obj/machinery/camera/C)
 	if(!C.can_use() || !is_in_chassis())
@@ -1521,3 +1528,11 @@ GLOBAL_LIST_INIT(ai_verbs_default, list(
 
 	SEND_SIGNAL(src, COMSIG_MOB_UPDATE_SIGHT)
 	sync_lighting_plane_alpha()
+
+
+/mob/living/silicon/ai/ghostize(can_reenter_corpse)
+	var/old_turf = get_turf(eyeobj)
+	. = ..()
+	if(isobserver(.))
+		var/mob/dead/observer/ghost = .
+		ghost.forceMove(old_turf)

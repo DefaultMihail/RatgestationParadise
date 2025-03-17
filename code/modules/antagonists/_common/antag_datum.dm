@@ -1,4 +1,5 @@
 GLOBAL_LIST_EMPTY(antagonists)
+GLOBAL_LIST_EMPTY(antagonists_datums)
 
 /datum/antagonist
 	/// The name of the antagonist.
@@ -23,6 +24,8 @@ GLOBAL_LIST_EMPTY(antagonists)
 	var/list/objectives
 	/// A list of strings which contain [targets][/datum/objective/var/target] of the antagonist's objectives. Used to prevent duplicate objectives.
 	var/list/assigned_targets
+	/// Current antagonist teams
+	var/datum/team/team
 	/// Antagonist datum specific information that appears in the player's notes. Information stored here will be removed when the datum is removed from the player.
 	var/antag_memory
 	/// The special role that will be applied to the owner's `special_role` var. i.e. `SPECIAL_ROLE_TRAITOR`, `SPECIAL_ROLE_VAMPIRE`.
@@ -43,6 +46,9 @@ GLOBAL_LIST_EMPTY(antagonists)
 	var/russian_wiki_name
 	/// Show antag in ghost orbit
 	var/show_in_orbit = TRUE
+	/// Role name in antag menu
+	var/antag_menu_name
+
 
 /datum/antagonist/New()
 	GLOB.antagonists += src
@@ -108,7 +114,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 	return (jobban_isbanned(user, ROLE_SYNDICATE) || (job_rank && jobban_isbanned(user, job_rank)))
 
 /**
- * When our datum was last and became removed. 
+ * When our datum was last and became removed.
  */
 /datum/antagonist/proc/handle_last_instance_removal()
 	return
@@ -390,11 +396,12 @@ GLOBAL_LIST_EMPTY(antagonists)
 				general_targets |= general_objective.target
 
 			new_objective.find_target(target_blacklist = general_targets)
-			if(new_objective.target)
+			if(new_objective.target )
 				found_valid_target = TRUE
 
 	if(!found_valid_target)
-		new_objective.explanation_text = "Yeah. Do whatever..."
+		new_objective.explanation_text = "Ага. Делай, что душе угодно."
+		new_objective.antag_menu_name = "Свободная цель"
 		new_objective.target = null
 
 	objectives += new_objective
@@ -405,6 +412,9 @@ GLOBAL_LIST_EMPTY(antagonists)
  * Creates a new antagonist team.
  */
 /datum/antagonist/proc/create_team(datum/team/team)
+	if(!GLOB.antagonist_teams[team])
+		new team
+	src.team = GLOB.antagonist_teams[team]
 	return
 
 
@@ -412,7 +422,7 @@ GLOBAL_LIST_EMPTY(antagonists)
  * Returns the team the antagonist belongs to, if any.
  */
 /datum/antagonist/proc/get_team()
-	return
+	return team
 
 
 /**
@@ -421,6 +431,18 @@ GLOBAL_LIST_EMPTY(antagonists)
 /datum/antagonist/proc/finalize_antag()
 	return
 
+/**
+ * Return name for antag menu
+ */
+/datum/antagonist/proc/get_antag_menu_name()
+	return antag_menu_name
+
+
+/**
+ * Return if antag shows in antag menu
+ */
+/datum/antagonist/proc/check_anatag_menu_ability()
+	return TRUE
 
 /**
  * Individual roundend report.
