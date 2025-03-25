@@ -61,7 +61,6 @@
 		/obj/effect/proc_holder/spell/sacrifice_circle,
 		/obj/effect/proc_holder/spell/conjure_item/pitchfork,
 		/obj/effect/proc_holder/spell/aoe/devil_fire,
-		/obj/effect/proc_holder/spell/dark_conversion
 	)
 
 /datum/devil_rank/blood_lizard
@@ -77,7 +76,6 @@
 		/obj/effect/proc_holder/spell/fireball/hellish,
 		/obj/effect/proc_holder/spell/aoe/devil_fire,
 		/obj/effect/proc_holder/spell/infernal_jaunt,
-		/obj/effect/proc_holder/spell/dark_conversion,
 		/obj/effect/proc_holder/spell/aoe/devil_fire
 	)
 
@@ -107,7 +105,6 @@
 		/obj/effect/proc_holder/spell/aoe/devil_fire,
 		/obj/effect/proc_holder/spell/infernal_jaunt,
 		/obj/effect/proc_holder/spell/sintouch,
-		/obj/effect/proc_holder/spell/dark_conversion,
 		/obj/effect/proc_holder/spell/aoe/devil_fire
 	)
 

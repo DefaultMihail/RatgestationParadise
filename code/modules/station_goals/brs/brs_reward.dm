@@ -65,7 +65,6 @@
 		/obj/item/stack/ore/bluespace_crystal = 200,
 		/obj/item/stack/sheet/mineral/bananium/fifty = 100,
 		/obj/item/stack/sheet/mineral/tranquillite/fifty = 100,
-		/obj/item/stack/sheet/mineral/abductor/fifty = 60,
 		/obj/item/stack/telecrystal/five = 30,
 
 		// Items

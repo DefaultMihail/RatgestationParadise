@@ -12,15 +12,7 @@
 	if(!.)
 		return .
 
-	if(is_shadow_or_thrall(target))
-		target.visible_message(
-			span_warning("[target] seems to resist the implant!"),
-			span_warning("You feel the corporate tendrils of Nanotrasen try to invade your mind!"),
-		)
-		removed(target, silent = TRUE)
-		qdel(src)
-
-	else if(is_cultist(target) || is_head_revolutionary(target))
+	if(is_cultist(target) || is_head_revolutionary(target))
 		to_chat(target, span_warning("You feel the corporate tendrils of Nanotrasen try to invade your mind!"))
 
 	else if(is_revolutionary(target))

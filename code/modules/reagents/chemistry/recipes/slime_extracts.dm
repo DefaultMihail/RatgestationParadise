@@ -587,46 +587,6 @@
 	var/obj/item/slimepotion/sentience/P = new
 	P.forceMove(get_turf(holder.my_atom))
 
-//Adamantine
-/datum/chemical_reaction/slimegolem
-	name = "Slime Golem"
-	id = "m_golem"
-	result = null
-	required_reagents = list("plasma_dust" = 1)
-	result_amount = 1
-	required_container = /obj/item/slime_extract/adamantine
-	required_other = 1
-
-/datum/chemical_reaction/slimegolem/on_reaction(datum/reagents/holder)
-	SSblackbox.record_feedback("tally", "slime_cores_used", 1, type)
-	new /obj/item/stack/sheet/mineral/adamantine(get_turf(holder.my_atom))
-
-/datum/chemical_reaction/moenkeylanguage
-	name = "Moenky language"
-	id = "monkeylanguage"
-	result = "monkeylanguage"
-	required_reagents = list("water" = 1)
-	result_amount = 1
-	required_container = /obj/item/slime_extract/pink
-	required_other = 1
-
-/datum/chemical_reaction/moenkeylanguage/on_reaction(datum/reagents/holder)
-	SSblackbox.record_feedback("tally", "slime_cores_used", 1, type)
-
-/datum/chemical_reaction/slimedamage
-	name = "Slime Damage Resistence Potion"
-	id = "m_slime_potion_DamageR"
-	result = null
-	required_reagents = list("water" = 1)
-	result_amount = 1
-	required_container = /obj/item/slime_extract/adamantine
-	required_other = 1
-
-/datum/chemical_reaction/slimedamage/on_reaction(datum/reagents/holder)
-	SSblackbox.record_feedback("tally", "slime_cores_used", 1, type)
-	var/obj/item/slimepotion/clothing/damage/D = new
-	D.forceMove(get_turf(holder.my_atom))
-
 //Bluespace
 /datum/chemical_reaction/slimefloor2
 	name = "Bluespace Floor"

@@ -29135,7 +29135,6 @@
 	},
 /area/ruin/unpowered/coldcolony_outside)
 "lbV" = (
-/obj/effect/mob_spawn/human/abductor,
 /obj/item/reagent_containers/glass/bottle/abductor/rezadone,
 /turf/simulated/floor/carpet{
 	temperature = 180

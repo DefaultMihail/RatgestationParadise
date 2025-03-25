@@ -275,8 +275,6 @@
 		var/skinned = H.dna.species.skinned_type
 		if(ismachineperson(H))
 			new /obj/effect/gibspawner/robot(src)
-		else if(!isplasmaman(H) && !isnucleation(H) && !isgolem(H))
-			new /obj/effect/gibspawner(src, H.dna)
 		if(skinned)
 			new skinned(src)
 

@@ -18,7 +18,6 @@
 	var/list/rare_ore = list(
 		/obj/item/stack/ore/diamond,
 		/obj/item/stack/ore/bluespace_crystal,
-		/obj/item/stack/sheet/mineral/abductor // few ruins of it often spawn, should be fine.
 	)
 	for(var/res in rare_ore)
 		new res(src, rand(10, 15))

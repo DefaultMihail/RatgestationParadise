@@ -320,8 +320,6 @@
 		/obj/item/reagent_containers/glass/bottle/reagent/omnizine = 50,
 		/obj/item/reagent_containers/glass/bottle/reagent/strange_reagent = 50,
 		/obj/item/scalpel/laser/manager = 50,
-		/obj/item/organ/internal/heart/gland/ventcrawling = 50,
-		/obj/item/organ/internal/heart/gland/heals = 50,
 		/obj/item/dnainjector/regenerate = 50,
 		/obj/item/dnainjector/nobreath = 50,
 		/obj/item/dnainjector/telemut = 50,
@@ -379,8 +377,7 @@
 	/obj/item/grenade/clusterbuster/metalfoam = 50,
 	/obj/item/crowbar/power = 50,
 	/obj/item/screwdriver/power = 50,
-	/obj/item/t_scanner/advanced = 50,
-	/obj/item/borg/upgrade/abductor_engi = 50)
+	/obj/item/t_scanner/advanced = 50)
 
 /obj/effect/spawner/lootdrop/trade_sol/largeitem
 	name = "8. Largeitem"

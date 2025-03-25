@@ -885,19 +885,6 @@
 	name = "farwa cube"
 	monkey_type = /datum/species/monkey/tajaran
 
-/obj/item/reagent_containers/food/snacks/monkeycube/wolpincube
-	name = "wolpin cube"
-	monkey_type = /datum/species/monkey/vulpkanin
-
-/obj/item/reagent_containers/food/snacks/monkeycube/stokcube
-	name = "stok cube"
-	monkey_type = /datum/species/monkey/unathi
-
-/obj/item/reagent_containers/food/snacks/monkeycube/neaeracube
-	name = "neaera cube"
-	monkey_type = /datum/species/monkey/skrell
-
-
 //////////////////////
 //		Eggs		//
 //////////////////////

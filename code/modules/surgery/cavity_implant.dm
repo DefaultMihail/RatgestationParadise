@@ -20,7 +20,6 @@
 		BODY_ZONE_CHEST,
 		BODY_ZONE_HEAD,
 	)
-	restricted_speciestypes = list(/datum/species/kidan, /datum/species/wryn, /datum/species/plasmaman)
 
 
 /datum/surgery/cavity_implant/soft
@@ -38,69 +37,6 @@
 		/datum/surgery_step/generic/cauterize
 	)
 
-	possible_locs = list(BODY_ZONE_PRECISE_GROIN)
-
-/datum/surgery/cavity_implant/insect
-	name = "Insectoid Cavity Implant/Removal"
-	steps = list(
-		/datum/surgery_step/open_encased/saw,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/generic/clamp_bleeders,
-		/datum/surgery_step/proxy/ib,
-		/datum/surgery_step/cavity/make_space,
-		/datum/surgery_step/proxy/cavity_manipulation,
-		/datum/surgery_step/cavity/close_space,
-		/datum/surgery_step/open_encased/close,
-		/datum/surgery_step/glue_bone,
-		/datum/surgery_step/set_bone,
-		/datum/surgery_step/finish_bone,
-		/datum/surgery_step/generic/cauterize
-	)
-	target_speciestypes = list(/datum/species/kidan, /datum/species/wryn)
-	restricted_speciestypes = null
-	possible_locs = list(
-		BODY_ZONE_CHEST,
-		BODY_ZONE_HEAD,
-		BODY_ZONE_PRECISE_GROIN,
-	)
-
-/datum/surgery/cavity_implant/plasmaman
-	name = "Plasmaman Cavity Implant/Removal"
-	steps = list(
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/generic/clamp_bleeders,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/proxy/ib,  // just do IB here since we're sawing the bone anyway
-		/datum/surgery_step/open_encased/saw,
-		/datum/surgery_step/open_encased/retract,
-		/datum/surgery_step/cavity/make_space,
-		/datum/surgery_step/proxy/cavity_manipulation,
-		/datum/surgery_step/cavity/close_space,
-		/datum/surgery_step/open_encased/close,
-		/datum/surgery_step/glue_bone/plasma,
-		/datum/surgery_step/generic/cauterize
-	)
-	possible_locs = list(
-		BODY_ZONE_CHEST,
-		BODY_ZONE_HEAD,
-	)
-	target_speciestypes = list(/datum/species/plasmaman)
-	restricted_speciestypes = null
-
-/datum/surgery/cavity_implant/plasmaman/soft
-	steps = list(
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/generic/clamp_bleeders,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/proxy/ib,  // just do IB here since we're sawing the bone anyway
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/cavity/make_space,
-		/datum/surgery_step/proxy/cavity_manipulation,
-		/datum/surgery_step/cavity/close_space,
-		/datum/surgery_step/generic/cauterize
-	)
 	possible_locs = list(BODY_ZONE_PRECISE_GROIN)
 
 /datum/surgery/cavity_implant/synth

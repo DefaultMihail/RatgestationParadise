@@ -192,34 +192,6 @@
 			if(prob(20))
 				affected_mob.say(pick("You look delicious.", "Going to... devour you...", "Hsssshhhhh!"))
 
-
-/datum/disease/virus/transformation/slime
-	name = "Advanced Mutation Transformation"
-	agent = "Advanced Mutation Toxin"
-	desc = "This highly concentrated extract converts anything into more of itself."
-	cures = list("frostoil")
-	cure_prob = 80
-	stage1 = list(span_notice("You don't feel very well."))
-	stage2 = list(span_notice("Your skin feels a little slimy."))
-	stage3 = list(span_danger("Your appendages are melting away."), span_danger("Your limbs begin to lose their shape."))
-	stage4 = list(span_danger("You are turning into a slime."))
-	transform_message = list(span_danger("You have become a slime."))
-	new_form = /mob/living/simple_animal/slime/random
-
-/datum/disease/virus/transformation/slime/stage_act()
-	if(!..() || !affected_mob)
-		return FALSE
-
-	switch(stage)
-		if(1)
-			if(isslimeperson(affected_mob))
-				stage = 5
-		if(3)
-			if(ishuman(affected_mob))
-				var/mob/living/carbon/human/human = affected_mob
-				if(!isslimeperson(human))
-					human.set_species(/datum/species/slime)
-
 /datum/disease/virus/transformation/corgi
 	name = "The Barkening"
 	agent = "Fell Doge Majicks"

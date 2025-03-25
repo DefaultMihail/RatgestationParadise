@@ -658,34 +658,6 @@
 	icon_name = "farwatail_s"
 	species_type = /datum/species/monkey/tajaran
 
-/obj/item/organ/external/tail/monkey/vulpkanin
-	name = "wolpin tail"
-	desc = "Хвост вульпина."
-	ru_names = list(
-		NOMINATIVE = "хвост вульпина",
-		GENITIVE = "хвоста вульпина",
-		DATIVE = "хвосту вульпина",
-		ACCUSATIVE = "хвост вульпина",
-		INSTRUMENTAL = "хвостом вульпина",
-		PREPOSITIONAL = "хвосте вульпина"
-	)
-	icon_name = "wolpintail_s"
-	species_type = /datum/species/monkey/vulpkanin
-
-/obj/item/organ/external/tail/monkey/unathi
-	name = "stok tail"
-	desc = "Хвост стока."
-	ru_names = list(
-		NOMINATIVE = "хвост стока",
-		GENITIVE = "хвоста стока",
-		DATIVE = "хвосту стока",
-		ACCUSATIVE = "хвост стока",
-		INSTRUMENTAL = "хвостом стока",
-		PREPOSITIONAL = "хвосте стока"
-	)
-	icon_name = "stoktail_s"
-	species_type = /datum/species/monkey/unathi
-
 /obj/item/organ/external/wing
 	name = "wings"
 	desc = "Крылья."

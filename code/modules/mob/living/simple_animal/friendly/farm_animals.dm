@@ -118,12 +118,6 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
 	. = ..()
-	if(. && isdiona(target))
-		var/mob/living/carbon/human/H = target
-		var/obj/item/organ/external/NB = pick(H.bodyparts)
-		H.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] отрывает большой кусок от [H]!"), \
-				span_userdanger("[capitalize(declent_ru(NOMINATIVE))] отрывает от вас большой кусок [NB.declent_ru(GENITIVE)]!"))
-		NB.droplimb()
 
 //cow
 /mob/living/simple_animal/cow

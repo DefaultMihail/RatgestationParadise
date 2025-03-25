@@ -107,7 +107,6 @@ GLOBAL_LIST_INIT(metal_recipes, list(
 	new /datum/stack_recipe("Intercom frame", /obj/item/mounted/frame/intercom, 2),
 	new /datum/stack_recipe("Shower", /obj/item/mounted/shower, 5, time = 7, on_floor = TRUE),
 	new /datum/stack_recipe("Stairs frame", /obj/structure/stairs_frame, 15, time = 5 SECONDS, one_per_turf = TRUE, on_floor = TRUE),
-	new /datum/stack_recipe("Torch holder", /obj/item/mounted/frame/torch_holder, 2, time = 3 SECONDS),
 ))
 
 /obj/item/stack/sheet/metal
@@ -237,13 +236,11 @@ GLOBAL_LIST_INIT(wood_recipes, list(
 	new /datum/stack_recipe("Wood table frame", /obj/structure/table_frame/wood, 2, time = 10),
 	new /datum/stack_recipe("Wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE),
 	new /datum/stack_recipe("Wooden chair", /obj/structure/chair/wood, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE),
-	new /datum/stack_recipe("Wooden stool", /obj/structure/chair/stool/wooden, 2, time = 5, one_per_turf = TRUE, on_floor = TRUE),
 	new /datum/stack_recipe("Wooden door", /obj/structure/mineral_door/wood, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE),
 	new /datum/stack_recipe("Notice Board", /obj/item/noticeboard, 5, time = 10),
 	new /datum/stack_recipe("Torch", /obj/item/flashlight/flare/torch, 5, time = 2 SECONDS),
 	new /datum/stack_recipe("Wooden crate", /obj/structure/closet/crate/wooden, 20, time = 10 SECONDS),
 	new /datum/stack_recipe("Wooden bed", /obj/structure/bed/wooden, 10, time = 4 SECONDS, one_per_turf = TRUE, on_floor = TRUE),
-	new /datum/stack_recipe("Wooden rack", /obj/structure/rack/wooden, 5, time = 4 SECONDS, one_per_turf = TRUE, on_floor = TRUE),
 ))
 
 /obj/item/stack/sheet/wood

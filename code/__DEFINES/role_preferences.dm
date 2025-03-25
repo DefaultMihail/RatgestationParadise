@@ -59,7 +59,6 @@
 //The gamemode specific ones are just so the gamemodes can query whether a player is old enough
 //(in game days played) to play that role
 GLOBAL_LIST_INIT(special_roles, list(
-	ROLE_ABDUCTOR = /datum/game_mode/abduction, 		// Abductor
 	ROLE_BLOB = /datum/game_mode/blob, 					// Blob
 	ROLE_CHANGELING = /datum/game_mode/changeling, 		// Changeling
 	ROLE_BORER, 										// Cortical borer
@@ -78,7 +77,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_REVENANT, 										// Revenant
 	ROLE_REV = /datum/game_mode/revolution, 			// Revolutionary
 	ROLE_SENTIENT, 										// Sentient animal
-	ROLE_SHADOWLING = /datum/game_mode/shadowling, 		// Shadowling
 	ROLE_SPACE_DRAGON,									// Space dragon
 	ROLE_NINJA, 										// Space ninja
 	ROLE_TERROR_SPIDER,									// Terror Spider

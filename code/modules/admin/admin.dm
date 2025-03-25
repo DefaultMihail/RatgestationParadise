@@ -749,8 +749,6 @@ GLOBAL_VAR_INIT(nologevent, 0)
 		antag_list += "Wizard"
 	if(M.mind in SSticker.mode.changelings)
 		antag_list += "Changeling"
-	if(M.mind in SSticker.mode.abductors)
-		antag_list += "Abductor"
 	if(M.mind.has_antag_datum(/datum/antagonist/vampire))
 		antag_list += "Vampire"
 	if(M.mind.has_antag_datum(/datum/antagonist/mindslave/thrall))

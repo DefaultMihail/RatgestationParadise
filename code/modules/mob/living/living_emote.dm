@@ -360,7 +360,6 @@
 	message = "улыба%(ет,ют)%ся."
 	message_postfix = ", смотря на %t."
 	message_param = EMOTE_PARAM_USE_POSTFIX
-	species_type_blacklist_typecache = list(/datum/species/skrell)	// they got their own
 
 
 /datum/emote/living/wsmile
@@ -369,7 +368,6 @@
 	message = "слабо улыба%(ет,ют)%ся."
 	message_postfix = ", смотря на %t."
 	message_param = EMOTE_PARAM_USE_POSTFIX
-	species_type_blacklist_typecache = list(/datum/species/skrell)
 
 
 /datum/emote/living/smug

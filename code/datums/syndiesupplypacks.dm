@@ -1095,24 +1095,6 @@ GLOBAL_LIST_INIT(all_syndie_supply_groups, list(SYNDIE_SUPPLY_EMERGENCY,SYNDIE_S
 	cost = 200
 	containername = "farwa crate"
 
-/datum/syndie_supply_packs/organic/wolpin
-	name = "Wolpin Crate"
-	contains = list (/obj/item/storage/box/monkeycubes/wolpincubes)
-	cost = 200
-	containername = "wolpin crate"
-
-/datum/syndie_supply_packs/organic/skrell
-	name = "Neaera Crate"
-	contains = list (/obj/item/storage/box/monkeycubes/neaeracubes)
-	cost = 200
-	containername = "neaera crate"
-
-/datum/syndie_supply_packs/organic/stok
-	name = "Stok Crate"
-	contains = list (/obj/item/storage/box/monkeycubes/stokcubes)
-	cost = 200
-	containername = "stok crate"
-
 /datum/syndie_supply_packs/organic/party
 	name = "Party Equipment Crate"
 	contains = list(/obj/item/storage/box/drinkingglasses,
@@ -1372,9 +1354,6 @@ GLOBAL_LIST_INIT(all_syndie_supply_groups, list(SYNDIE_SUPPLY_EMERGENCY,SYNDIE_S
 /datum/syndie_supply_packs/organic/hydroponics/exoticseeds
 	name = "Exotic Seeds Crate"
 	contains = list(/obj/item/seeds/nettle,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
 					/obj/item/seeds/nymph,
 					/obj/item/seeds/nymph,
 					/obj/item/seeds/nymph,

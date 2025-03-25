@@ -144,11 +144,6 @@
 							/obj/structure/flora/ausbushes/grassybush, /obj/structure/flora/ausbushes/sunnybush, /obj/structure/flora/tree/palm, /mob/living/carbon/human/lesser/monkey,
 							/obj/item/gun/projectile/bow, /obj/item/storage/backpack/quiver/full)
 			florachance = 20
-		if("alien") //Beneficial, turns stuff into alien alloy which is useful to cargo and research. Also repairs atmos.
-			NewTerrainFloors = /turf/simulated/floor/mineral/abductor
-			NewTerrainWalls = /turf/simulated/wall/mineral/abductor
-			NewTerrainChairs = /obj/structure/bed/abductor //ayys apparently don't have chairs. An entire species of people who only recline.
-			NewTerrainTables = /obj/structure/table/abductor
 
 /obj/machinery/anomalous_crystal/theme_warp/ActivationReaction(mob/user, method)
 	if(..())
@@ -225,7 +220,7 @@
 			if(ishuman(i))
 				var/mob/living/carbon/human/H = i
 				if(H.stat == DEAD)
-					H.set_species(/datum/species/shadow)
+					H.set_species(/datum/species/skeleton)
 					H.revive()
 					//Free revives, but significantly limits your options for reviving except via the crystal
 					ADD_TRAIT(H, TRAIT_NO_CLONE, ANOMALOUS_CRYSTAL_TRAIT)

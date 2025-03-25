@@ -130,9 +130,7 @@ GLOBAL_LIST_EMPTY(limb_icon_cache)
 				var/datum/sprite_accessory/facial_hair_style = GLOB.facial_hair_styles_list[f_style]
 				if(facial_hair_style && ((facial_hair_style.species_allowed && (dna.species.name in facial_hair_style.species_allowed)) || (dna.species.bodyflags & ALL_RPARTS)))
 					var/icon/facial_s = new /icon("icon" = facial_hair_style.icon, "icon_state" = "[facial_hair_style.icon_state]_s")
-					if(istype(dna.species, /datum/species/slime)) // I am el worstos
-						facial_s.Blend("[owner.skin_colour]A0", ICON_AND) //A0 = 160 alpha.
-					else if(facial_hair_style.do_colouration)
+					if(facial_hair_style.do_colouration)
 						facial_s.Blend(facial_colour, ICON_ADD)
 					add_overlay(facial_s)
 
@@ -141,9 +139,7 @@ GLOBAL_LIST_EMPTY(limb_icon_cache)
 				var/datum/sprite_accessory/hair_style = GLOB.hair_styles_full_list[h_style]
 				if(hair_style && ((dna.species.name in hair_style.species_allowed) || (dna.species.bodyflags & ALL_RPARTS)))
 					var/icon/hair_s = new /icon("icon" = hair_style.icon, "icon_state" = "[hair_style.icon_state]_s")
-					if(istype(dna.species, /datum/species/slime)) // I am el worstos
-						hair_s.Blend("[owner.skin_colour]A0", ICON_AND) //A0 = 160 alpha.
-					else if(hair_style.do_colouration)
+					if(hair_style.do_colouration)
 						hair_s.Blend(hair_colour, ICON_ADD)
 					add_overlay(hair_s)
 

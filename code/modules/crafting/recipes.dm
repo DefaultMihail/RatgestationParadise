@@ -741,62 +741,6 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_MISC2
 
-/datum/crafting_recipe/tribal_rod
-	name = "Tribal Fishing Rod"
-	time = 4 SECONDS
-	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/stack/sheet/sinew = 1)
-	result = /obj/item/twohanded/fishing_rod/tribal
-	category = CAT_PRIMAL
-	subcategory = CAT_MISC2
-
-/datum/crafting_recipe/grace_of_lazis
-	name = "Grace Of Lazis"
-	time = 6 SECONDS
-	reqs = list(/obj/item/twohanded/spear/bonespear = 1,
-				/obj/item/reagent_containers/food/snacks/monstermeat/goliath = 18)
-	blacklist = list(/obj/item/twohanded/spear/bonespear/chitinspear, /obj/item/twohanded/spear/bonespear/her_biting_embrace)
-	result = /obj/structure/grace_of_lazis
-	category = CAT_PRIMAL
-	subcategory = CAT_MISC2
-
-/datum/crafting_recipe/wooden_totem
-	name = "Wooden Totem"
-	time = 15 SECONDS
-	reqs = list(/obj/item/stack/sheet/wood = 30,
-				/obj/item/stack/sheet/animalhide/goliath_hide = 1)
-	result = /obj/structure/ash_totem/wooden
-	category = CAT_PRIMAL
-	subcategory = CAT_MISC2
-
-/datum/crafting_recipe/stone_totem
-	name = "Stone Totem"
-	time = 15 SECONDS
-	reqs = list(/obj/item/stack/sheet/mineral/sandstone = 30,
-				/obj/item/stack/sheet/sinew = 2)
-	result = /obj/structure/ash_totem/stone
-	category = CAT_PRIMAL
-	subcategory = CAT_MISC2
-
-/datum/crafting_recipe/bone_totem
-	name = "Bone Totem"
-	time = 15 SECONDS
-	reqs = list(/obj/item/stack/sheet/wood = 15,
-				/obj/item/stack/sheet/mineral/sandstone = 15,
-				/obj/item/stack/sheet/bone = 3)
-	result = /obj/structure/ash_totem/bone
-	category = CAT_PRIMAL
-	subcategory = CAT_MISC2
-
-/datum/crafting_recipe/primitive_surgical_kit
-	name = "Primitive surgical kit"
-	time = 30
-	reqs = list(/obj/item/stack/sheet/bone = 6,
-				/obj/item/stack/sheet/sinew = 3)
-	result = list(/obj/item/storage/toolbox/surgery/ashwalker)
-	category = CAT_PRIMAL
-	subcategory = CAT_MISC2
-
 /datum/crafting_recipe/bonedagger
 	name = "Bone Dagger"
 	result = /obj/item/kitchen/knife/combat/survival/bone
@@ -947,17 +891,6 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				 /obj/item/stack/sheet/sinew = 3)
-	category = CAT_PRIMAL
-	subcategory = CAT_WEAPONS
-
-/datum/crafting_recipe/upgraded_boneaxe
-	name = "Guillotine (Bone Axe)"
-	result = /obj/item/twohanded/fireaxe/boneaxe/guillotine
-	time = 5 SECONDS
-	reqs = list(/obj/item/twohanded/fireaxe/boneaxe = 1,
-				/obj/item/circular_saw_blade = 1,
-				/obj/item/stack/sheet/sinew = 2)
-	blacklist = list(/obj/item/twohanded/fireaxe/boneaxe/guillotine)
 	category = CAT_PRIMAL
 	subcategory = CAT_WEAPONS
 
@@ -1817,12 +1750,3 @@
 				/obj/item/stack/sheet/animalhide/weaver_chitin = 2)
 	category = CAT_PRIMAL
 	subcategory = CAT_WEAPONS
-
-/datum/crafting_recipe/fishing_pouch
-	name = "Fishing pouch"
-	result = /obj/item/storage/bag/medpouch/fishing
-	time = 4 SECONDS
-	reqs = list(/obj/item/stack/sheet/cloth = 3,
-				/obj/item/stack/sheet/sinew = 1)
-	category = CAT_PRIMAL
-	subcategory = CAT_MISC2

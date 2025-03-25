@@ -97,9 +97,6 @@ GLOBAL_LIST_EMPTY(admin_objective_list)
 		if(current_location && !is_level_reachable(current_location.z))
 			return TARGET_INVALID_UNREACHABLE
 
-	if(isgolem(possible_target.current))
-		return TARGET_INVALID_GOLEM
-
 	if(possible_target.offstation_role)
 		return TARGET_INVALID_EVENT
 

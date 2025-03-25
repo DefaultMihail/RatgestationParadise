@@ -106,10 +106,7 @@
 
 /datum/reagent/slimejelly/on_mob_life(mob/living/M)
 	var/update_flags = STATUS_UPDATE_NONE
-	if(!isslimeperson(M) && prob(10))
-		to_chat(M, span_danger("Ваши внутренности пылают!"))
-		update_flags |= M.adjustToxLoss(rand(2,6) / 2, FALSE) // avg 0.2 toxin per cycle
-	else if(prob(40))
+	if(prob(40))
 		update_flags |= M.adjustBruteLoss(-0.25, FALSE)
 	return ..() | update_flags
 
@@ -142,27 +139,6 @@
 		B.basecolor = color
 		B.update_icon()
 
-
-/datum/reagent/slimetoxin
-	name = "Мутационный токсин"
-	id = "mutationtoxin"
-	description = "Мутационный токсин, производимый слаймами."
-	reagent_state = LIQUID
-	color = "#13BC5E" // rgb: 19, 188, 94
-	can_synth = FALSE
-	taste_description = "теней"
-
-/datum/reagent/slimetoxin/on_mob_life(mob/living/M)
-	if(ishuman(M))
-		var/mob/living/carbon/human/human = M
-		if(!isshadowperson(human))
-			to_chat(M, span_danger("Ваша плоть быстро мутирует!"))
-			to_chat(M, span_danger("Теперь вы - Тень, мутант из расы обитающих во тьме гуманоидов."))
-			to_chat(M, span_danger("Ваше тело сильно реагирует на свет, однако оно натурально исцеляется при нахождении во тьме."))
-			to_chat(M, span_danger("Тем не менее, вы не изменились психически и сохранили свои прежние обязанности."))
-			human.set_species(/datum/species/shadow)
-	return ..()
-
 /datum/reagent/aslimetoxin
 	name = "Продвинутый мутационный токсин"
 	id = "amutationtoxin"
@@ -171,12 +147,6 @@
 	color = "#13BC5E" // rgb: 19, 188, 94
 	can_synth = FALSE
 	taste_description = "желе"
-
-/datum/reagent/aslimetoxin/reaction_mob(mob/living/M, method=REAGENT_TOUCH, volume)
-	if(method != REAGENT_TOUCH)
-		var/datum/disease/virus/transformation/slime/D = new
-		D.Contract(M)
-
 
 /datum/reagent/mercury
 	name = "Ртуть"
@@ -292,8 +262,6 @@
 
 
 /datum/reagent/stable_mutagen/on_mob_life(mob/living/carbon/human/target)
-	if(isnucleation(target))
-		return ..()
 	target.apply_effect(1, IRRADIATE, negate_armor = TRUE)
 	if(current_cycle != 10 || !ishuman(target) || !target.dna || !islist(data) || !istype(data["dna"], /datum/dna))
 		return ..()

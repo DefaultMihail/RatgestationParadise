@@ -1067,16 +1067,6 @@
 	build_path = /obj/item/safe_internals
 	category = list("initial", "Construction")
 
-/datum/design/golem_shell
-	name = "Golem Shell Construction"
-	desc = "Allows for the construction of a Golem Shell."
-	id = "golem"
-	req_tech = null	// Unreachable by tech researching.
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 40000)
-	build_path = /obj/item/golem_shell
-	category = list("Imported")
-
 /datum/design/tts
 	name = "TTS device"
 	desc = "A small device with a keyboard attached. Anything entered on the keyboard is played out the speaker."

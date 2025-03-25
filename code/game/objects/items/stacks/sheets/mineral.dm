@@ -98,21 +98,6 @@ GLOBAL_LIST_INIT(tranquillite_recipes, list ( \
 	new/datum/stack_recipe("Mime Statue", /obj/structure/statue/tranquillite/mime, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
-GLOBAL_LIST_INIT(abductor_recipes, list ( \
-	new/datum/stack_recipe("alien bed", /obj/structure/bed/abductor, 2, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien locker", /obj/structure/closet/abductor, 1, time = 15, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien table frame", /obj/structure/table_frame/abductor, 1, time = 15, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien airlock assembly", /obj/structure/door_assembly/door_assembly_abductor, 4, time = 20, one_per_turf = 1, on_floor = 1), \
-	null, \
-	new/datum/stack_recipe("alien floor tile", /obj/item/stack/tile/mineral/abductor, 1, 4, 20), \
-	new/datum/stack_recipe("alien chair", /obj/structure/chair/comfy/abductor,  2, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien computer frame", /obj/structure/computerframe/abductor,  4, time = 25, one_per_turf = 1, on_floor = 1)
-	))
-
-GLOBAL_LIST_INIT(adamantine_recipes, list(
-	new /datum/stack_recipe("incomplete servant golem shell", /obj/item/golem_shell/servant, req_amount = 1, res_amount = 1), \
-	))
-
 GLOBAL_LIST_INIT(snow_recipes, list(
 	new/datum/stack_recipe("snowman", /obj/structure/snowman, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Snowball", /obj/item/snowball, 1)
@@ -435,45 +420,6 @@ GLOBAL_LIST_INIT(plastitanium_recipes, list(
 	icon_state = "sheet-enruranium"
 	origin_tech = "materials=6"
 	materials = list(MAT_URANIUM=3000)
-
-//Alien Alloy
-/obj/item/stack/sheet/mineral/abductor
-	name = "alien alloy"
-	icon = 'icons/obj/abductor.dmi'
-	icon_state = "sheet-abductor"
-	item_state = "sheet-abductor"
-	singular_name = "alien alloy sheet"
-	force = 5
-	throwforce = 5
-	w_class = WEIGHT_CLASS_NORMAL
-	throw_speed = 1
-	origin_tech = "materials=6;abductor=1"
-	sheettype = "abductor"
-	materials = list(MAT_METAL = 4000, MAT_PLASMA = 4000)
-
-/obj/item/stack/sheet/mineral/abductor/fifty
-	amount = 50
-
-/obj/item/stack/sheet/mineral/abductor/Initialize(mapload, new_amount, merge = TRUE)
-	. = ..()
-	recipes = GLOB.abductor_recipes
-
-/obj/item/stack/sheet/mineral/adamantine
-	name = "adamantine"
-	desc = "A strange mineral used in the construction of sentient golems."
-	icon_state = "sheet-adamantine"
-	item_state = "sheet-adamantine"
-	singular_name = "adamantine sheet"
-	origin_tech = "materials=5"
-	merge_type = /obj/item/stack/sheet/mineral/adamantine
-	wall_allowed = FALSE
-
-/obj/item/stack/sheet/mineral/adamantine/fifty
-	amount = 50
-
-/obj/item/stack/sheet/mineral/adamantine/Initialize(mapload, new_amount, merge = TRUE)
-	. = ..()
-	recipes = GLOB.adamantine_recipes
 
 /*
  * Mythril

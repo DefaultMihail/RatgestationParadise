@@ -68,7 +68,7 @@
 	explanation_text = "Почему вы должны зацикливаться на своем звании? Покажите всем, что вы можете выполнять и другую работу, и не позволяйте никому остановить вас, прежде всего потому, что у вас нет требуемой квалификации."
 
 /datum/objective/sintouched/envy/on_apply()
-	user.set_species(/datum/species/wryn)
+	user.set_species(/datum/species/skeleton)
 
 /datum/objective/sintouched/pride
 	antag_menu_name = "Гордыня"

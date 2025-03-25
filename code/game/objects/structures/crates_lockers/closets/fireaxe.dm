@@ -213,65 +213,6 @@
 /obj/structure/closet/fireaxecabinet/welder_act(mob/user, obj/item/I) //A bastion of sanity in a sea of madness
 	return
 
-
-
-//mining "fireaxe"
-/obj/structure/fishingrodcabinet
-	name = "fishing cabinet"
-	desc = "There is a small label that reads \"Fo* Em**gen*y u*e *nly\". All the other text is scratched out and replaced with various fish weights."
-	icon = 'icons/obj/closet.dmi'
-	icon_state = "fishingrod"
-	anchored = TRUE
-	var/obj/item/twohanded/fishing_rod/olreliable //what the fuck?
-
-
-/obj/structure/fishingrodcabinet/Initialize(mapload)
-	. = ..()
-	olreliable = new(src)
-	update_icon(UPDATE_OVERLAYS)
-
-
-/obj/structure/fishingrodcabinet/update_overlays()
-	. = ..()
-	if(olreliable)
-		. += "rod"
-
-
-/obj/structure/fishingrodcabinet/attackby(obj/item/I, mob/living/user, params)
-	if(user.a_intent == INTENT_HARM)
-		return ..()
-
-	if(istype(I, /obj/item/twohanded/fishing_rod))
-		var/obj/item/twohanded/fishing_rod/rod = I
-		if(HAS_TRAIT(rod, TRAIT_WIELDED))
-			to_chat(user, span_warning("Unwield [rod] first."))
-			return ATTACK_CHAIN_PROCEED
-		if(!user.drop_transfer_item_to_loc(rod, src))
-			return ..()
-		olreliable = rod
-		to_chat(user, span_notice("You place [rod] back in [src]."))
-		update_icon(UPDATE_OVERLAYS)
-		return ATTACK_CHAIN_BLOCKED_ALL
-
-	return ..()
-
-
-/obj/structure/fishingrodcabinet/blob_act(obj/structure/blob/B)
-	if(olreliable)
-		olreliable.forceMove(loc)
-	qdel(src)
-
-/obj/structure/fishingrodcabinet/attack_hand(mob/user)
-	if(!olreliable)
-		return ..()
-
-	add_fingerprint(user)
-	olreliable.forceMove_turf()
-	user.put_in_hands(olreliable, ignore_anim = FALSE)
-	to_chat(user, span_notice("You take [olreliable] from [src]."))
-	olreliable = null
-	update_icon(UPDATE_OVERLAYS)
-
 /obj/structure/closet/sechammercabinet
 	name = "tactical sledgehammer cabinet"
 	desc = "Стойка, предназначенная для хранения тактической кувалды. Надпись гласит: \"Для особых случаев\"."

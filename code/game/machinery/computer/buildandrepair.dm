@@ -428,10 +428,6 @@
 	board_name = "Nanotrasen Drop Pod"
 	build_path = /obj/machinery/computer/shuttle/nt/drop_pod
 
-/obj/item/circuitboard/shuttle/golem_ship
-	board_name = "Golem Ship"
-	build_path = /obj/machinery/computer/shuttle/golem_ship
-
 /obj/item/circuitboard/HolodeckControl
 	board_name = "Holodeck Control"
 	build_path = /obj/machinery/computer/HolodeckControl
@@ -802,26 +798,6 @@
 
 /obj/structure/computerframe/HONKputer/circuit_compatibility_check(obj/item/circuitboard/circuit)
 	return circuit.board_type == "HONKputer"
-
-
-/obj/structure/computerframe/abductor
-	icon_state = "comp_frame_alien1"
-
-
-/obj/structure/computerframe/abductor/update_icon_state()
-	icon_state = "comp_frame_alien[state]"
-
-
-/obj/structure/computerframe/abductor/on_construction(obj/machinery/computer/computer)
-	..()
-	computer.abductor = TRUE
-	computer.max_integrity = 400
-	computer.obj_integrity = 400
-
-
-/obj/structure/computerframe/abductor/drop_computer_materials(location)
-	new /obj/item/stack/sheet/mineral/abductor(location, 4)
-
 
 #undef STATE_EMPTY
 #undef STATE_CIRCUIT

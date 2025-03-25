@@ -46,7 +46,6 @@
 		BODY_ZONE_CHEST,
 		BODY_ZONE_PRECISE_GROIN,
 	)
-	restricted_speciestypes = list(/datum/species/plasmaman, /datum/species/wryn, /datum/species/kidan)
 
 /datum/surgery/bone_repair/plasmaman
 	name = "Plasmaman Bone Repair"
@@ -73,27 +72,6 @@
 		BODY_ZONE_WING,
 	)
 	target_speciestypes = list(/datum/species/plasmaman)
-	restricted_speciestypes = null
-
-/datum/surgery/bone_repair/insect
-	name = "Insectoid Bone Repair"
-	steps = list(
-		/datum/surgery_step/open_encased/saw,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/generic/clamp_bleeders,
-		/datum/surgery_step/proxy/ib,  // Only proxy IB here
-		/datum/surgery_step/glue_bone,
-		/datum/surgery_step/set_bone,
-		/datum/surgery_step/finish_bone,
-		/datum/surgery_step/generic/cauterize
-	)
-	possible_locs = list(
-		BODY_ZONE_CHEST,
-		BODY_ZONE_PRECISE_GROIN,
-	)
-	target_speciestypes = list(/datum/species/wryn, /datum/species/kidan)
 	restricted_speciestypes = null
 
 /datum/surgery/bone_repair/skull
