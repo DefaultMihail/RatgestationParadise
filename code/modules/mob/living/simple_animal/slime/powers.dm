@@ -154,23 +154,6 @@
 	else
 		to_chat(src, "<i>I am not ready to evolve yet...</i>")
 
-	if(age_state.age == SLIME_SLIMEMAN)
-		if(amount_grown >= age_state.amount_grown)
-			var/mob/living/carbon/human/slime/new_slime = src.change_mob_type(/mob/living/carbon/human/slime, null, null, TRUE)
-			var/new_colour = colour_rgb(colour)
-			new_slime.skin_colour = new_colour
-			for(var/organname in new_slime.bodyparts_by_name)
-				var/obj/item/organ/external/E = new_slime.bodyparts_by_name[organname]
-				E.sync_colour_to_human(new_slime)
-			new_slime.update_hair()
-			new_slime.update_body()
-			new_slime.blood_color = new_colour
-			new_slime.dna.species.blood_color = new_slime.dna.species
-			var/datum/species/slime/species = new_slime.dna.species
-			species.evolved_slime = TRUE
-		else
-			to_chat(src, "<i>I am not ready to evolve yet...</i>")
-
 /datum/action/innate/slime/evolve
 	name = "Evolve"
 	button_icon_state = "slimegrow"

@@ -178,12 +178,7 @@
 	new /obj/effect/temp_visual/explosion/florawave(target_turf)
 	for(var/currentTurf in RANGE_TURFS(1, target_turf))
 		for(var/object in currentTurf)
-			if(isdiona(object))
-				var/mob/living/plant = object
-				if(!plant.on_fire) // the hit has no effect if the target is on fire
-					plant.adjust_fire_stacks(fire_stacks)
-					plant.IgniteMob()
-			else if(is_type_in_list(object, list(/obj/structure/glowshroom, /obj/structure/spacevine)))
+			if(is_type_in_list(object, list(/obj/structure/glowshroom, /obj/structure/spacevine)))
 				if(prob(5))
 					new /obj/effect/decal/cleanable/molten_object(get_turf(object))
 				else

@@ -607,10 +607,6 @@
 /area/admin)
 "fI" = (
 /obj/structure/table/wood,
-/obj/item/melee/baton/abductor,
-/obj/item/abductor/silencer,
-/obj/item/abductor/mind_device,
-/obj/item/abductor/gizmo,
 /obj/structure/ninjatele{
 	pixel_x = -28
 	},
@@ -2956,11 +2952,6 @@
 /obj/item/decorations/sticky_decorations/flammable/snowflake,
 /turf/simulated/wall/indestructible/snow,
 /area/tdome/newtdome/CQC)
-"If" = (
-/obj/structure/table/wood,
-/obj/item/gun/energy/alien,
-/turf/simulated/floor/wood,
-/area/admin)
 "Iq" = (
 /obj/effect/turf_decal/mech,
 /turf/simulated/floor/wood,
@@ -3886,7 +3877,6 @@
 "Vq" = (
 /obj/structure/table/wood,
 /obj/item/radio/headset,
-/obj/item/radio/headset/abductor,
 /obj/item/radio/headset/alt,
 /obj/item/radio/headset/binary{
 	name = "binary radio headset"
@@ -13101,7 +13091,7 @@ fE
 CE
 Ep
 zU
-If
+Qa
 wx
 Ep
 Kp

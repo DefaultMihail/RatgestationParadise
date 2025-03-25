@@ -440,13 +440,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/pancake/choc_chip_pancake
 
-/datum/recipe/grill/unathi
-	reagents = list("blackpepper" = 1, "sodiumchloride" = 1, "herbsmix" = 1, "tsauce" = 1)
-	items = list(
-		/obj/item/organ/external/tail/unathi
-	)
-	result = /obj/item/reagent_containers/food/snacks/sliceable/lizard
-
 /datum/recipe/grill/plov
 	items = list(
 		/obj/item/reagent_containers/food/snacks/boiledrice,

@@ -2,9 +2,6 @@
 /datum/tgui_say/proc/start_thinking()
 	if(!client?.mob || !window_open)
 		return FALSE
-	/// Special exemptions
-	if(isabductor(client.mob))
-		return FALSE
 	client.mob.set_thinking_indicator(TRUE)
 	addtimer(CALLBACK(src, PROC_REF(stop_thinking)), 5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE | TIMER_STOPPABLE)
 

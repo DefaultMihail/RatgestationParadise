@@ -15,10 +15,6 @@
 		to_chat(user, span_notice("Looks like somebody already used it."))
 		return FALSE
 
-	if(!isslimeperson(user))
-		to_chat(user, span_notice("Looks like your skin is too hard for this syringe."))
-		return FALSE
-
 	var/mob/living/carbon/human/attacker = user
 	if(attacker.get_int_organ(/obj/item/organ/internal/heart/slime/anomaly))
 		to_chat(user, span_notice("You already have the abilities that this extract can provide."))

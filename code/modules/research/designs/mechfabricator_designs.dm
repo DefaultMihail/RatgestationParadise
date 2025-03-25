@@ -1460,16 +1460,6 @@
 	construction_time = 12 SECONDS
 	category = list("Cyborg Upgrade Modules")
 
-/datum/design/borg_upgrade_abductor_engi
-	name = "Engineer Cyborg Upgrade (Abductor Engineering Equipment)"
-	id = "borg_upgade_abductor_engi"
-	build_type = MECHFAB
-	build_path = /obj/item/borg/upgrade/abductor_engi
-	req_tech = list("engineering" = 7, "materials" = 7, "abductor" = 4)
-	materials = list(MAT_METAL = 25000, MAT_SILVER = 12500, MAT_PLASMA = 5000, MAT_TITANIUM = 10000, MAT_DIAMOND = 10000) //Base abductor engineering tools * 4
-	construction_time = 12 SECONDS
-	category = list("Cyborg Upgrade Modules")
-
 /datum/design/borg_upgrade_hypospray
 	name = "Medical Cyborg Upgrade (Upgraded Hypospray)"
 	id = "borg_upgrade_hypospray"
@@ -1487,16 +1477,6 @@
 	build_path = /obj/item/borg/upgrade/hypospray_pierce
 	req_tech = list("materials" = 5, "biotech" = 6, "engineering" = 6)
 	materials = list(MAT_METAL = 6000, MAT_GLASS = 3000, MAT_DIAMOND = 500, MAT_TITANIUM = 10000)
-	construction_time = 12 SECONDS
-	category = list("Cyborg Upgrade Modules")
-
-/datum/design/borg_upgrade_abductor_medi
-	name = "Medical Cyborg Upgrade (Abductor Medical Equipment)"
-	id = "borg_upgade_abductor_medi"
-	build_type = MECHFAB
-	build_path = /obj/item/borg/upgrade/abductor_medi
-	req_tech = list("biotech" = 7, "materials" = 7, "abductor" = 3)
-	materials = list(MAT_METAL = 18000, MAT_GLASS = 1500, MAT_SILVER = 13000, MAT_GOLD = 1000, MAT_PLASMA = 4000, MAT_TITANIUM = 12000, MAT_DIAMOND = 1000) //Base abductor engineering tools *8 + IMS cost
 	construction_time = 12 SECONDS
 	category = list("Cyborg Upgrade Modules")
 

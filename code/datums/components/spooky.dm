@@ -22,7 +22,7 @@
 			return //undeads are unaffected by the spook-pocalypse.
 		C.Jitter(70 SECONDS)
 		C.SetStuttering(40 SECONDS)
-		if(!istype(H.dna.species, /datum/species/diona) && !istype(H.dna.species, /datum/species/machine) && !istype(H.dna.species, /datum/species/slime) && !istype(H.dna.species, /datum/species/golem) && !istype(H.dna.species, /datum/species/plasmaman))
+		if(!istype(H.dna.species, /datum/species/machine && !istype(H.dna.species, /datum/species/skeleton)))
 			C.apply_damage(25, STAMINA) //boneless humanoids don't lose the will to live
 		to_chat(C, "<font color='red' size='4'><B>DOOT</B></font>")
 		spectral_change(H)
@@ -32,7 +32,7 @@
 		C.SetStuttering(40 SECONDS)
 
 /datum/component/spooky/proc/spectral_change(mob/living/carbon/human/H, mob/user)
-	if((H.getStaminaLoss() > 95) && (!istype(H.dna.species, /datum/species/diona) && !istype(H.dna.species, /datum/species/machine) && !istype(H.dna.species, /datum/species/slime) && !istype(H.dna.species, /datum/species/golem) && !istype(H.dna.species, /datum/species/plasmaman) && !istype(H.dna.species, /datum/species/skeleton)))
+	if((H.getStaminaLoss() > 95) && (!istype(H.dna.species, /datum/species/machine)  && !istype(H.dna.species, /datum/species/skeleton)))
 		H.Stun(40 SECONDS)
 		H.set_species(/datum/species/skeleton)
 		H.visible_message("<span class='warning'>[H] has given up on life as a mortal.</span>")

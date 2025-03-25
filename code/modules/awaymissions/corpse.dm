@@ -770,19 +770,6 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/centcom
 
-
-
-/obj/effect/mob_spawn/human/abductor
-	name = "abductor"
-	mob_name = "alien"
-	mob_species = /datum/species/abductor
-	outfit = /datum/outfit/abductorcorpse
-
-/datum/outfit/abductorcorpse
-	name = "Abductor Corpse"
-	uniform = /obj/item/clothing/under/color/grey
-	shoes = /obj/item/clothing/shoes/combat
-
 //For ghost bar.
 /obj/effect/mob_spawn/human/alive/space_bar_patron
 	name = "Bar cryogenics"

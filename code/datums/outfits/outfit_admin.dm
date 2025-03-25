@@ -516,11 +516,8 @@
 	)
 
 /datum/outfit/admin/vox/equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(isvoxarmalis(H))
-		. = ..()
-	else
-		H.equip_vox_raider()
-		H.regenerate_icons()
+	H.equip_vox_raider()
+	H.regenerate_icons()
 
 /datum/outfit/admin/vox/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()

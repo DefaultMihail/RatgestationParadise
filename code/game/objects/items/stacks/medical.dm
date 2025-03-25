@@ -34,10 +34,6 @@
 		var/selected_zone = user.zone_selected
 		var/obj/item/organ/external/affecting = human_target.get_organ(selected_zone)
 
-		if(isgolem(human_target))
-			to_chat(user, span_danger("This can't be used on golems!"))
-			return .
-
 		if(human_target.covered_with_thick_material(selected_zone))
 			to_chat(user, span_danger("There is no thin material to inject into."))
 			return .

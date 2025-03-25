@@ -392,10 +392,6 @@
 		return FALSE
 	if(is_monkeybasic(player))	// no monkas
 		return FALSE
-	if(isgolem(player))	// get out of here
-		return FALSE
-	if(is_evolvedslime(player))	// no evolved slimes please
-		return FALSE
 	return TRUE	// congratulations, you are normal!
 
 

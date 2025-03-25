@@ -29,7 +29,6 @@
 
 /datum/surgery_step/reshape_face/end_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/organ/external/head/head = target.get_organ(target_zone)
-	var/species_names = target.dna.species.name
 	if(head.undisfigure())
 		user.visible_message(
 			"[user] successfully restores [target]'s appearance!",
@@ -38,7 +37,6 @@
 		)
 	else
 		var/list/names = list()
-		var/list_size = 10
 
 		//IDs in hand
 		if(ishuman(user)) //Only 'humans' can hold ID cards
@@ -46,7 +44,6 @@
 			var/obj/item/card/id/id = H.get_id_from_hands()
 			if(istype(id))
 				names += id.registered_name
-				list_size-- //To stop list bloat
 
 		//IDs on body
 		var/list/id_list = list()
@@ -57,17 +54,7 @@
 		for(var/obj/item/card/id/id in id_list) //Add card names to 'names'
 			if(id.registered_name != target.real_name)
 				names += id.registered_name
-				list_size--
 
-		if(!isabductor(user))
-			for(var/i in 1 to list_size)
-				names += random_name(target.gender, species_names)
-
-		else //Abductors get to pick fancy names
-			list_size-- //One less cause they get a normal name too
-			for(var/i in 1 to list_size)
-				names += "Subject [target.gender == MALE ? "I" : "O"]-[pick("A", "B", "C", "D", "E")]-[rand(10000, 99999)]"
-			names += random_name(target.gender, species_names) //give one normal name in case they want to do regular plastic surgery
 		var/chosen_name = tgui_input_list(user, "Choose a new name to assign.", "Plastic Surgery", names)
 		if(!chosen_name)
 			return

@@ -463,28 +463,6 @@
 
 	. += _memory_edit_role_enabled(ROLE_OPERATIVE)
 
-/datum/mind/proc/memory_edit_shadowling(mob/living/carbon/human/H)
-	. = _memory_edit_header("shadowling")
-	if(src in SSticker.mode.shadows)
-		. += "<b><font color='red'>SHADOWLING</font></b>|thrall|<a href='byond://?src=[UID()];shadowling=clear'>no</a>"
-	else if(src in SSticker.mode.shadowling_thralls)
-		. += "Shadowling|<b><font color='red'>THRALL</font></b>|<a href='byond://?src=[UID()];shadowling=clear'>no</a>"
-	else
-		. += "<a href='byond://?src=[UID()];shadowling=shadowling'>shadowling</a>|<a href='byond://?src=[UID()];shadowling=thrall'>thrall</a>|<b>NO</b>"
-
-	. += _memory_edit_role_enabled(ROLE_SHADOWLING)
-
-/datum/mind/proc/memory_edit_abductor(mob/living/carbon/human/H)
-	. = _memory_edit_header("abductor")
-	if(src in SSticker.mode.abductors)
-		. += "<b><font color='red'>ABDUCTOR</font></b>|<a href='byond://?src=[UID()];abductor=clear'>no</a>"
-		. += "|<a href='byond://?src=[UID()];common=undress'>undress</a>|<a href='byond://?src=[UID()];abductor=equip'>equip</a>"
-	else
-		. += "<a href='byond://?src=[UID()];abductor=abductor'>abductor</a>|<b>NO</b>"
-
-	. += _memory_edit_role_enabled(ROLE_ABDUCTOR)
-
-
 /datum/mind/proc/memory_edit_ninja()
 	. = _memory_edit_header("ninja")
 	var/datum/antagonist/ninja/ninja_datum = has_antag_datum(/datum/antagonist/ninja)
@@ -746,10 +724,6 @@
 		sections["vampire"] = memory_edit_vampire(H)
 		/** NUCLEAR ***/
 		sections["nuclear"] = memory_edit_nuclear(H)
-		/** SHADOWLING **/
-		sections["shadowling"] = memory_edit_shadowling(H)
-		/** Abductors **/
-		sections["abductor"] = memory_edit_abductor(H)
 		/** Space Ninja **/
 		sections["ninja"] = memory_edit_ninja()
 		/** THIEF ***/
@@ -2273,63 +2247,6 @@
 				log_admin("[key_name(usr)] give [key_name(current)] thief equipment")
 				message_admins("[key_name_admin(usr)] give [key_name_admin(current)] thief equipment")
 
-	else if(href_list["shadowling"])
-		switch(href_list["shadowling"])
-			if("clear")
-				if(src in SSticker.mode.shadows)
-					message_admins("[key_name_admin(usr)] has de-shadowlinged [current].")
-					log_admin("[key_name(usr)] has de-shadowlinged [current].")
-				else if(src in SSticker.mode.shadowling_thralls)
-					message_admins("[key_name_admin(usr)] has de-thrall'ed [current].")
-					log_admin("[key_name(usr)] has de-thralled [key_name(current)]")
-					message_admins("[key_name_admin(usr)] has de-thralled [key_name_admin(current)]")
-				remove_shadow_role()
-			if("shadowling")
-				if(!ishuman(current))
-					to_chat(usr, "<span class='warning'>This only works on humans!</span>")
-					return
-				SSticker.mode.shadows += src
-				special_role = SPECIAL_ROLE_SHADOWLING
-				SSticker.mode.recount_required_thralls()
-				to_chat(current, "<span class='shadowling'><b>Something stirs deep in your mind. A red light floods your vision, and slowly you remember. Though your human disguise has served you well, the \
-				time is nigh to cast it off and enter your true form. You have disguised yourself amongst the humans, but you are not one of them. You are a shadowling, and you are to ascend at all costs.\
-				</b></span>")
-				SSticker.mode.finalize_shadowling(src)
-				SSticker.mode.update_shadow_icons_added(src)
-				log_admin("[key_name(usr)] has shadowlinged [key_name(current)]")
-				message_admins("[key_name_admin(usr)] has shadowlinged [key_name_admin(current)]")
-			if("thrall")
-				if(!ishuman(current))
-					to_chat(usr, "<span class='warning'>This only works on humans!</span>")
-					return
-				SSticker.mode.add_thrall(src)
-				message_admins("[key_name_admin(usr)] has thralled [current].")
-				log_admin("[key_name(usr)] has thralled [current].")
-
-	else if(href_list["abductor"])
-		switch(href_list["abductor"])
-			if("clear")
-				to_chat(usr, "Not implemented yet. Sorry!")
-				//ticker.mode.update_abductor_icons_removed(src)
-			if("abductor")
-				if(!ishuman(current))
-					to_chat(usr, "<span class='warning'>This only works on humans!</span>")
-					return
-				make_Abductor()
-				log_admin("[key_name(usr)] turned [current] into abductor.")
-				SSticker.mode.update_abductor_icons_added(src)
-			if("equip")
-				if(!ishuman(current))
-					to_chat(usr, "<span class='warning'>This only works on humans!</span>")
-					return
-
-				var/mob/living/carbon/human/H = current
-				var/gear = tgui_alert(usr, "Agent or Scientist Gear", "Gear", list("Agent", "Scientist"))
-				if(gear)
-					if(gear=="Agent")
-						H.equipOutfit(/datum/outfit/abductor/agent)
-					else
-						H.equipOutfit(/datum/outfit/abductor/scientist)
 	else if(href_list["ninja"])
 		switch(href_list["ninja"])
 			if("clear")
@@ -2484,7 +2401,7 @@
 				blob_overmind.is_infinity = !blob_overmind.is_infinity
 				log_admin("[key_name(usr)] make blob points [blob_overmind.is_infinity? "infinity" : "not infinity"] to [key_name(current)]")
 				message_admins("[key_name_admin(usr)] make blob points [blob_overmind.is_infinity? "infinity" : "not infinity"] to [key_name_admin(current)]")
-			
+
 			if("select_strain")
 				if(!isblobovermind(src))
 					return
@@ -2496,7 +2413,7 @@
 					blob_overmind.set_strain(strain)
 					log_admin("[key_name(usr)] changed the strain to [strain] for [key_name(current)]")
 					message_admins("[key_name_admin(usr)] changed the strain to [strain] for [key_name_admin(current)]")
-	
+
 	else if(href_list["terror"])
 		switch(href_list["terror"])
 			if("datumise")
@@ -2505,7 +2422,7 @@
 				var/mob/living/simple_animal/hostile/poison/terror_spider/spider = current
 				spider.add_datum_if_not_exist()
 				log_and_message_admins("has made [key_name(current)] into a \"Terror Spider\"")
-	
+
 	else if(href_list["xenomorph"])
 		switch(href_list["xenomorph"])
 			if("datumise")
@@ -2750,18 +2667,6 @@
 
 	remove_antag_datum(thief_datum)
 
-
-/datum/mind/proc/remove_shadow_role()
-	SSticker.mode.update_shadow_icons_removed(src)
-	if(src in SSticker.mode.shadows)
-		SSticker.mode.shadows -= src
-		special_role = null
-		current.spellremove(current)
-		current.remove_language(LANGUAGE_HIVE_SHADOWLING)
-	else if(src in SSticker.mode.shadowling_thralls)
-		SSticker.mode.remove_thrall(src,0)
-
-
 /datum/mind/proc/remove_ninja_role()
 	var/datum/antagonist/ninja/ninja_datum = has_antag_datum(/datum/antagonist/ninja)
 	if(!ninja_datum)
@@ -2782,7 +2687,6 @@
 	remove_devil_role()
 	remove_traitor_role()
 	remove_thief_role()
-	remove_shadow_role()
 	remove_ninja_role()
 
 	if(adminlog)
@@ -2938,56 +2842,6 @@
 /datum/mind/proc/make_Thief()
 	if(!has_antag_datum(/datum/antagonist/thief))
 		add_antag_datum(/datum/antagonist/thief)
-
-/datum/mind/proc/make_Abductor()
-	var/role = tgui_alert(usr, "Abductor Role?", "Role", list("Agent", "Scientist"))
-	var/team = tgui_input_list(usr, "Abductor Team?", "Team?", list(1,2,3,4))
-	var/teleport = tgui_alert(usr, "Teleport to ship?", "Teleport", list("Yes", "No"))
-
-	if(!role || !team || !teleport)
-		return
-
-	if(!ishuman(current))
-		return
-
-	SSticker.mode.abductors |= src
-
-	var/datum/objective/stay_hidden/hidden_obj = new
-	hidden_obj.owner = src
-	objectives += hidden_obj
-
-	var/datum/objective/experiment/O = new
-	O.owner = src
-	objectives += O
-
-	var/mob/living/carbon/human/H = current
-
-	H.set_species(/datum/species/abductor)
-	var/datum/species/abductor/S = H.dna.species
-
-	if(role == "Scientist")
-		S.scientist = TRUE
-
-	S.team = team
-
-	var/list/obj/effect/landmark/abductor/agent_landmarks = new
-	var/list/obj/effect/landmark/abductor/scientist_landmarks = new
-	agent_landmarks.len = 4
-	scientist_landmarks.len = 4
-	for(var/obj/effect/landmark/abductor/A in GLOB.landmarks_list)
-		if(istype(A, /obj/effect/landmark/abductor/agent))
-			agent_landmarks[text2num(A.team)] = A
-		else if(istype(A, /obj/effect/landmark/abductor/scientist))
-			scientist_landmarks[text2num(A.team)] = A
-
-	var/obj/effect/landmark/L
-	if(teleport == "Yes")
-		switch(role)
-			if("Agent")
-				L = agent_landmarks[team]
-			if("Scientist")
-				L = agent_landmarks[team]
-		H.forceMove(L.loc)
 
 /datum/mind/proc/get_blob_infected_type()
 	if(!current)

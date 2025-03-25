@@ -223,7 +223,6 @@ GLOBAL_LIST_EMPTY(event_last_fired)
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Ревенант", 				/datum/event/revenant, 					150),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Спавн свармеров", 			/datum/event/spawn_swarmer, 			0, 	is_one_shot = TRUE),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Спавн морфа", 				/datum/event/spawn_morph, 				40,		list(ASSIGNMENT_SECURITY = 10), is_one_shot = TRUE),
-		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Визит абдукторов", 		/datum/event/abductor/one_crew, 		40,		list(ASSIGNMENT_SECURITY =  3), TRUE),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Pulse Demon Infiltration",	/datum/event/spawn_pulsedemon,			0),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Вспышка болезни",			/datum/event/disease_outbreak, 			0,		list(ASSIGNMENT_MEDICAL = 150), TRUE),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Хедкрабы",					/datum/event/headcrabs, 				0,		list(ASSIGNMENT_SECURITY = 20)),
@@ -241,7 +240,6 @@ GLOBAL_LIST_EMPTY(event_last_fired)
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Перегрузка ЛКП",	/datum/event/apc_overload,		0),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Блоб",			/datum/event/blob, 				30,						list(ASSIGNMENT_ENGINEER =  5), TRUE),	// 6.9% on high pop, 5.5% on low pop
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Метеорный вал",	/datum/event/meteor_wave,		30,						list(ASSIGNMENT_ENGINEER =  5),	TRUE),	// 6.9% on high pop, 5.5% on low pop
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Визит абдукторов",/datum/event/abductor, 		    20, 					list(ASSIGNMENT_SECURITY =  3), TRUE),	// 5.8% on high pop, 4.5% on low pop
 		new /datum/event_meta/alien(EVENT_LEVEL_MAJOR, "Заражение ксеноморфами",	/datum/event/alien_infestation, 		20,		list(ASSIGNMENT_SECURITY = 4), TRUE),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Пауки Ужаса",		/datum/event/spider_terror, 	20,						list(ASSIGNMENT_SECURITY = 4), TRUE),	// 7.1% on high pop, 5.3% on low pop
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Демон Резни",		/datum/event/spawn_slaughter,	20,  is_one_shot = TRUE),	// 3% on high pop, 2.1% on low pop

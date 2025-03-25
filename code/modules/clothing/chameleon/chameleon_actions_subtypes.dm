@@ -141,7 +141,6 @@
 /datum/action/item_action/chameleon/change/suit/initialize_blacklist()
 	. = ..()
 	chameleon_blacklist |= typecacheof(list(
-		/obj/item/clothing/suit/armor/abductor,
 		/obj/item/clothing/suit/armor/changeling,
 		/obj/item/clothing/suit/space/changeling,
 	), only_root_path = TRUE)

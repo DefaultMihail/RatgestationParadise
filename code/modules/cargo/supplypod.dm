@@ -159,13 +159,7 @@
 
 	if(ishuman(target))
 		var/mob/living/carbon/human/prisoner = target
-
-		if(isplasmaman(prisoner))
-			prisoner.equipOutfit(/datum/outfit/prisoner/plasmamen)
-		else if(isvox(prisoner) || isvoxarmalis(prisoner))
-			prisoner.equipOutfit(/datum/outfit/prisoner/vox)
-		else
-			prisoner.equipOutfit(/datum/outfit/prisoner)
+		prisoner.equipOutfit(/datum/outfit/prisoner)
 
 
 	to_chat(target, span_warning("Вы были этапированы на тюремную станцию!"))

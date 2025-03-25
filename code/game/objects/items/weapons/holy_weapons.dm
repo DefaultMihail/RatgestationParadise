@@ -394,12 +394,6 @@
 /obj/item/nullrod/whip/afterattack(atom/movable/AM, mob/user, proximity, params)
 	if(!proximity)
 		return
-	if(ishuman(AM))
-		var/mob/living/carbon/human/H = AM
-		if(is_shadow(H))
-			var/phrase = pick("Die monster! You don't belong in this world!!!", "You steal men's souls and make them your slaves!!!", "Your words are as empty as your soul!!!", "Mankind ill needs a savior such as you!!!")
-			user.say("[phrase]")
-			H.adjustBruteLoss(12) //Bonus damage
 
 /obj/item/nullrod/fedora
 	name = "binary fedora"

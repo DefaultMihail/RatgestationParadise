@@ -738,18 +738,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/doner_vegan
 
-/datum/recipe/microwave/kidan_ragu
-	reagents = list("water" = 10, "sodiumchloride" = 1)
-	items = list(
-		/obj/item/organ/external/head/kidan,
-		/obj/item/reagent_containers/food/snacks/grown/potato,
-		/obj/item/reagent_containers/food/snacks/grown/potato,
-		/obj/item/reagent_containers/food/snacks/grown/carrot,
-		/obj/item/reagent_containers/food/snacks/grown/tomato,
-		/obj/item/reagent_containers/food/snacks/grown/chili
-	)
-	result = /obj/item/reagent_containers/food/snacks/kidanragu
-
 /datum/recipe/microwave/tomato_sauce
 	reagents = list("water" = 15, "sodiumchloride" = 1, "blackpepper" = 1, "herbsmix" = 1)
 	items = list(

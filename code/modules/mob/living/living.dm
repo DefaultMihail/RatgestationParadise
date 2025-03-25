@@ -896,7 +896,7 @@
 		to_chat(usr, "OOC Metadata is not supported by this server!")
 
 
-/mob/living/Move(atom/newloc, direct = NONE, glide_size_override = 0, update_dir = TRUE)	
+/mob/living/Move(atom/newloc, direct = NONE, glide_size_override = 0, update_dir = TRUE)
 	if(lying_angle != 0 && !buckled)
 		lying_angle_on_movement(direct)
 
@@ -2088,7 +2088,7 @@
 
 
 ///Proc to hook behavior to the change of value in the resting variable.
-/mob/living/proc/set_resting(new_resting, silent = TRUE, instant = FALSE)
+/mob/living/proc/set_resting(new_resting, silent = TRUE, instant = TRUE)
 	if(!(mobility_flags & MOBILITY_REST))
 		return
 	if(new_resting == resting)
@@ -2117,7 +2117,7 @@
 		else
 			if(!silent)
 				to_chat(src, span_notice("You stand up."))
-			get_up(instant)
+			get_up(!instant)
 
 	SEND_SIGNAL(src, COMSIG_LIVING_RESTING, new_resting, silent, instant)
 	update_resting()

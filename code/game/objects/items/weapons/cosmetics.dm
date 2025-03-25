@@ -190,9 +190,6 @@
 	if(head.h_style == "Bald" || head.h_style == "Balding Hair" || head.h_style == "Skinhead")
 		to_chat(user, span_notice("There is not enough hair left to shave..."))
 		return .
-	if(isskrell(target))
-		to_chat(user, span_warning("Your razor isn't going to cut through tentacles."))
-		return .
 	if(target == user)
 		user.visible_message(
 			span_warning("[user] starts to shave [user.p_their()] head with [src]."),

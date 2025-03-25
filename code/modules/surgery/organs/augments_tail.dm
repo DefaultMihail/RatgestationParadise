@@ -228,7 +228,7 @@
 	if(implant && implant.activated)
 		active_implant = TRUE
 
-	if(!istype(user.bodyparts_by_name[BODY_ZONE_TAIL], /obj/item/organ/external/tail/unathi) && !active_implant)
+	if(!istype(user.bodyparts_by_name[BODY_ZONE_TAIL], /obj/item/organ/external/tail/tajaran) && !active_implant)
 		if(show_message)
 			to_chat(user, span_warning("У вас слабый хвост!"))
 		return FALSE

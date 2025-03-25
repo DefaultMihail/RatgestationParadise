@@ -67,7 +67,7 @@
 	cure_prob = 50
 	permeability_mod = 0.75
 	severity = BIOHAZARD
-	var/list/virspecies = list(/datum/species/human, /datum/species/tajaran, /datum/species/unathi,/datum/species/skrell, /datum/species/vulpkanin, /datum/species/diona)
+	var/list/virspecies = list(/datum/species/human, /datum/species/tajaran)
 	var/list/virsuffix = list("pox", "rot", "flu", "cough", "-gitis", "cold", "rash", "itch", "decay")
 	var/datum/species/chosentype
 	var/chosensuff
@@ -129,12 +129,3 @@
 	switch(chosentype)
 		if(/datum/species/tajaran)
 			H.emote("purr")
-		if(/datum/species/unathi)
-			H.emote("hiss")
-		if(/datum/species/skrell)
-			H.emote("warble")
-		if(/datum/species/vulpkanin)
-			H.emote("howl")
-		if(/datum/species/diona)
-			H.emote("creak")
-

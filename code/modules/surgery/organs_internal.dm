@@ -28,7 +28,6 @@
 	)
 	requires_organic_bodypart = TRUE
 	requires_bodypart = TRUE
-	restricted_speciestypes = list(/datum/species/kidan, /datum/species/wryn, /datum/species/plasmaman)
 
 /datum/surgery/organ_manipulation/soft
 	possible_locs = list(BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH)
@@ -99,46 +98,6 @@
 		/datum/surgery_step/proxy/manipulate_organs,
 		/datum/surgery_step/generic/cauterize
 	)
-
-/datum/surgery/organ_manipulation/insect
-	name = "Insectoid Organ Manipulation"
-	steps = list(
-		/datum/surgery_step/open_encased/saw,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/proxy/open_organ,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/generic/clamp_bleeders,
-		/datum/surgery_step/proxy/manipulate_organs,
-		/datum/surgery_step/internal/manipulate_organs/finish,
-		/datum/surgery_step/glue_bone,
-		/datum/surgery_step/set_bone,
-		/datum/surgery_step/finish_bone,
-		/datum/surgery_step/proxy/open_organ,
-		/datum/surgery_step/generic/cauterize
-	)
-	possible_locs = list(
-		BODY_ZONE_CHEST,
-		BODY_ZONE_HEAD,
-		BODY_ZONE_PRECISE_GROIN,
-	)
-	requires_organic_bodypart = TRUE
-	target_speciestypes = list(/datum/species/kidan, /datum/species/wryn)
-	restricted_speciestypes = null
-
-/datum/surgery/organ_manipulation/insect/soft
-	possible_locs = list(
-		BODY_ZONE_PRECISE_EYES,
-		BODY_ZONE_PRECISE_MOUTH,
-	)
-	steps = list(
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/generic/clamp_bleeders,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/proxy/manipulate_organs,
-		/datum/surgery_step/generic/cauterize
-	)
-	requires_organic_bodypart = TRUE
 
 /datum/surgery/organ_manipulation/alien
 	name = "Alien Organ Manipulation"
@@ -990,7 +949,6 @@
 		/obj/item/melee/energy/sword/cyborg/saw = 100,
 		/obj/item/primitive_saw = 100,
 		/obj/item/hatchet = 90,
-		/obj/item/circular_saw_blade = 80,
 		/obj/item/wirecutters = 70
 	)
 

@@ -536,8 +536,6 @@ GLOBAL_LIST_INIT(cloner_biomass_items, list(\
 			SSticker.mode.rise(H)
 			if(SSticker.mode.cult_ascendant)
 				SSticker.mode.ascend(H)
- 	if((H.mind in SSticker.mode.shadowling_thralls) || (H.mind in SSticker.mode.shadows))
- 		SSticker.mode.update_shadow_icons_added(H.mind)
 
 //Put messages in the connected computer's temp var for display.
 /obj/machinery/clonepod/proc/connected_message(message)

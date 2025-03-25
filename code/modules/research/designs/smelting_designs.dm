@@ -43,25 +43,3 @@
 	materials = list(MAT_PLASMA = MINERAL_MATERIAL_AMOUNT, MAT_TITANIUM = MINERAL_MATERIAL_AMOUNT, MAT_GLASS = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plastitaniumglass
 	category = list("initial")
-
-/datum/design/smelter/alienalloy
-	name = "Alien Alloy"
-	desc = "Plasma + Iron (x4)"
-	id = "alienalloy"
-	req_tech = list("abductor" = 1, "materials" = 7, "plasmatech" = 2)
-	build_type = PROTOLATHE | SMELTER
-	materials = list(MAT_METAL = 4000, MAT_PLASMA = 4000)
-	build_path = /obj/item/stack/sheet/mineral/abductor
-	category = list("Stock Parts")
-	lathe_time_factor = 5
-
-/datum/design/smelter/alienglass
-	name = "Alien Glass"
-	desc = "Plasma + Iron + Glass(x4)"
-	id = "alienglass"
-	req_tech = list("abductor" = 1, "materials" = 7, "plasmatech" = 2)
-	build_type = PROTOLATHE | SMELTER
-	materials = list(MAT_METAL = 4000, MAT_PLASMA = 4000, MAT_GLASS = 4000)
-	build_path = /obj/item/stack/sheet/abductorglass
-	category = list("Stock Parts")
-	lathe_time_factor = 5

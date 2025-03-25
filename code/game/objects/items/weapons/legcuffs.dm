@@ -337,6 +337,15 @@
 	breakouttime = 4 SECONDS
 	reusable = FALSE
 
+/obj/item/restraints/handcuffs/energy/used
+	desc = "energy discharge"
+	item_flags = DROPDEL
+
+/obj/item/restraints/handcuffs/energy/used/dropped(mob/user, slot, silent = FALSE)
+	user.visible_message("<span class='danger'>[src] restraining [user] breaks in a discharge of energy!</span>", \
+							"<span class='userdanger'>[src] restraining [user] breaks in a discharge of energy!</span>")
+	do_sparks(4, 0, user.loc)
+	. = ..()
 
 /obj/item/restraints/legcuffs/bola/sinew
 	name = "skull bola"

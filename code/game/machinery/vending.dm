@@ -2315,7 +2315,6 @@
 					/obj/item/seeds/lily = 3,
 					/obj/item/seeds/potato = 3,
 					/obj/item/seeds/pumpkin = 3,
-					/obj/item/seeds/replicapod = 3,
 					/obj/item/seeds/wheat/rice = 3,
 					/obj/item/seeds/soya = 3,
 					/obj/item/seeds/sugarcane = 3,
@@ -4940,8 +4939,7 @@
 		/obj/item/stack/sheet/mineral/uranium/fifty = 50)
 	contraband = list(/obj/item/stack/sheet/mineral/tranquillite/fifty = 50,
 		/obj/item/stack/sheet/mineral/bananium/fifty = 50,
-		/obj/item/stack/sheet/mineral/sandstone/fifty = 50,
-		/obj/item/stack/sheet/mineral/abductor/fifty = 50)
+		/obj/item/stack/sheet/mineral/sandstone/fifty = 50)
 
 /obj/machinery/vending/mech/ntc
 	icon = 'icons/obj/machines/vending.dmi'

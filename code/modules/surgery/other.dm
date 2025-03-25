@@ -59,7 +59,6 @@
 		BODY_ZONE_HEAD,
 		BODY_ZONE_PRECISE_GROIN,
 	)
-	restricted_speciestypes = list(/datum/species/wryn, /datum/species/kidan, /datum/species/plasmaman)
 
 /datum/surgery/bleeding/plasmaman
 	name = "Plasmaman Internal Bleeding"
@@ -86,29 +85,6 @@
 		BODY_ZONE_WING,
 	)
 	target_speciestypes = list(/datum/species/plasmaman)
-	restricted_speciestypes = null
-
-/datum/surgery/bleeding/insect
-	name = "Insectoid Internal Bleeding"
-	steps = list(
-		/datum/surgery_step/open_encased/saw,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/generic/clamp_bleeders,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/proxy/ib,
-		/datum/surgery_step/glue_bone,
-		/datum/surgery_step/set_bone,
-		/datum/surgery_step/finish_bone,
-		/datum/surgery_step/generic/cauterize
-	)
-	possible_locs = list(
-		BODY_ZONE_CHEST,
-		BODY_ZONE_HEAD,
-		BODY_ZONE_PRECISE_GROIN,
-	)
-	target_speciestypes = list(/datum/species/wryn, /datum/species/kidan)
 	restricted_speciestypes = null
 
 /datum/surgery/debridement
@@ -351,107 +327,3 @@
 
 	//no damage or anything, just wastes medicine
 	return SURGERY_STEP_RETRY
-
-//////////////////////////////////////////////////////////////////
-//					Dethrall Shadowling 						//
-//////////////////////////////////////////////////////////////////
-/datum/surgery/remove_thrall
-	name = "Remove Shadow Tumor"
-	steps = list(
-		/datum/surgery_step/generic/cut_open,
-		/datum/surgery_step/generic/clamp_bleeders,
-		/datum/surgery_step/generic/retract_skin,
-		/datum/surgery_step/internal/dethrall,
-		/datum/surgery_step/generic/cauterize
-	)
-	possible_locs = list(
-		BODY_ZONE_HEAD,
-		BODY_ZONE_CHEST,
-		BODY_ZONE_PRECISE_GROIN,
-	)
-	requires_organic_bodypart = TRUE
-
-/datum/surgery/remove_thrall/synth
-	name = "Debug Shadow Tumor"
-	steps = list(
-		/datum/surgery_step/robotics/external/unscrew_hatch,
-		/datum/surgery_step/robotics/external/open_hatch,
-		/datum/surgery_step/internal/dethrall,
-		/datum/surgery_step/robotics/external/close_hatch
-	)
-	requires_organic_bodypart = FALSE
-	possible_locs = list(
-		BODY_ZONE_HEAD,
-		BODY_ZONE_CHEST,
-		BODY_ZONE_PRECISE_GROIN,
-	)
-
-/datum/surgery/remove_thrall/can_start(mob/user, mob/living/carbon/human/target)
-	. = ..()
-	if(!.)
-		return FALSE
-	if(!is_thrall(target))
-		return FALSE
-	var/obj/item/organ/internal/brain/B = target.get_int_organ(/obj/item/organ/internal/brain)
-	var/obj/item/organ/external/affected = target.get_organ(user.zone_selected)
-	if(!B)
-		// No brain to remove the tumor from
-		return FALSE
-	if(!LAZYIN(affected.internal_organs, B))
-		return FALSE
-	return TRUE
-
-
-/datum/surgery_step/internal/dethrall
-	name = "cleanse contamination"
-	begin_sound = 'sound/items/lighter/light.ogg'
-	allowed_tools = list(/obj/item/flash = 100, /obj/item/flashlight/pen = 80, /obj/item/flashlight = 40)
-	blood_level = SURGERY_BLOODSPREAD_NONE
-	time = 3 SECONDS
-
-/datum/surgery_step/internal/dethrall/begin_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool,datum/surgery/surgery)
-	var/obj/item/organ/internal/brain = target.get_organ_slot(INTERNAL_ORGAN_BRAIN)
-	user.visible_message(
-		"[user] reaches into [target]'s head with [tool].",
-		span_notice("You begin aligning [tool]'s light to the tumor on [target]'s brain..."),
-		chat_message_type = MESSAGE_TYPE_COMBAT
-	)
-	to_chat(target, span_boldannounceic("A small part of your [brain.parent_organ_zone] pulses with agony as the light impacts it."))
-	return ..()
-
-/datum/surgery_step/internal/dethrall/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool,datum/surgery/surgery)
-	if(isshadowlinglesser(target)) //Empowered thralls cannot be deconverted
-		to_chat(target, span_shadowling("<b><i>NOT LIKE THIS!</i></b>"))
-		user.visible_message(span_warning("[target] suddenly slams upward and knocks down [user]!"), \
-							 span_userdanger("[target] suddenly bolts up and slams you with tremendous force!"),
-							 chat_message_type = MESSAGE_TYPE_COMBAT)
-		user.SetSleeping(0)
-		user.SetStunned(0)
-		user.SetWeakened(0)
-		user.SetKnockdown(0)
-		user.SetParalysis(0)
-		user.set_resting(FALSE, instant = TRUE)
-		user.get_up(instant = TRUE)
-		if(iscarbon(user))
-			var/mob/living/carbon/C = user
-			C.Weaken(12 SECONDS)
-			C.apply_damage(20, BRUTE, BODY_ZONE_CHEST)
-		else if(issilicon(user))
-			var/mob/living/silicon/S = user
-			S.Weaken(16 SECONDS)
-			S.apply_damage(20, BRUTE)
-			playsound(S, 'sound/effects/bang.ogg', 50, 1)
-		return SURGERY_STEP_INCOMPLETE
-	var/obj/item/organ/internal/brain/B = target.get_int_organ(/obj/item/organ/internal/brain)
-	var/obj/item/organ/external/E = target.get_organ(check_zone(B.parent_organ_zone))
-	user.visible_message("[user] shines light onto the tumor in [target]'s [E]!", span_notice("You cleanse the contamination from [target]'s brain!"), chat_message_type = MESSAGE_TYPE_COMBAT)
-	if(target.vision_type) //Turns off their darksight if it's still active.
-		to_chat(target, span_boldannounceic("Your eyes are suddenly wrought with immense pain as your darksight is forcibly dismissed!"))
-		target.set_vision_override(null)
-	SSticker.mode.remove_thrall(target.mind, 0)
-	target.visible_message(span_warning("A strange black mass falls from [target]'s [E]!"))
-	var/obj/item/organ/thing = new /obj/item/organ/internal/shadowtumor(get_turf(target))
-	thing.update_DNA(target.dna)
-	user.put_in_hands(thing, ignore_anim = FALSE)
-	return SURGERY_STEP_CONTINUE
-

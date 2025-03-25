@@ -31,7 +31,7 @@
 			if(HAS_TRAIT(H, TRAIT_HANDS_BLOCKED) || !P.Adjacent(H.loc))
 				return
 
-			if(H.zone_selected != BODY_ZONE_HEAD || ismachineperson(P) || isunathi(P) || isgrey(P))
+			if(H.zone_selected != BODY_ZONE_HEAD || ismachineperson(P))
 				H.custom_emote(message = "[pick("чеш[pluralize_ru(H.gender, "ет", "ут")]")] [P].")
 
 			else

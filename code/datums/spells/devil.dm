@@ -344,64 +344,6 @@
 
 	playsound(get_turf(user), 'sound/magic/blind.ogg', 50, TRUE)
 
-/obj/effect/proc_holder/spell/dark_conversion
-	name = "Dark conversion"
-	desc = "Превращает гуманоида в тенечеловека и искажает его восприятие реальности."
-
-	action_icon = 'icons/mob/actions/actions_cult.dmi'
-	action_icon_state = "horror"
-
-	base_cooldown = 300 SECONDS
-	var/cast_time = 5 SECONDS
-
-	clothes_req = FALSE
-	human_req = FALSE
-
-/obj/effect/proc_holder/spell/dark_conversion/create_new_targeting()
-	var/datum/spell_targeting/aoe/targeting = new()
-
-	targeting.range = 5
-	targeting.allowed_type = /mob/living/carbon/human
-
-	return targeting
-
-/obj/effect/proc_holder/spell/dark_conversion/create_new_handler()
-	var/datum/spell_handler/devil/devil = new
-	return devil
-
-/obj/effect/proc_holder/spell/dark_conversion/valid_target(mob/living/carbon/human/target, mob/user)
-	return target.mind && !isshadowperson(target)
-
-/obj/effect/proc_holder/spell/dark_conversion/cast(list/targets, mob/user = usr)
-	var/mob/living/carbon/human/human = targets[1]
-	var/mob/living/carbon/carbon = user
-	var/datum/antagonist/devil/devil = carbon.mind?.has_antag_datum(/datum/antagonist/devil)
-
-	carbon.say("INF' [devil.info.truename] NO")
-	playsound(get_turf(carbon), 'sound/magic/narsie_attack.ogg', 100, TRUE)
-
-	human.Knockdown(0.1 SECONDS)
-
-	if(!do_after(user, cast_time, user, NONE))
-		revert_cast(user)
-		return
-
-	make_shadow(human)
-
-/obj/effect/proc_holder/spell/dark_conversion/proc/make_shadow(mob/living/carbon/human/human)
-	human.set_species(/datum/species/shadow)
-	human.store_memory("Вы - создание тьмы. Старайтесь сохранить свою истинную форму и выполнить свои задания.", TRUE)
-
-	var/datum/objective/assassinate/kill = new
-	kill.owner = human.mind
-	kill.find_target()
-
-	LAZYADD(human.mind.objectives, kill)
-	LAZYADD(human.faction, "hell")
-
-	human.mind.prepare_announce_objectives()
-	playsound(human, 'sound/magic/mutate.ogg', 100, TRUE)
-
 /obj/effect/proc_holder/spell/sacrifice_circle
 	name = "Create sacrifice circle"
 	desc = "Создает руну для жертвоприношений."
