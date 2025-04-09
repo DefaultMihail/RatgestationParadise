@@ -271,3 +271,83 @@
 
 /obj/machinery/computer/old_frame/thick
 	icon_state = "thick"
+
+//Another time, duck
+
+/obj/machinery/computer/modular
+	name = "modular computer"
+	desc = "Pu pu pu"
+	icon_state = "computer"
+	circuit = /obj/item/circuitboard/computer/modular
+	var/transform_sound = 'sound/machines/twobeep.ogg'
+	var/static/list/module_options = list(
+		"Консоль камер" = /obj/machinery/computer/security,
+		"Консоль связи" = /obj/machinery/computer/communications,
+		"Консоль арестов" = /obj/machinery/computer/secure_data
+	)
+
+/obj/machinery/computer/modular/attack_hand(mob/user)
+	if(stat & (BROKEN|NOPOWER))
+		return
+	if(!isliving(user))
+		return
+
+	var/list/choices = list()
+	for(var/mod_name in module_options)
+		var/obj_type = module_options[mod_name]
+		var/image/choice_image = image(
+			icon = initial(obj_type.icon),
+			icon_state = initial(obj_type.icon_state)
+		)
+		choices[mod_name] = choice_image
+
+	var/choice = show_radial_menu(
+		user,
+		src,
+		choices,
+		custom_check = CALLBACK(src, PROC_REF(check_menu), user),
+		require_near = TRUE,
+		tooltips = TRUE
+	)
+
+	if(!choice || !check_menu(user))
+		return
+
+	var/new_type = module_options[choice]
+	if(!new_type)
+		return
+
+	visible_message(span_notice("[src] начинает переконфигурироваться в [choice]..."))
+	playsound(src, 'sound/machines/terminal_button02.ogg', 50, TRUE)
+	playsound(src, transform_sound, 50, TRUE)
+	flick("rackframe", src)
+
+	addtimer(CALLBACK(src, PROC_REF(transform_console), new_type, user), 5 SECONDS)
+
+/obj/machinery/computer/modular/proc/check_menu(mob/user)
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated() || !user.Adjacent(src))
+		return FALSE
+	if(stat & (BROKEN|NOPOWER))
+		return FALSE
+	return TRUE
+
+/obj/machinery/computer/modular/proc/transform_console(new_type, mob/user)
+	if(QDELETED(src) || stat & (BROKEN|NOPOWER))
+		return
+
+	var/obj/machinery/computer/new_console = new new_type(loc)
+	new_console.setDir(dir)
+	new_console.stat = stat
+	new_console.obj_integrity = obj_integrity
+	new_console.update_icon()
+
+	visible_message(span_notice("[src] завершает переконфигурацию в [initial(new_console.name)]."))
+	playsound(src, 'sound/machines/twobeep.ogg', 50, TRUE)
+	qdel(src)
+
+/obj/item/circuitboard/computer/modular
+	name = "Модульная консоль (Оборудование)"
+	build_path = /obj/machinery/computer/modular
+
