@@ -286,21 +286,24 @@
 		"Консоль арестов" = /obj/machinery/computer/secure_data
 	)
 
+
 /obj/machinery/computer/modular/attack_hand(mob/user)
 	if(stat & (BROKEN|NOPOWER))
 		return
 	if(!isliving(user))
 		return
 
+	// 1. Создаем список choices и заполняем его изображениями
 	var/list/choices = list()
 	for(var/mod_name in module_options)
 		var/obj_type = module_options[mod_name]
 		var/image/choice_image = image(
-			icon = initial(obj_type.icon),
-			icon_state = initial(obj_type.icon_state)
+			icon = initial(icon), // Используем иконку текущей консоли
+			icon_state = initial(icon_state)
 		)
 		choices[mod_name] = choice_image
 
+	// 2. Передаем заполненный список в show_radial_menu
 	var/choice = show_radial_menu(
 		user,
 		src,
