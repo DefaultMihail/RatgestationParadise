@@ -284,14 +284,6 @@
 	name = "Modular Computer (Circuit Board)"
 	build_path = /obj/machinery/computer/modular
 
-/obj/machinery/computer/modular/New()
-	crew_monitor = new(src)
-	..()
-
-/obj/machinery/computer/modular/Destroy()
-	QDEL_NULL(crew_monitor)
-	return ..()
-
 /obj/machinery/computer/modular/attack_ai(mob/user)
 	attack_hand(user)
 
@@ -304,8 +296,23 @@
 
 	add_fingerprint(user)
 	show_radial_menu(
-		user = user
-		anchor = src
-		choices = list()
-		choices_icons = list()
+		anchor = src,
+		user = user,
+		choices = list(
+			"Crew" = image(icon = 'icons/obj/items.dmi', icon_state = "health"),
+			"Card" = image(icon = 'icons/obj/items.dmi', icon_state = "id")
+		),
+		choices_icons = list(),
 	)
+
+/obj/machinery/computer/modular/proc/crew(mob/user)
+	if(stat & (BROKEN|NOPOWER)) // Проверка состояния
+		return
+
+	var/turf/current_turf = get_turf(src) // Сохраняем текущий тайл ДО удаления
+	var/obj/machinery/computer/crew/new_computer = new(current_turf) // Создаём новый компьютер
+	qdel(src) // Удаляем текущий объект
+
+	if(user) // Проверка существования пользователя
+		to_chat(user, span_notice("Замена на crew")) // Уведомление
+		playsound(new_computer, 'sound/machines/twobeep.ogg', 50, TRUE) // Звук от нового объекта
