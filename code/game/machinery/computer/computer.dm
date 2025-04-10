@@ -283,3 +283,29 @@
 /obj/item/circuitboard/computer/modular
 	name = "Modular Computer (Circuit Board)"
 	build_path = /obj/machinery/computer/modular
+
+/obj/machinery/computer/modular/New()
+	crew_monitor = new(src)
+	..()
+
+/obj/machinery/computer/modular/Destroy()
+	QDEL_NULL(crew_monitor)
+	return ..()
+
+/obj/machinery/computer/modular/attack_ai(mob/user)
+	attack_hand(user)
+
+/obj/machinery/computer/modular/attack_hand(mob/user)
+	if(stat & (BROKEN|NOPOWER))
+		return
+
+	if(..())
+		return TRUE
+
+	add_fingerprint(user)
+	show_radial_menu(
+		user = user
+		anchor = src
+		choices = list()
+		choices_icons = list()
+	)
