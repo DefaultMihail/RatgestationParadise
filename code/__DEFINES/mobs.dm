@@ -202,94 +202,18 @@
 #define INCORPOREAL_REVENANT 3
 
 //Human sub-species
-#define isshadowling(A) (is_species(A, /datum/species/shadow/ling))
-#define isshadowlinglesser(A) (is_species(A, /datum/species/shadow/ling/lesser))
-#define isabductor(A) (is_species(A, /datum/species/abductor))
-#define isgolem(A) (is_species(A, /datum/species/golem))
 #define isfarwa(A) (is_species(A, /datum/species/monkey/tajaran))
-#define iswolpin(A) (is_species(A, /datum/species/monkey/vulpkanin))
-#define isneara(A) (is_species(A, /datum/species/monkey/skrell))
-#define isstok(A) (is_species(A, /datum/species/monkey/unathi))
-#define isplasmaman(A) (is_species(A, /datum/species/plasmaman))
-#define isshadowperson(A) (is_species(A, /datum/species/shadow))
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
 #define ishumanbasic(A) (is_species(A, /datum/species/human))
-#define isunathi(A) (is_species(A, /datum/species/unathi))
-#define isashwalker(A) (is_species(A, /datum/species/unathi/ashwalker))
-#define isashwalkershaman(A) (is_species(A, /datum/species/unathi/ashwalker/shaman))
-#define isdraconid(A) (is_species(A, /datum/species/unathi/draconid))
 #define istajaran(A) (is_species(A, /datum/species/tajaran))
-#define isvulpkanin(A) (is_species(A, /datum/species/vulpkanin))
-#define isskrell(A) (is_species(A, /datum/species/skrell))
-#define isvox(A) (is_species(A, /datum/species/vox))
-#define isvoxarmalis(A) (is_species(A, /datum/species/vox/armalis))
-#define iskidan(A) (is_species(A, /datum/species/kidan))
-#define isslimeperson(A) (is_species(A, /datum/species/slime))
-#define isnucleation(A) (is_species(A, /datum/species/nucleation))
-#define isgrey(A) (is_species(A, /datum/species/grey))
-#define isdiona(A) (is_species(A, /datum/species/diona))
 #define ismachineperson(A) (is_species(A, /datum/species/machine))
-#define isdrask(A) (is_species(A, /datum/species/drask))
-#define iswryn(A) (is_species(A, /datum/species/wryn))
-#define ismoth(A) (is_species(A, /datum/species/moth))
-
 //Human sub-species names
-#define SPECIES_ABDUCTOR "Abductor"
-#define SPECIES_DIONA "Diona"
-#define SPECIES_DRASK "Drask"
-
-#define SPECIES_GOLEM_BASIC "Голем" //basic-golem used in gamemodes, but not subtypes? whoever find this comment - take a closer look at this
-#define SPECIES_GOLEM_RANDOM "Случайный Голем"
-#define SPECIES_GOLEM_ADAMANTINE "Адамантиновый Голем"
-#define SPECIES_GOLEM_PLASMA "Плазменный Голем"
-#define SPECIES_GOLEM_DIAMOND "Алмазный Голем"
-#define SPECIES_GOLEM_GOLD "Золотой Голем"
-#define SPECIES_GOLEM_SILVER "Серебрянный Голем"
-#define SPECIES_GOLEM_PLASTEEL "Пласталиевый Голем"
-#define SPECIES_GOLEM_TITANIUM "Титановый Голем"
-#define SPECIES_GOLEM_PLASTITANIUM "Пластитановый Голем"
-#define SPECIES_GOLEM_ALLOY "Голем из инопланетных сплавов"
-#define SPECIES_GOLEM_WOOD "Деревянный Голем"
-#define SPECIES_GOLEM_URANIUM "Урановый Голем"
-#define SPECIES_GOLEM_PLASTIC "Пластиковый Голем"
-#define SPECIES_GOLEM_SAND "Песчаный Голем"
-#define SPECIES_GOLEM_GLASS "Стеклянный Голем"
-#define SPECIES_GOLEM_BLUESPACE "Блюспейс-Голем"
-#define SPECIES_GOLEM_BANANIUM "Бананиевый Голем"
-#define SPECIES_GOLEM_TRANQUILLITITE "Транквилитовый Голем"
-#define SPECIES_GOLEM_CLOCKWORK "Латунный Голем"
-
-#define SPECIES_GREY "Grey"
 #define SPECIES_HUMAN "Human"
-#define SPECIES_KIDAN "Kidan"
 #define SPECIES_MACNINEPERSON "Machine"
 #define SPECIES_MONKEY "Monkey"
 #define SPECIES_FARWA "Farwa"
-#define SPECIES_WOLPIN "Wolpin"
-#define SPECIES_NEARA "Neara"
-#define SPECIES_STOK "Stok"
-#define SPECIES_MOTH "Nian"
-#define SPECIES_NUCLEATION "Nucleation"
-#define SPECIES_PLASMAMAN "Plasmaman"
-
-#define SPECIES_SHADOW_BASIC "Shadow"
-#define SPECIES_SHADOWLING "Shadowling"
-#define SPECIES_LESSER_SHADOWLING "Lesser Shadowling"
-
 #define SPECIES_SKELETON "Skeleton"
-#define SPECIES_SKRELL "Skrell"
-#define SPECIES_SLIMEPERSON "Slime People"
 #define SPECIES_TAJARAN "Tajaran"
-
-#define SPECIES_UNATHI "Unathi"
-#define SPECIES_ASHWALKER_BASIC "Ash Walker"
-#define SPECIES_ASHWALKER_SHAMAN "Ash Walker Shaman"
-#define SPECIES_DRACONOID "Draconid"
-
-#define SPECIES_VOX "Vox"
-#define SPECIES_VOX_ARMALIS "Vox Armalis"
-#define SPECIES_VULPKANIN "Vulpkanin"
-#define SPECIES_WRYN "Wryn"
 
 #define isanimal(A)		(istype((A), /mob/living/simple_animal) || istype(A, /mob/living/basic))
 #define iscat(A)		(istype((A), /mob/living/simple_animal/pet/cat))
@@ -299,7 +223,6 @@
 #define isbot(A)		(istype((A), /mob/living/simple_animal/bot))
 #define isswarmer(A)	(istype((A), /mob/living/simple_animal/hostile/swarmer))
 #define isguardian(A)	(istype((A), /mob/living/simple_animal/hostile/guardian))
-#define isnymph(A)      (istype((A), /mob/living/simple_animal/diona))
 #define ishostile(A) 	(istype(A, /mob/living/simple_animal/hostile))
 #define isterrorspider(A) (istype((A), /mob/living/simple_animal/hostile/poison/terror_spider))
 #define isslaughterdemon(A) (istype((A), /mob/living/simple_animal/demon/slaughter))
