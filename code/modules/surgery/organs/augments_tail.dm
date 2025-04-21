@@ -83,7 +83,7 @@
 
 /obj/item/organ/internal/cyberimp/tail/blade/insert(mob/living/carbon/M, special = ORGAN_MANIPULATION_DEFAULT)
 	. = ..()
-	if(isunathi(M))
+	if(istajaran(M))
 		return
 	implant_ability.Grant(M)
 

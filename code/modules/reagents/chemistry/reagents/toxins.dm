@@ -292,8 +292,6 @@
 
 
 /datum/reagent/stable_mutagen/on_mob_life(mob/living/carbon/human/target)
-	if(isnucleation(target))
-		return ..()
 	target.apply_effect(1, IRRADIATE, negate_armor = TRUE)
 	if(current_cycle != 10 || !ishuman(target) || !target.dna || !islist(data) || !istype(data["dna"], /datum/dna))
 		return ..()

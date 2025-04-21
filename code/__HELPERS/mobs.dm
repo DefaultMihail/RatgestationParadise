@@ -177,14 +177,6 @@
   * * species - The name of the species to filter valid body accessories.
   * * is_optional - Whether *no* body accessory (null) is an option.
  */
-/proc/random_body_accessory(species = SPECIES_VULPKANIN, is_optional = FALSE)
-	var/list/valid_body_accessories = list()
-	if(is_optional)
-		valid_body_accessories += null
-	if(GLOB.body_accessory_by_species[species])
-		for(var/name in GLOB.body_accessory_by_species[species])
-			valid_body_accessories.Add(name)
-	return length(valid_body_accessories) ? pick(valid_body_accessories) : null
 
 /proc/random_name(gender, species = SPECIES_HUMAN)
 
@@ -201,7 +193,7 @@
 		return current_species.get_random_name(gender)
 
 /proc/random_skin_tone(species = SPECIES_HUMAN)
-	if(species == SPECIES_HUMAN || species == SPECIES_DRASK)
+	if(species == SPECIES_HUMAN)
 		switch(pick(60;"caucasian", 15;"afroamerican", 10;"african", 10;"latino", 5;"albino"))
 			if("caucasian")		. = -10
 			if("afroamerican")	. = -115
@@ -210,9 +202,6 @@
 			if("albino")		. = 34
 			else				. = rand(-185, 34)
 		return min(max(. + rand(-25, 25), -185), 34)
-	else if(species == SPECIES_VOX)
-		. = rand(1, 6)
-		return .
 
 /proc/skintone2racedescription(tone, species = SPECIES_HUMAN)
 	if(species == SPECIES_HUMAN)
@@ -226,14 +215,6 @@
 			if(-65 to -45)			return "brown"
 			if(-INFINITY to -65)	return "black"
 			else					return "unknown"
-	else if(species == SPECIES_VOX)
-		switch(tone)
-			if(2)					return "dark green"
-			if(3)					return "brown"
-			if(4)					return "gray"
-			if(5)					return "emerald"
-			if(6)					return "azure"
-			else					return "green"
 	else
 		return "unknown"
 

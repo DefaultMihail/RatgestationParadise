@@ -118,9 +118,6 @@
 	. = ATTACK_CHAIN_PROCEED
 
 	var/dye_list = list("hair", "alt. hair theme")
-	if(target.gender == MALE || isvulpkanin(target))
-		dye_list += "facial hair"
-		dye_list += "alt. facial hair theme"
 
 	if(target.dna.species.bodyflags & HAS_SKIN_COLOR)
 		dye_list += "body"

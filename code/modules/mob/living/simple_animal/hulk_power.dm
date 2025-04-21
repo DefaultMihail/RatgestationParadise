@@ -29,8 +29,6 @@
 	var/mob/living/simple_animal/hulk/Monster
 	if(HAS_TRAIT(user, TRAIT_CLUMSY))
 		Monster = new /mob/living/simple_animal/hulk/clown_hulk(get_turf(user))
-	else if(isunathi(user))
-		Monster = new /mob/living/simple_animal/hulk/zilla(get_turf(user))
 	else
 		Monster = new /mob/living/simple_animal/hulk/human(get_turf(user))
 

@@ -16,7 +16,7 @@
 /datum/disease/virus/nuclefication/stage_act()
 	if(!..())
 		return FALSE
-	if(isnucleation(affected_mob) || !ishuman(affected_mob))
+	if(!ishuman(affected_mob))
 		cure()
 		return FALSE
 	var/mob/living/carbon/H = affected_mob

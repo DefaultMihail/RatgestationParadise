@@ -269,20 +269,7 @@
 /datum/config_entry/str_list/playable_species
 	default = list(
 		SPECIES_TAJARAN,
-		SPECIES_SKRELL,
-		SPECIES_UNATHI,
-		SPECIES_DIONA,
-		SPECIES_VULPKANIN,
-		SPECIES_MOTH,
-		SPECIES_DRASK,
-		SPECIES_GREY,
-		SPECIES_KIDAN,
 		SPECIES_MACNINEPERSON,
-		SPECIES_NUCLEATION,
-		SPECIES_PLASMAMAN,
-		SPECIES_SLIMEPERSON,
-		SPECIES_VOX,
-		SPECIES_WRYN,
 	)
 
 /datum/config_entry/number/alien_player_ratio

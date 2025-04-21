@@ -437,15 +437,6 @@
 	)
 	icon_state = "wings_n_fangs_n_tentacles"
 
-/obj/item/reagent_containers/food/snacks/lavaland_food/wings_n_fangs_n_tentacles/on_mob_eating_effect(mob/user)
-	if(isunathi(user))
-		var/mob/living/carbon/human/human_unathi = user
-		var/obj/item/organ/internal/cyberimp/tail/blade/organic_upgrade/tumour = human_unathi.get_organ_slot(INTERNAL_ORGAN_TAIL_DEVICE)
-		if(!tumour)
-			tumour = new
-			to_chat(human_unathi, span_warning("Вы чувствуете сильное покалывание в вашем хвосте."))
-			tumour.insert(human_unathi)
-
 /obj/item/reagent_containers/food/snacks/lavaland_food/goli_kernels
 	name = "goli-kernels"
 	desc = "небольшой мясной шарик на \"подносе\" из грибной шляпки. Вкуснятина!"

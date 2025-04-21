@@ -22,9 +22,7 @@
 
 		explosion(old_turf, 0, 0, 3, 6, cause = imp_in)
 
-		if(isnucleation(imp_in))
-			imp_in.visible_message(span_warning("Тело [imp_in] взрывается, оставляя после себя множество микроскопических кристаллов!"))
-		else if(!ismachineperson(imp_in))
+		if(!ismachineperson(imp_in))
 			new /obj/effect/temp_visual/gib(old_turf)
 			new /obj/effect/gibspawner/human(old_turf)
 			playsound(old_turf, 'sound/goonstation/effects/gib.ogg', 50, TRUE)

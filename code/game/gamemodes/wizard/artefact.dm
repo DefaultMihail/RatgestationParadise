@@ -336,7 +336,7 @@ GLOBAL_LIST_EMPTY(multiverse)
 
 		M.equip_to_slot_or_del(sword, ITEM_SLOT_HAND_RIGHT) //Don't duplicate what's equipped to hands, or else duplicate swords could be generated...or weird cases of factionless swords.
 	else
-		if(istajaran(M) || isunathi(M))
+		if(istajaran(M))
 			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(M), ITEM_SLOT_FEET)	//If they can't wear shoes, give them a pair of sandals.
 
 		var/randomize = pick("mobster","roman","wizard","cyborg","syndicate","assistant", "animu", "cultist", "highlander", "clown", "killer", "pirate", "soviet", "officer", "gladiator")

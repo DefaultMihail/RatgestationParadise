@@ -307,10 +307,6 @@
 	duration = 30 SECONDS
 	status_type = STATUS_EFFECT_REFRESH
 
-/datum/status_effect/forced_rumble/tick(seconds_between_ticks)
-	if(prob(20) && isunathi(owner))
-		owner.emote("rumble")
-
 /datum/status_effect/forced_sneeze
 	id = "forced_sneeze"
 	alert_type = null

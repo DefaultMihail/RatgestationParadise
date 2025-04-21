@@ -338,14 +338,6 @@
 /obj/machinery/power/supermatter_shard/attack_hand(mob/user as mob)
 	if(isAI(user))
 		return
-	if(isnucleation(user))
-		nuclear_touch(user)
-		new /obj/effect/temp_visual/heart(loc)
-		var/touch_sm = pick(list("poke", "pet", "hug", "cuddle"))
-		user.visible_message(span_notice("[user] [touch_sm]s the supermatter!"), \
-								span_notice("You [touch_sm] the supermatter!"))
-		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-		return
 
 	user.visible_message("<span class=\"warning\">\The [user] reaches out and touches \the [src], inducing a resonance... [user.p_their(TRUE)] body starts to glow and bursts into flames before flashing into ash.</span>",\
 		"<span class=\"danger\">You reach out and touch \the [src]. Everything starts burning and all you can hear is ringing. Your last thought is \"That was not a wise decision.\"</span>",\
@@ -458,9 +450,6 @@
 /obj/machinery/power/supermatter_shard/Bumped(atom/movable/moving_atom)
 	. = ..()
 	if(isprojectile(moving_atom))	// we update this in bullet_act()
-		return .
-	if(isnucleation(moving_atom))
-		nuclear_touch(moving_atom)
 		return .
 	if(isliving(moving_atom))
 		moving_atom.visible_message("<span class='danger'>\The [moving_atom] slams into \the [src] inducing a resonance... [moving_atom.p_their(TRUE)] body starts to glow and catch flame before flashing into ash.</span>",\

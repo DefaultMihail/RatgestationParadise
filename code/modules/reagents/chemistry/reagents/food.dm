@@ -1148,7 +1148,7 @@
 
 /datum/reagent/consumable/animal_feed/on_mob_life(mob/living/M)
 	var/update_flags = STATUS_UPDATE_NONE
-	if(isvulpkanin(M) || istajaran(M))
+	if(istajaran(M))
 		update_flags |= M.adjustBruteLoss(-0.25, FALSE, affect_robotic = FALSE)
 		update_flags |= M.adjustFireLoss(-0.25, FALSE, affect_robotic = FALSE)
 		M.AdjustDisgust(-5 SECONDS)

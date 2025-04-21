@@ -162,11 +162,6 @@
 	. = ..()
 	icon_state = "[totem_dye]_dyes"
 
-/obj/item/lavaland_mortar/attack(mob/living/carbon/human/target, mob/living/user, params, def_zone, skip_attack_anim)
-	if(!isunathi(target))
-		balloon_alert(user, "цель неподходящей расы!")
-		return ..()
-
 	if(user.a_intent != INTENT_HELP)
 		return ..()
 
