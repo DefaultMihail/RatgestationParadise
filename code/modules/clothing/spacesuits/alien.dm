@@ -86,7 +86,7 @@
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
 	icon = 'icons/obj/clothing/species/vox/suits.dmi'
-	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
+
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/clothing/species/vox/suit.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/clothing/species/armalis/suit.dmi',
@@ -97,7 +97,7 @@
 	clothing_flags = STOPSPRESSUREDMAGE
 	flags_cover = HEADCOVERSEYES
 	icon = 'icons/obj/clothing/species/vox/hats.dmi'
-	species_restricted = list(SPECIES_VOX,SPECIES_VOX_ARMALIS)
+
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/clothing/species/vox/head.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/clothing/species/armalis/head.dmi',
@@ -174,7 +174,7 @@
 	icon_state = "vox-casual-2"
 	item_color = "vox-casual-2"
 	item_state = "vox-casual-2"
-	species_restricted = list(SPECIES_VOX,SPECIES_VOX_ARMALIS)
+
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/clothing/species/armalis/suit.dmi'
@@ -189,7 +189,7 @@
 	permeability_coefficient = 0.05
 	item_color = "gloves-vox"
 	icon = 'icons/obj/clothing/species/vox/gloves.dmi'
-	species_restricted = list(SPECIES_VOX,SPECIES_VOX_ARMALIS)
+
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/clothing/species/vox/gloves.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/clothing/species/armalis/gloves.dmi',
@@ -201,7 +201,7 @@
 	item_state = "boots-vox"
 	icon_state = "boots-vox"
 	icon = 'icons/obj/clothing/species/vox/shoes.dmi'
-	species_restricted = list(SPECIES_VOX,SPECIES_VOX_ARMALIS)
+
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/clothing/species/vox/feet.dmi',
 		SPECIES_VOX_ARMALIS = 'icons/mob/clothing/species/armalis/feet.dmi'
@@ -243,7 +243,6 @@
 	desc = "Alien backpack, made from synthetic fiber."
 	icon_state = "backpack_gold_vox"
 	item_state = "backpack_gold_vox"
-	var/list/species_restricted = list(SPECIES_VOX)
 
 /obj/item/storage/backpack/alien/satchel
 	name = "alien satchel"

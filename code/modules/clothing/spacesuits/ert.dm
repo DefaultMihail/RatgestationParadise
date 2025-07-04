@@ -236,7 +236,7 @@
 		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/suit.dmi'
 		)
 	allowed = list(/obj/item/nullrod/claymore, /obj/item/storage/belt/claymore, /obj/item/gun/energy,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/restraints/handcuffs,/obj/item/flashlight/seclite,/obj/item/kitchen/knife/combat)
-	hide_tail_by_species = list(SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_ASHWALKER_BASIC, SPECIES_ASHWALKER_SHAMAN, SPECIES_DRACONOID, SPECIES_VOX, SPECIES_VULPKANIN)
+	hide_tail_by_species = list(SPECIES_TAJARAN)
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize(mapload)
 	. = ..()
@@ -358,7 +358,7 @@
 	/obj/item/radio, /obj/item/analyzer, /obj/item/gun, /obj/item/melee/baton, /obj/item/reagent_containers/spray/pepper, \
 	/obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/restraints/handcuffs)
 	strip_delay = 130
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form", SPECIES_VOX)
+
 
 /obj/item/clothing/head/helmet/space/ert_eva_amber
 	name = "ERT Amber Space helmet"
@@ -371,7 +371,7 @@
 	flash_protect = FLASH_PROTECTION_NONE
 	var/obj/machinery/camera/portable/camera
 	var/has_camera = TRUE
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form", SPECIES_VOX)
+
 
 /obj/item/clothing/head/helmet/space/ert_eva_amber/Initialize()
 	if(loc)

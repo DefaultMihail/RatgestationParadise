@@ -360,13 +360,5 @@
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	sprite_sheets = list(
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/helmet.dmi',
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/helmet.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/head.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/head.dmi',
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/helmet.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/helmet.dmi',
 	)

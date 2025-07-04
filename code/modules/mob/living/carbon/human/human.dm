@@ -56,60 +56,12 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_GODMODE, INNATE_TRAIT)
 
-/mob/living/carbon/human/skrell/Initialize(mapload)
-	. = ..(mapload, /datum/species/skrell)
-
 /mob/living/carbon/human/tajaran/Initialize(mapload)
 	. = ..(mapload, /datum/species/tajaran)
 
-/mob/living/carbon/human/vulpkanin/Initialize(mapload)
-	. = ..(mapload, /datum/species/vulpkanin)
-
-/mob/living/carbon/human/unathi/Initialize(mapload)
-	. = ..(mapload, /datum/species/unathi)
-
-/mob/living/carbon/human/unathi_draconid/Initialize(mapload)
-	. = ..(mapload, /datum/species/unathi/draconid)
-
-/mob/living/carbon/human/unathi_ashwalker/Initialize(mapload)
-	. = ..(mapload, /datum/species/unathi/ashwalker)
-
-/mob/living/carbon/human/unathi_ashwalker_shaman/Initialize(mapload)
-	. = ..(mapload, /datum/species/unathi/ashwalker/shaman)
-
-/mob/living/carbon/human/vox/Initialize(mapload)
-	. = ..(mapload, /datum/species/vox)
-
-/mob/living/carbon/human/voxarmalis/Initialize(mapload)
-	. = ..(mapload, /datum/species/vox/armalis)
 
 /mob/living/carbon/human/skeleton/Initialize(mapload)
 	. = ..(mapload, /datum/species/skeleton)
-
-/mob/living/carbon/human/kidan/Initialize(mapload)
-	. = ..(mapload, /datum/species/kidan)
-
-/mob/living/carbon/human/plasma/Initialize(mapload)
-	. = ..(mapload, /datum/species/plasmaman)
-
-/mob/living/carbon/human/slime/Initialize(mapload)
-	. = ..(mapload, /datum/species/slime)
-
-/mob/living/carbon/human/grey/Initialize(mapload)
-	. = ..(mapload, /datum/species/grey)
-
-/mob/living/carbon/human/abductor/Initialize(mapload)
-	. = ..(mapload, /datum/species/abductor)
-
-/mob/living/carbon/human/diona/Initialize(mapload)
-	. = ..(mapload, /datum/species/diona)
-	if (!tts_seed)
-		tts_seed = "Priest"
-
-/mob/living/carbon/human/pod_diona/Initialize(mapload)
-	. = ..(mapload, /datum/species/diona/pod)
-	if (!tts_seed)
-		tts_seed = "Priest"
 
 /mob/living/carbon/human/machine/Initialize(mapload)
 	. = ..(mapload, /datum/species/machine)
@@ -129,83 +81,6 @@
 		qdel(organ)
 	regenerate_icons()
 	death()
-
-/mob/living/carbon/human/shadow/Initialize(mapload)
-	. = ..(mapload, /datum/species/shadow)
-
-/mob/living/carbon/human/shadowling/Initialize(mapload)
-	. = ..(mapload, /datum/species/shadow/ling)
-
-/mob/living/carbon/human/golem/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem)
-
-/mob/living/carbon/human/golem_random/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/random)
-
-/mob/living/carbon/human/golem_adamantine/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/adamantine)
-
-/mob/living/carbon/human/golem_plasma/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/plasma)
-
-/mob/living/carbon/human/golem_diamond/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/diamond)
-
-/mob/living/carbon/human/golem_gold/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/gold)
-
-/mob/living/carbon/human/golem_silver/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/silver)
-
-/mob/living/carbon/human/golem_plasteel/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/plasteel)
-
-/mob/living/carbon/human/golem_titanium/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/titanium)
-
-/mob/living/carbon/human/golem_plastitanium/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/plastitanium)
-
-/mob/living/carbon/human/golem_alien_alloy/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/alloy)
-
-/mob/living/carbon/human/golem_uranium/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/uranium)
-
-/mob/living/carbon/human/golem_plastic/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/plastic)
-
-/mob/living/carbon/human/golem_sand/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/sand)
-
-/mob/living/carbon/human/golem_glass/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/glass)
-
-/mob/living/carbon/human/golem_bluespace/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/bluespace)
-
-/mob/living/carbon/human/golem_bananium/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/bananium)
-
-/mob/living/carbon/human/golem_tranquillite/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/tranquillite)
-
-/mob/living/carbon/human/golem_clockwork/Initialize(mapload)
-	. = ..(mapload, /datum/species/golem/clockwork)
-
-/mob/living/carbon/human/wryn/Initialize(mapload)
-	. = ..(mapload, /datum/species/wryn)
-
-/mob/living/carbon/human/nucleation/Initialize(mapload)
-	. = ..(mapload, /datum/species/nucleation)
-
-/mob/living/carbon/human/drask/Initialize(mapload)
-	. = ..(mapload, /datum/species/drask)
-
-/mob/living/carbon/human/moth/Initialize(mapload)
-	. = ..(mapload, /datum/species/moth)
-	if(!body_accessory)
-		change_body_accessory("Plain Wings")
 
 /mob/living/carbon/human/get_status_tab_items()
 	var/list/status_tab_data = ..()

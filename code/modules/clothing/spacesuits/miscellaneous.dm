@@ -370,9 +370,7 @@
 	icon_state = "spacemime_suit"
 	item_state = "spacemime_items"
 	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
-	sprite_sheets = list(
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/suit.dmi',
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/suit.dmi')
+
 
 
 /obj/item/clothing/head/helmet/space/eva/clown
@@ -394,9 +392,7 @@
 	icon_state = "spaceclown_suit"
 	item_state = "spaceclown_items"
 	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
-	sprite_sheets = list(
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/suit.dmi',
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/suit.dmi')
+
 
 
 //pirate-themed stuff

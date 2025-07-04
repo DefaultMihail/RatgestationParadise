@@ -19,16 +19,7 @@
 	//Species-specific stuff.
 	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/helmet.dmi',
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/helmet.dmi',
-		SPECIES_SKRELL = 'icons/mob/clothing/species/skrell/helmet.dmi',
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/helmet.dmi',
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/helmet.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/helmet.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/helmet.dmi'
 		)
 
 
@@ -88,18 +79,10 @@
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
 	jetpack_upgradable = TRUE
 	light_on = FALSE
-	hide_tail_by_species = list(SPECIES_VOX , SPECIES_VULPKANIN , SPECIES_UNATHI, SPECIES_ASHWALKER_BASIC, SPECIES_ASHWALKER_SHAMAN, SPECIES_DRACONOID, SPECIES_TAJARAN)
+	hide_tail_by_species = list(SPECIES_TAJARAN)
 	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/suit.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/suit.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/suit.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/suit.dmi',
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/suit.dmi',
-		SPECIES_SKRELL = 'icons/mob/clothing/species/skrell/suit.dmi',
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/suit.dmi',
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/suit.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/suit.dmi'
 		)
 
 

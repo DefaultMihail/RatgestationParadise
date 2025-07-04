@@ -210,7 +210,7 @@
 	flags_inv_transparent = HIDEJUMPSUIT
 	strip_delay = 80
 	put_on_delay = 60
-	hide_tail_by_species = list(SPECIES_VOX)
+
 	sprite_sheets = list(
 		SPECIES_PLASMAMAN = 'icons/mob/clothing/species/plasmaman/suit.dmi',
 		SPECIES_VOX = 'icons/mob/clothing/species/vox/suit.dmi',
@@ -504,7 +504,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	slowdown = 3
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
-	hide_tail_by_species = list(SPECIES_VOX)
+
 	sprite_sheets = list(
 		SPECIES_PLASMAMAN = 'icons/mob/clothing/species/plasmaman/suit.dmi',
 		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/suit.dmi'
@@ -517,7 +517,7 @@
 	clothing_flags = THICKMATERIAL
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
-	hide_tail_by_species = list(SPECIES_VOX, SPECIES_VULPKANIN)
+
 
 /obj/item/clothing/suit/armor/tdome/red
 	name = "Red Thunderdome Armor"
@@ -564,7 +564,7 @@
 	desc = "A set of armor worn by paranormal members of the Nanotrasen Emergency Response Team. Has crusader sigils."
 	icon_state = "knight_templar"
 	item_state = "knight_templar"
-	hide_tail_by_species = list(SPECIES_VOX, SPECIES_VULPKANIN)
+
 	allowed = list(/obj/item/nullrod/claymore, /obj/item/storage/belt/claymore, /obj/item/gun/energy,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/restraints/handcuffs,/obj/item/flashlight/seclite,/obj/item/kitchen/knife/combat)
 	sprite_sheets = list(
 		SPECIES_PLASMAMAN = 'icons/mob/clothing/species/plasmaman/suit.dmi',

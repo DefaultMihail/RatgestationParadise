@@ -115,16 +115,8 @@
 	strip_delay = 50
 
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/uniform.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/uniform.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/uniform.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/uniform.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/uniform.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/uniform.dmi'
 		)
 
 /obj/item/clothing/under/det/skirt
@@ -132,13 +124,8 @@
 	icon_state = "detective_skirt"
 	item_color = "detective_skirt"
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/uniform.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/uniform.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/uniform.dmi'
 	)
 
 
@@ -155,10 +142,7 @@
 	icon_state = "noirdet_skirt"
 	item_state = "noir_skirt"
 	item_color = "noirdet_skirt"
-	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/uniform.dmi'
-	)
+
 
 /obj/item/clothing/under/det/alt_a
 	icon_state = "detective_suit"
@@ -169,14 +153,8 @@
 	icon_state = "detectives_skirt_grey"
 	item_color = "detectives_skirt_grey"
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/uniform.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/uniform.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/uniform.dmi',
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/vulpkanin/uniform.dmi'
 		)
 
@@ -203,13 +181,8 @@
 	item_state = "r_suit"
 	item_color = "hosredf"
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/uniform.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/uniform.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/uniform.dmi'
 	)
 
 /obj/item/clothing/under/rank/head_of_security/corp
@@ -226,10 +199,7 @@
 	icon_state = "hosalt_skirt"
 	item_state = "hosalt_skirt"
 	item_color = "hosalt_skirt"
-	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/uniform.dmi'
-	)
+
 
 /obj/item/clothing/under/rank/head_of_security/paradef
 	desc = "It's a fashionable jumpskirt worn by those few with the dedication to achieve the position of \"Head of Security\". It has additional armor to protect the wearer. Made for parades."
@@ -237,10 +207,7 @@
 	icon_state = "hos_parade_fem"
 	item_state = "hos_parade_fem"
 	item_color = "hos_parade_fem"
-	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/uniform.dmi'
-	)
+
 
 //Jensen cosplay gear
 
@@ -315,15 +282,8 @@
 	item_color = "brig_physf"
 	permeability_coefficient = 0.50
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/uniform.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/uniform.dmi',
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/uniform.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/uniform.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/uniform.dmi'
 		)
 
 /obj/item/clothing/under/rank/security/brigmedical
@@ -340,10 +300,7 @@
 	icon_state = "brigmed_skirt"
 	item_state = "brigmed_skirt"
 	item_color = "brigmed_skirt"
-	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/uniform.dmi'
-	)
+
 
 //Pod Pilot
 /obj/item/clothing/under/rank/security/pod_pilot

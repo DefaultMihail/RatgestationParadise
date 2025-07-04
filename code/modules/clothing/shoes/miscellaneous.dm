@@ -23,17 +23,8 @@
 	icon_state = "riotboots"
 	item_state = "riotboots"
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/shoes.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/shoes.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/shoes.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/shoes.dmi'
 	)
 
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
@@ -177,17 +168,8 @@
 	item_state = "armored_shoes"
 	armor = list("melee" = 5, "bullet" = 25, "laser" = 10, "energy" = 5, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 75)
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/shoes.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/shoes.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/shoes.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/shoes.dmi'
 		)
 
 /obj/item/clothing/shoes/workboots
@@ -601,15 +583,6 @@
 	icon_state = "leather_boots"
 	item_state = "leather_boots"
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/shoes.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/shoes.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/shoes.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/shoes.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/shoes.dmi'
 		)
