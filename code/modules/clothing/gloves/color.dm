@@ -157,13 +157,8 @@
 	armor = list("melee" = 5, "bullet" = 25, "laser" = 10, "energy" = 5, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 75)
 	can_be_cut = FALSE
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/gloves.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/gloves.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/gloves.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/gloves.dmi'
 		)
 
 /obj/item/clothing/gloves/color/orange

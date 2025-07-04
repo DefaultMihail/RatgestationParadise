@@ -58,9 +58,7 @@
 			if (hashands_p)
 				dat +=  {"• <a href='byond://?src=[UID()];interaction=give'>Передать предмет.</a><br>"}
 			dat +=  {"• <a href='byond://?src=[UID()];interaction=slap'><span style='color: darkred;'>Дать пощечину!</span></a><br>"}
-			if (P.dna.species.name == SPECIES_MOTH)
-				dat +=  {"• <a href='byond://?src=[UID()];interaction=pullwing'><span style='color: darkred;'>Дёрнуть за крылья!</span></a><br>"}
-			if ((P.dna.species.name == SPECIES_TAJARAN)  || (P.dna.species.name == SPECIES_VOX)|| (P.dna.species.name == SPECIES_VULPKANIN) || (P.dna.species.name == SPECIES_UNATHI))
+			if ((P.dna.species.name == SPECIES_TAJARAN))
 				dat +=  {"• <a href='byond://?src=[UID()];interaction=pull'><span style='color: darkred;'>Дёрнуть за хвост!</span></a><br>"}
 				if(P.can_inject(H))
 					dat +=  {"• <a href='byond://?src=[UID()];interaction=pet'>Погладить.</a><br>"}
@@ -69,7 +67,7 @@
 		dat +=  {"• <a href='byond://?src=[UID()];interaction=fuckyou'><span style='color: darkred;'>Показать средний палец.</span></a><br>"}
 		dat +=  {"• <a href='byond://?src=[UID()];interaction=threaten'><span style='color: darkred;'>Погрозить кулаком.</span></a><br>"}
 
-	if (mouthfree && H.dna.species.name != SPECIES_DIONA)
+	if (mouthfree)
 		dat += {"<span style='font-size: 3;'><b>Лицо:</b></span><br>"}
 		dat += {"• <a href='byond://?src=[UID()];interaction=kiss'>Поцеловать.</a><br>"}
 		if (Adjacent(P))

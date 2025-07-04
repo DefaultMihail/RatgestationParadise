@@ -634,7 +634,7 @@
 	desc = "A visor of alien origin, charred by fire and completely non-functioning. It's been impeccably polished, shiny!"
 	icon = 'icons/obj/custom_items.dmi'
 	icon_state = "charred_visor"
-	species_restricted = list(SPECIES_VOX)
+
 
 /obj/item/clothing/head/bearpelt/fluff/polar //Gibson1027: Sploosh
 	name = "polar bear pelt hat"
@@ -953,12 +953,8 @@
 	icon_state = "k3_webbing"
 	ignore_suitadjust = FALSE
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/suit.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/suit.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/suit.dmi'
 		)
 	actions_types = list(/datum/action/item_action/toggle)
 
@@ -1224,7 +1220,7 @@
 	icon = 'icons/obj/custom_items.dmi'
 	icon_state = "spartan_mask"
 	item_state = "spartan_mask"
-	species_restricted = list(SPECIES_VOX)
+
 
 //////////// Shoes ////////////
 
@@ -1631,12 +1627,10 @@
 	icon = 'icons/obj/custom_items.dmi'
 	lefthand_file = 'icons/mob/inhands/fluff_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/fluff_righthand.dmi'
-	sprite_sheets = list(SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi')
 	icon_state = "kiaoutfit"
 	item_state = "kiaoutfit"
 	item_color = "kiaoutfit"
 	displays_id = FALSE
-	species_restricted = list(SPECIES_VOX)
 
 /obj/item/clothing/head/fluff/kiahat //FullOfSkittles: Kiachi
 	name = "Suspicious Witch Hat"
@@ -1654,11 +1648,9 @@
 	icon = 'icons/obj/custom_items.dmi'
 	lefthand_file = 'icons/mob/inhands/fluff_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/fluff_righthand.dmi'
-	sprite_sheets = list(SPECIES_VOX = 'icons/mob/clothing/species/vox/mask.dmi')
 	icon_state = "kiamask"
 	item_state = "kiamask"
 	item_color = "kiamask"
-	species_restricted = list(SPECIES_VOX)
 
 
 /obj/item/clothing/gloves/ring/fluff
@@ -1682,10 +1674,9 @@
 	desc = "A simple black dress with a white undercoat, tied with a blue ribbon."
 	lefthand_file = 'icons/mob/inhands/fluff_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/fluff_righthand.dmi'
-	sprite_sheets = list(SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi')
 	icon = 'icons/obj/custom_items.dmi'
 	icon_state = "kikeridress"
 	item_state = "kikeridress"
 	item_color = "kikeridress"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	species_restricted = list(SPECIES_VOX)
+

@@ -155,7 +155,7 @@
 /obj/item/clothing/under/vox
 	has_sensor = 0
 	icon = 'icons/obj/clothing/species/vox/uniforms.dmi'
-	species_restricted = list(SPECIES_VOX)
+
 	sprite_sheets = list(
 		SPECIES_VOX = 'icons/mob/clothing/species/vox/uniform.dmi'
 		)

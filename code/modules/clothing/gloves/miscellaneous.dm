@@ -92,13 +92,8 @@
 	icon_state = "riotgloves"
 	item_state = "riotgloves"
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/gloves.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/gloves.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/gloves.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/gloves.dmi'
 	)
 
 /obj/item/clothing/gloves/bracer
@@ -432,14 +427,8 @@
 	icon_state = "brown_short_gloves"
 	item_state = "brown_short_gloves"
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/gloves.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/gloves.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/gloves.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/gloves.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/gloves.dmi'
 		)
 
 /obj/item/clothing/gloves/combat/swat
@@ -449,14 +438,8 @@
 	item_state = "nt_swat_gl"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 75)
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/gloves.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/gloves.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/gloves.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/gloves.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/gloves.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/gloves.dmi'
 		)
 
 

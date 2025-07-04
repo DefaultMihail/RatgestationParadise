@@ -12,23 +12,9 @@
 	resistance_flags = NONE
 	can_toggle = TRUE
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/mask.dmi',
-		SPECIES_VOX_ARMALIS = 'icons/mob/clothing/species/armalis/mask.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/mask.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/mask.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/mask.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/mask.dmi',
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/mask.dmi',
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/mask.dmi',
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/mask.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/mask.dmi',
-		SPECIES_PLASMAMAN = 'icons/mob/clothing/species/plasmaman/mask.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/mask.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/mask.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/mask.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/mask.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/mask.dmi',
-		SPECIES_WRYN = 'icons/mob/clothing/species/wryn/mask.dmi'
 	)
 
 /obj/item/clothing/mask/breath/attack_self(mob/user)
@@ -45,18 +31,3 @@
 	item_state = "medical"
 	permeability_coefficient = 0.01
 	put_on_delay = 10
-
-/obj/item/clothing/mask/breath/vox
-	desc = "A weirdly-shaped breath mask."
-	name = "vox breath mask"
-	icon_state = "voxmask"
-	item_state = "voxmask"
-	permeability_coefficient = 0.01
-	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS) //These should fit the "Mega Vox" just fine.
-	actions_types = null
-
-/obj/item/clothing/mask/breath/vox/attack_self(mob/user)
-	return
-
-/obj/item/clothing/mask/breath/vox/click_alt(mob/user)
-	return NONE

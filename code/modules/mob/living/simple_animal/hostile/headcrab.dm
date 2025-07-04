@@ -108,10 +108,6 @@
 		cut_overlays()
 		add_overlay(human_overlays)
 		var/image/I = image('icons/mob/headcrab.dmi', icon_state = "[crab_head_overlay]")
-		if(host_species == SPECIES_VOX)
-			I = image('icons/mob/headcrab.dmi', icon_state = "[crab_head_overlay]_vox")
-		else if(host_species == SPECIES_GREY)
-			I = image('icons/mob/headcrab.dmi', icon_state = "[crab_head_overlay]_gray")
 		add_overlay(I)
 
 		if(blocks_emissive)

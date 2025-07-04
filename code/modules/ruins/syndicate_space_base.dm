@@ -34,7 +34,7 @@
 	allow_species_pick = TRUE
 	allow_gender_pick = TRUE
 	allow_name_pick = TRUE
-	pickable_species = list(SPECIES_HUMAN, SPECIES_VULPKANIN, SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_DIONA, SPECIES_DRASK, SPECIES_VOX, SPECIES_PLASMAMAN, SPECIES_MACNINEPERSON, SPECIES_KIDAN, SPECIES_GREY, SPECIES_NUCLEATION, SPECIES_SLIMEPERSON, SPECIES_WRYN, SPECIES_MOTH)
+	pickable_species = list(SPECIES_HUMAN, SPECIES_TAJARAN, SPECIES_MACNINEPERSON)
 	faction = list("syndicate")
 	min_hours = 10
 	exp_type = EXP_TYPE_LIVING
@@ -60,40 +60,12 @@
 /datum/outfit/space_base_syndicate/pre_equip(mob/living/carbon/human/H)
 	if(H.dna.species)
 		var/race = H.dna.species.name
-		switch(race)
-			if(SPECIES_VOX, SPECIES_VOX_ARMALIS)
-				box = /obj/item/storage/box/survival_vox
-			if(SPECIES_PLASMAMAN)
-				box = /obj/item/storage/box/survival_plasmaman
-			else
-				box = /obj/item/storage/box/survival_syndi
 
 /datum/outfit/space_base_syndicate/post_equip(mob/living/carbon/human/H)
 	H.faction |= "syndicate"
 	if(H.dna.species)
 
 		var/race = H.dna.species.name
-
-		switch(race)
-			if(SPECIES_VOX, SPECIES_VOX_ARMALIS)
-				H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/syndicate(H), ITEM_SLOT_MASK)
-				H.equip_to_slot_or_del(new /obj/item/tank/internals/emergency_oxygen/double/vox(H), ITEM_SLOT_HAND_LEFT)
-				H.internal = H.l_hand
-
-			if(SPECIES_PLASMAMAN)
-				var/L = H.get_item_by_slot(ITEM_SLOT_POCKET_LEFT)
-				var/R = H.get_item_by_slot(ITEM_SLOT_POCKET_RIGHT)
-				var/I = H.get_item_by_slot(ITEM_SLOT_ID)
-				qdel(H.get_item_by_slot(ITEM_SLOT_CLOTH_INNER))
-				qdel(H.get_item_by_slot(ITEM_SLOT_HEAD))
-				H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/syndicate(H), ITEM_SLOT_MASK)
-				H.equip_to_slot(new /obj/item/tank/internals/plasmaman/belt/full(H), ITEM_SLOT_HAND_LEFT)
-				H.equip_to_slot(I, ITEM_SLOT_ID) // По непонятной мне причине другие методы считают что персонаж не может надеть предметы. Поэтому надеваем насильно!
-				H.equip_to_slot(R, ITEM_SLOT_POCKET_RIGHT)
-				H.equip_to_slot(L, ITEM_SLOT_POCKET_LEFT)
-				H.equip_to_slot_or_del(new /obj/item/clothing/under/plasmaman(H), ITEM_SLOT_CLOTH_INNER)
-				H.equip_to_slot(new /obj/item/clothing/head/helmet/space/plasmaman(H), ITEM_SLOT_HEAD)
-				H.internal = H.l_hand
 
 		H.update_action_buttons_icon()
 		H.rejuvenate() //fix any damage taken by naked vox/plasmamen/etc
