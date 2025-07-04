@@ -260,21 +260,6 @@
 
 		var/race = synd_mob.dna.species.name
 
-		switch(race)
-			if(SPECIES_VOX, SPECIES_VOX_ARMALIS)
-				synd_mob.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/syndicate(synd_mob), ITEM_SLOT_MASK)
-				synd_mob.equip_to_slot_or_del(new /obj/item/tank/internals/emergency_oxygen/double/vox(synd_mob), ITEM_SLOT_HAND_LEFT)
-				synd_mob.internal = synd_mob.l_hand
-				synd_mob.update_action_buttons_icon()
-
-			if(SPECIES_PLASMAMAN)
-				synd_mob.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/syndicate(synd_mob), ITEM_SLOT_MASK)
-				synd_mob.equip_or_collect(new /obj/item/tank/internals/plasmaman(synd_mob), ITEM_SLOT_SUITSTORE)
-				synd_mob.equip_or_collect(new /obj/item/extinguisher_refill(synd_mob), ITEM_SLOT_BACKPACK)
-				synd_mob.equip_or_collect(new /obj/item/extinguisher_refill(synd_mob), ITEM_SLOT_BACKPACK)
-				synd_mob.internal = synd_mob.get_item_by_slot(ITEM_SLOT_SUITSTORE)
-				synd_mob.update_action_buttons_icon()
-
 	synd_mob.rejuvenate() //fix any damage taken by naked vox/plasmamen/etc while round setups
 	var/obj/item/implant/explosive/E = new/obj/item/implant/explosive(synd_mob)
 	E.implant(synd_mob)

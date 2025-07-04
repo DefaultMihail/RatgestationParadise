@@ -6,13 +6,8 @@
 	item_state = "headset"
 	equip_sound = 'sound/items/handling/generic_equip4.ogg'
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/ears.dmi',
-		SPECIES_VOX_ARMALIS = 'icons/mob/clothing/species/armalis/ears.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/ears.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/ears.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/ears.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/ears.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/ears.dmi'
 	) //We read you loud and skree-er.
 	materials = list(MAT_METAL=75)
 	canhear_range = 0 // can't hear headsets from very far away

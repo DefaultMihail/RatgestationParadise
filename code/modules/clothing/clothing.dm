@@ -203,13 +203,8 @@
 	resistance_flags = NONE
 
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/ears.dmi',
-		SPECIES_VOX_ARMALIS = 'icons/mob/clothing/species/armalis/ears.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/ears.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/ears.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/ears.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/ears.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/ears.dmi'
 		) //We read you loud and skree-er.
 
 
@@ -366,11 +361,6 @@ BLIND     // can't see anything
 
 	lefthand_file = 'icons/mob/inhands/gloves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/gloves_righthand.dmi'
-
-	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/gloves.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/gloves.dmi'
-		)
 
 
 /obj/item/clothing/gloves/equipped(mob/living/carbon/human/user, slot, initial)
@@ -712,17 +702,8 @@ BLIND     // can't see anything
 	slowdown = SHOES_SLOWDOWN
 
 	sprite_sheets = list(
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/shoes.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/shoes.dmi',
-		SPECIES_DRASK = 'icons/mob/clothing/species/drask/shoes.dmi',
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/shoes.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/shoes.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/shoes.dmi'
 		)
 
 

@@ -21,21 +21,9 @@ GLOBAL_DATUM(basic_robolimb, /datum/robolimb)
 	var/unavailable_at_chargen = FALSE
 	///Which Species can choose these Robolimbs at CharGen
 	var/list/species_allowed = list(
-		SPECIES_GREY,
 		SPECIES_HUMAN,
-		SPECIES_KIDAN,
 		SPECIES_MACNINEPERSON,
-		SPECIES_DIONA,
-		SPECIES_DRASK,
-		SPECIES_MOTH,
-		SPECIES_NUCLEATION,
-		SPECIES_PLASMAMAN,
-		SPECIES_SKRELL,
-		SPECIES_SLIMEPERSON,
 		SPECIES_TAJARAN,
-		SPECIES_UNATHI,
-		SPECIES_VOX,
-		SPECIES_VULPKANIN
 		)
 	///Whether the limb type is available for selection via attack_self with a robolimb - see robo_parts Defaults to TRUE.
 	var/selectable = TRUE
@@ -166,17 +154,6 @@ GLOBAL_DATUM(basic_robolimb, /datum/robolimb)
 	icon = 'icons/mob/human_races/cyberlimbs/nanotrasen/nanotrasen_main.dmi'
 	has_subtypes = CHILDLESS
 	is_monitor = TRUE
-
-/*Robo Vox */
-//Main
-/datum/robolimb/robovox
-	company = "Vox"
-	desc = "This limb is cybernetic and looks like like it would only fit a Vox Primalis."
-	icon = 'icons/mob/human_races/cyberlimbs/robovox/main.dmi'
-	has_subtypes = CHILDLESS
-	selectable = FALSE
-	// The only robolimbs for Vox at Chargen
-	species_allowed = list(SPECIES_VOX)
 
 /* Shellguard */
 //Main

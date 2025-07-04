@@ -139,8 +139,6 @@
 	/// Typecache of the blacklisted species
 	var/static/list/blacklisted_species = list(
 		SPECIES_MACNINEPERSON = TRUE,
-		SPECIES_PLASMAMAN = TRUE,
-		SPECIES_VOX = TRUE,
 	)
 
 
