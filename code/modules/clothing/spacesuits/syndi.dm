@@ -7,14 +7,7 @@
 	desc = "Has a tag on it: Totally not property of a hostile corporation, honest!"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30,"energy" = 25, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 80, "acid" = 85)
 	sprite_sheets = list(
-		SPECIES_GREY = 'icons/mob/clothing/species/grey/helmet.dmi',
-		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/helmet.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/helmet.dmi',
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/helmet.dmi',
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/helmet.dmi')
+		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/helmet.dmi',)
 
 
 /obj/item/clothing/suit/space/syndicate
@@ -26,13 +19,7 @@
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30,"energy" = 25, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 80, "acid" = 85)
 	sprite_sheets = list(
-		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/suit.dmi',
-		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/suit.dmi',
-		SPECIES_ASHWALKER_BASIC = 'icons/mob/clothing/species/unathi/suit.dmi',
-		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/suit.dmi',
-		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/suit.dmi',
-		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/suit.dmi',
-		SPECIES_VOX = 'icons/mob/clothing/species/vox/suit.dmi')
+		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/suit.dmi',)
 
 
 //Green syndicate space suit
