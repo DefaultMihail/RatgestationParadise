@@ -506,7 +506,6 @@
 	item_state = "shamanrags"
 	item_color = "shamanrags"
 	has_sensor = FALSE
-	species_restricted = list(SPECIES_UNATHI, SPECIES_ASHWALKER_BASIC, SPECIES_ASHWALKER_SHAMAN, SPECIES_DRACONOID)
 
 //dress
 
