@@ -258,8 +258,6 @@
 		A.randomize_appearance_for(synd_mob)
 		*/
 
-		var/race = synd_mob.dna.species.name
-
 	synd_mob.rejuvenate() //fix any damage taken by naked vox/plasmamen/etc while round setups
 	var/obj/item/implant/explosive/E = new/obj/item/implant/explosive(synd_mob)
 	E.implant(synd_mob)

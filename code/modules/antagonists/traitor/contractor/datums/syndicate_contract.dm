@@ -358,14 +358,6 @@
 	victim_belongings = list()
 	var/list/obj/item/stuff_to_transfer = list()
 
-	// Speciall skrell headpocket handling
-	var/obj/item/organ/internal/headpocket/headpocket = M.get_organ_slot(INTERNAL_ORGAN_HEADPOCKET)
-	if(headpocket)
-		var/turf/target_turf = get_turf(M)
-		for(var/obj/item/item in headpocket.pocket.contents)
-			stuff_to_transfer += item
-			headpocket.pocket.remove_from_storage(item, target_turf)
-
 	// Cybernetic implants get removed first (to deal with NODROP stuff)
 	for(var/obj/item/organ/internal/cyberimp/I in H.internal_organs)
 		// Greys get to keep their implant
@@ -382,9 +374,6 @@
 		if(istype(H))
 			// Keep their uniform and shoes
 			if(I == H.w_uniform || I == H.shoes)
-				continue
-			// Plasmamen are no use if they're crispy
-			if(isplasmaman(H) && I == H.head)
 				continue
 
 		// Any kind of non-syndie implant gets potentially removed (mindshield, etc)
@@ -426,12 +415,6 @@
 	if(istype(H))
 		var/obj/item/tank/internals/emergency_oxygen/tank
 		var/obj/item/clothing/mask/breath/mask
-		if(isvox(H))
-			tank = new /obj/item/tank/internals/emergency_oxygen/nitrogen(H)
-			mask = new /obj/item/clothing/mask/breath/vox(H)
-		else if(isplasmaman(H))
-			tank = new /obj/item/tank/internals/emergency_oxygen/plasma(H)
-			mask = new /obj/item/clothing/mask/breath(H)
 
 		if(tank)
 			tank.equip_to_best_slot(H)

@@ -57,15 +57,9 @@
 	id = /obj/item/card/id/syndicate/scientist
 	implants = list(/obj/item/implant/weapons_auth)
 
-/datum/outfit/space_base_syndicate/pre_equip(mob/living/carbon/human/H)
-	if(H.dna.species)
-		var/race = H.dna.species.name
-
 /datum/outfit/space_base_syndicate/post_equip(mob/living/carbon/human/H)
 	H.faction |= "syndicate"
-	if(H.dna.species)
 
-		var/race = H.dna.species.name
 
 		H.update_action_buttons_icon()
 		H.rejuvenate() //fix any damage taken by naked vox/plasmamen/etc
