@@ -17,7 +17,7 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 
 	//Species-specific stuff.
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 	sprite_sheets = list(
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/helmet.dmi',
 		)
