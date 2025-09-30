@@ -448,7 +448,6 @@
 	if(target.vision_type) //Turns off their darksight if it's still active.
 		to_chat(target, span_boldannounceic("Your eyes are suddenly wrought with immense pain as your darksight is forcibly dismissed!"))
 		target.set_vision_override(null)
-	SSticker.mode.remove_thrall(target.mind, 0)
 	target.visible_message(span_warning("A strange black mass falls from [target]'s [E]!"))
 	var/obj/item/organ/thing = new /obj/item/organ/internal/shadowtumor(get_turf(target))
 	thing.update_DNA(target.dna)

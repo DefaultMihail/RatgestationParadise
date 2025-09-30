@@ -268,3 +268,20 @@
 /obj/item/restraints/handcuffs/manacles/used/attack(mob/living/target, mob/living/user, params, def_zone, skip_attack_anim = FALSE)
 	return ATTACK_CHAIN_PROCEED
 
+/obj/item/restraints/handcuffs/energy
+	name = "hard-light energy field"
+	desc = "A hard-light field restraining the hands."
+	icon_state = "cuff_white" // Needs sprite
+	breakouttime = 450
+	trashtype = /obj/item/restraints/handcuffs/energy/used
+	origin_tech = "materials=4;magnets=5"
+
+/obj/item/restraints/handcuffs/energy/used
+	desc = "energy discharge"
+	item_flags = DROPDEL
+
+/obj/item/restraints/handcuffs/energy/used/dropped(mob/user, slot, silent = FALSE)
+	user.visible_message(span_danger("[src] restraining [user] breaks in a discharge of energy!"), \
+							span_userdanger("[src] restraining [user] breaks in a discharge of energy!"))
+	do_sparks(4, 0, user.loc)
+	. = ..()

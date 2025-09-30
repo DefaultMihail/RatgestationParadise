@@ -17,8 +17,6 @@
 	underwear = random_underwear(gender, species)
 	undershirt = random_undershirt(gender, species)
 	socks = random_socks(gender, species)
-	if(length(GLOB.body_accessory_by_species[species]))
-		body_accessory = random_body_accessory(species, S.optional_body_accessory)
 	if(S?.bodyflags & (HAS_SKIN_TONE|HAS_ICON_SKIN_TONE))
 		s_tone = random_skin_tone(species)
 	h_style = random_hair_style(gender, S, robohead)
@@ -320,8 +318,6 @@
 
 		if(icon)
 			var/icon/temp = new(icon, icon_state)
-			if((current_species.name != SPECIES_MOTH) && current_species.bodyflags & HAS_SKIN_COLOR)
-				temp.Blend(s_colour, blend_mode)
 			if(current_species.bodyflags & HAS_TAIL_MARKINGS)
 				var/tail_marking = m_styles["tail"]
 				var/datum/sprite_accessory/body_markings/BM = GLOB.marking_styles_list[tail_marking]
@@ -366,9 +362,7 @@
 	var/datum/sprite_accessory/hair_style = GLOB.hair_styles_full_list[h_style]
 	if(hair_style)
 		var/icon/hair_s = new/icon("icon" = hair_style.icon, "icon_state" = "[hair_style.icon_state]_s")
-		if(current_species.name == SPECIES_SLIMEPERSON) // whee I am part of the problem
-			hair_s.Blend("[s_colour]A0", ICON_ADD)
-		else if(hair_style.do_colouration)
+		if(hair_style.do_colouration)
 			hair_s.Blend(h_colour, ICON_ADD)
 
 		var/datum/sprite_accessory/hair_gradient/gradient = GLOB.hair_gradients_list[h_grad_style]
@@ -402,9 +396,7 @@
 	var/datum/sprite_accessory/facial_hair_style = GLOB.facial_hair_styles_list[f_style]
 	if(facial_hair_style && facial_hair_style.species_allowed)
 		var/icon/facial_s = new/icon("icon" = facial_hair_style.icon, "icon_state" = "[facial_hair_style.icon_state]_s")
-		if(current_species.name == SPECIES_SLIMEPERSON) // whee I am part of the problem
-			facial_s.Blend("[s_colour]A0", ICON_ADD)
-		else if(facial_hair_style.do_colouration)
+		if(facial_hair_style.do_colouration)
 			facial_s.Blend(f_colour, ICON_ADD)
 
 		if(facial_hair_style.secondary_theme)

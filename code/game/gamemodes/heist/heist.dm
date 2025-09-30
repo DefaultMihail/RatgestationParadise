@@ -125,7 +125,6 @@ GLOBAL_LIST_EMPTY(cortical_stacks) //Stacks for 'leave nobody behind' objective.
 	I.implant(vox)
 	GLOB.cortical_stacks += I
 
-	vox.equip_vox_raider()
 	vox.regenerate_icons()
 
 /datum/game_mode/proc/is_raider_crew_safe()

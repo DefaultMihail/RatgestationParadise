@@ -593,11 +593,3 @@
 	)
 	consume_wrench(I)
 	user.apply_effect(150, IRRADIATE)
-
-
-/obj/machinery/power/supermatter_shard/proc/nuclear_touch(var/mob/living/user)
-	var/datum/species/nucleation/nuclear = user.dna.species
-	if(nuclear.touched_supermatter == FALSE)
-		user.revive()
-		nuclear.touched_supermatter = TRUE
-		to_chat(user, span_userdanger("The wave of warm energy is overwhelming you. You feel calm."))

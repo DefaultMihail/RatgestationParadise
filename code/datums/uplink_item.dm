@@ -691,37 +691,6 @@
 	cost = 40
 	race = list(SPECIES_MACNINEPERSON)
 
-//Slime People
-
-/datum/uplink_item/racial/anomaly_extract
-	name = "Аномальный экстракт"
-	desc = "Результат научных экспериментов по смешиванию экспериментального стабильного мутагена с ядром огненной аномалии. \
-			Позволяет пользователю трансформироваться в слизня и разогреться до очень высокой температуры."
-	item = /obj/item/anomaly_extract
-	cost = 40
-	race = list(SPECIES_SLIMEPERSON)
-
-//Plasmaman
-
-/datum/uplink_item/racial/plasma_chameleon
-	name = "Набор одежды \"Хамелеон\" для плазмолюдов"
-	desc = "Комплект одежды, оснащённый технологией \"Хамелеон\", которая позволяет изменять её внешний вид. \
-			Однако из-за несовершенства этой технологии обувь не обеспечивает защиту от скольжения. \
-			В набор также входит дополнительный печать \"Хамелеон\". Предназначен только для плазмолюдов."
-	item = /obj/item/storage/box/syndie_kit/plasma_chameleon
-	cost = 20
-	race = list(SPECIES_PLASMAMAN)
-
-//Nucleation
-
-/datum/uplink_item/racial/second_chance
-	name = "Имплант второго шанса"
-	desc = "Имплант, активируемый по желанию, позволяет имитировать смерть, вызывая взрыв. \
-			После активации он полностью залечивает все раны пользователя и телепортирует его в безопасное место."
-	item = /obj/item/implanter/second_chance
-	cost = 40
-	race = list(SPECIES_NUCLEATION)
-
 //Human
 
 /datum/uplink_item/racial/holo_cigar
@@ -755,22 +724,6 @@
 	item = /obj/item/storage/box/syndie_kit/military_hardsuit
 	cost = 40
 	race = list(SPECIES_HUMAN)
-
-//Grey
-
-/datum/uplink_item/racial/agent_belt
-	name = "Пояс абдуктора"
-	desc = "Пояс с инструментами, используемый абдукторами. Он включает в себя полный набор инопланетных инструментов."
-	item = /obj/item/storage/belt/military/abductor/full
-	cost = 16
-	race = list(SPECIES_GREY)
-
-/datum/uplink_item/racial/silencer
-	name = "Глушитель абдуктора"
-	desc = "Компактное устройство, предназначенное для выключения коммуникационного оборудования."
-	item = /obj/item/abductor/silencer
-	cost = 12
-	race = list(SPECIES_GREY)
 
 // DANGEROUS WEAPONS
 

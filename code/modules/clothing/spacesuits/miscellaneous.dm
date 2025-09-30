@@ -8,19 +8,15 @@
 	permeability_coefficient = 0.01
 	resistance_flags = ACID_PROOF
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 
 /obj/item/clothing/head/helmet/space/capspace/equipped(mob/living/carbon/human/user, slot, initial)
 	. = ..()
 
 	if(ishuman(user) && slot == ITEM_SLOT_HEAD)
-		if(isvox(user))
-			if(flags_inv & HIDEHAIR)
-				flags_inv &= ~HIDEHAIR
-		else
-			if((initial(flags_inv) & HIDEHAIR) && !(flags_inv & HIDEHAIR))
-				flags |= HIDEHAIR
+		if((initial(flags_inv) & HIDEHAIR) && !(flags_inv & HIDEHAIR))
+			flags |= HIDEHAIR
 
 /obj/item/clothing/suit/space/captain
 	name = "captain's space suit"
@@ -32,7 +28,7 @@
 	allowed = list(/obj/item/tank/internals, /obj/item/flashlight,/obj/item/gun/energy, /obj/item/gun/projectile, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton,/obj/item/restraints/handcuffs)
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 100)
 	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDETAIL
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 
 	//Deathsquad space suit, not hardsuits because no flashlight!
@@ -66,9 +62,6 @@
 	sprite_sheets = list(
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/suit.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/suit.dmi'
 	)
 
 	//NEW SWAT suit
@@ -81,7 +74,7 @@
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 30, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
 	strip_delay = 120
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 /obj/item/clothing/head/helmet/space/deathsquad/beret
 	name = "officer's beret"
@@ -93,9 +86,6 @@
 	sprite_sheets = list(
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/suit.dmi',
 		SPECIES_FARWA = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_WOLPIN = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_NEARA = 'icons/mob/clothing/species/monkey/suit.dmi',
-		SPECIES_STOK = 'icons/mob/clothing/species/monkey/suit.dmi'
 	)
 
 /obj/item/clothing/head/helmet/space/deathsquad/beret/supreme
@@ -251,7 +241,7 @@
 	icon_state = "paramedic-eva-helmet"
 	item_state = "paramedic-eva-helmet"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 20, fire = 50, acid = 65)
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 	sprite_sheets = list(
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/helmet.dmi',)
@@ -263,7 +253,7 @@
 	desc = "A brand new paramedic EVA suit. The nitrile seems a bit too thin to be space proof. Used for retrieving bodies in space."
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 20, fire = 50, acid = 65)
 	slowdown = 0.5
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 	sprite_sheets = list(
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/suit.dmi',
@@ -276,7 +266,7 @@
 	item_state = "s_suit"
 	desc = "A lightweight space suit with the basic ability to protect the wearer from the vacuum of space during emergencies."
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 20, fire = 50, acid = 65)
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 	sprite_sheets = list(
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/suit.dmi',
@@ -290,7 +280,7 @@
 	desc = "A lightweight space helmet with the basic ability to protect the wearer from the vacuum of space during emergencies."
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 20, fire = 50, acid = 65)
 	flash_protect = FLASH_PROTECTION_NONE
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 	sprite_sheets = list(
 		SPECIES_TAJARAN = 'icons/mob/clothing/species/tajaran/helmet.dmi',)
 
@@ -302,7 +292,7 @@
 	desc = ". . ."
 	icon_state = "spacemimehelmet"
 	item_state = "spacemimehelmet"
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 
 /obj/item/clothing/suit/space/eva/mime
@@ -311,7 +301,7 @@
 	desc = ". . ."
 	icon_state = "spacemime_suit"
 	item_state = "spacemime_items"
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 
 
@@ -321,7 +311,7 @@
 	desc = "An EVA helmet specifically designed for the clown. SPESSHONK!"
 	icon_state = "clownhelmet"
 	item_state = "clownhelmet"
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 /obj/item/clothing/suit/space/eva/clown
 	name = "clown eva suit"
@@ -329,7 +319,7 @@
 	desc = "An EVA suit specifically designed for the clown. SPESSHONK!"
 	icon_state = "spaceclown_suit"
 	item_state = "spaceclown_items"
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 
 
 

@@ -48,11 +48,8 @@
 		START_PROCESSING(SSprocessing, src)
 
 /turf/simulated/floor/lava/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
-	if(istype(AM, /obj/item/reagent_containers/food/snacks/charred_krill))
-		krill_act(AM)
-	else
-		if(burn_stuff(AM))
-			START_PROCESSING(SSprocessing, src)
+	if(burn_stuff(AM))
+		START_PROCESSING(SSprocessing, src)
 
 /turf/simulated/floor/lava/proc/krill_act(atom/movable/AM)
 	return
@@ -244,49 +241,11 @@
 	if(locate(/turf/simulated/floor/plating/asteroid/basalt) in range(3, src))
 		deep_water = FALSE
 
-/turf/simulated/floor/lava/lava_land_surface/proc/get_fish()
-	if(deep_water)
-		return GLOB.deep_fish
-	else
-		return GLOB.shore_fish
-
-/turf/simulated/floor/lava/lava_land_surface/krill_act(atom/movable/AM)
-	var/obj/item/reagent_containers/food/snacks/charred_krill/krill = AM //yourself
-	krill.in_lava = TRUE
-	krill.anchored = TRUE	//no closet kidnaping
-	visible_message(span_warning("[capitalize(krill.declent_ru(NOMINATIVE))] медленно тон[pluralize_ru(krill.gender, "ет", "ут")] в лаве!"))
-	sleep(5 SECONDS)
-	qdel(krill)
-	if(!can_be_fished_on)
-		visible_message(span_warning("И ничего не происходит..."))
-		return
-	visible_message(span_warning("Неожиданно, из лавы выныривают две рыбы и разрывают [krill.declent_ru(ACCUSATIVE)] на части!"))
-	var/list/fishable_list = get_fish()
-	for(var/i in 1 to 2)
-		var/fish = pick(fishable_list)
-		new fish(src)
-
 /turf/simulated/floor/lava/lava_land_surface/attackby(obj/item/I, mob/user, params)
 	. = ..()
 
 	if(ATTACK_CHAIN_CANCEL_CHECK(.))
 		return .
-
-	if(istype(I, /obj/item/reagent_containers/food/snacks/charred_krill))
-		to_chat(user, span_notice("Вы осторожно кладёте креветку на поверхность лавы..."))
-		if(do_after(user, 5 SECONDS, target = src))
-			if(QDELETED(I))
-				return .
-			if(!can_be_fished_on)
-				to_chat(user, span_warning("И ничего не происходит..."))
-				return .
-			to_chat(user, span_notice("Неожиданно, из лавы выныривают две рыбы и разрывают креветку на части!"))
-			var/list/fishable_list = get_fish()
-			for(var/i in 1 to 2)
-				var/fish = pick(fishable_list)
-				new fish(src)
-			qdel(I)
-			return .|ATTACK_CHAIN_SUCCESS
 
 /turf/simulated/floor/lava/airless
 	temperature = TCMB
@@ -353,7 +312,7 @@
 		if(ishuman(burn_living) && prob(65))
 			var/mob/living/carbon/human/burn_human = burn_living
 			var/datum/species/burn_species = burn_human.dna.species.name
-			if(burn_species != SPECIES_PLASMAMAN && burn_species != SPECIES_MACNINEPERSON) //ignore plasmamen/robotic species.
+			if(burn_species != SPECIES_MACNINEPERSON) //ignore robotic species.
 				burn_damage += human_tox_fire_damage
 				tox_damage += human_tox_fire_damage
 		burn_living.apply_damages(burn = burn_damage, tox = tox_damage, spread_damage = TRUE)	//Cold mutagen is bad for you, more at 11.

@@ -1677,12 +1677,6 @@ Eyes need to have significantly high darksight to shine unless the mob has the X
 	// Parent function handles stuff the human may be holding
 	..()
 
-	var/obj/item/organ/internal/lantern/O = get_int_organ(/obj/item/organ/internal/lantern)
-	if(O && O.glowing)
-		O.toggle_biolum(TRUE)
-		visible_message(span_danger("[src] is engulfed in shadows and fades into the darkness."), \
-						span_danger("A sense of dread washes over you as you suddenly dim dark."))
-
 /mob/living/carbon/human/proc/get_perceived_trauma(shock_reduction)
 	return min(health, maxHealth) + shock_reduction
 

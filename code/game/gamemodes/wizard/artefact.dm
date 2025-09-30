@@ -230,7 +230,7 @@ GLOBAL_LIST_EMPTY(multiverse)
 		M.set_species(user.dna.species.type) //duplicate the sword user's species.
 	else
 		if(prob(50))
-			var/list/list_all_species = list(/datum/species/human, /datum/species/unathi, /datum/species/skrell, /datum/species/tajaran, /datum/species/kidan, /datum/species/golem, /datum/species/diona, /datum/species/machine, /datum/species/slime, /datum/species/grey, /datum/species/vulpkanin)
+			var/list/list_all_species = list(/datum/species/human,/datum/species/tajaran, /datum/species/machine)
 			M.set_species(pick(list_all_species))
 	M.real_name = user.real_name //this is clear down here in case the user happens to become a golem; that way they have the proper name.
 	M.name = user.real_name
@@ -490,12 +490,6 @@ GLOBAL_LIST_EMPTY(multiverse)
 	W.update_label(M.real_name)
 	W.SetOwnerInfo(M)
 	M.equip_to_slot_or_del(W, ITEM_SLOT_ID)
-
-	if(isvox(M))
-		M.dna.species.after_equip_job(null, M) //Nitrogen tanks
-	if(isplasmaman(M))
-		M.dna.species.after_equip_job(null, M) //No fireballs from other dimensions.
-
 	M.update_icons()
 
 /obj/item/multisword/pure_evil

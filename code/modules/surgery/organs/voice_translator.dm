@@ -57,8 +57,6 @@
 	given_languages = list()
 	upgrade_with = list(/obj/item/translator_upgrade/grey_retraslator)
 	origin_tech = "materials=2;biotech=3;engineering=3;programming=3;abductor=2"
-	species_restrictions = list(SPECIES_GREY, SPECIES_ABDUCTOR)
-
 
 /obj/item/organ/internal/cyberimp/mouth/translator/New()
 	if(!..())

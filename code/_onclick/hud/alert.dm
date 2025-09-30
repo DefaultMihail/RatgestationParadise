@@ -446,18 +446,6 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 	desc = "Unit's power cell is running low. Recharging stations are available in robotics, the dormitory bathrooms, and the AI satellite."
 	icon_state = "lowcell"
 
-//Diona Nymph
-/atom/movable/screen/alert/nymph
-	name = "Gestalt merge"
-	desc = "You have merged with a diona gestalt and are now part of it's biomass. You can still wiggle yourself free though."
-
-/atom/movable/screen/alert/nymph/Click()
-	if(!usr || !usr.client)
-		return
-	if(isnymph(usr))
-		var/mob/living/simple_animal/diona/D = usr
-		return D.resist()
-
 //Need to cover all use cases - emag, illegal upgrade module, malf AI hack, traitor cyborg
 /atom/movable/screen/alert/hacked
 	name = "Hacked"
@@ -878,7 +866,7 @@ so as to remain in compliance with the most up-to-date laws."
 	if(paramslist["shift"]) // screen objects don't do the normal Click() stuff so we'll cheat
 		to_chat(usr, "<span class='boldnotice'>[name]</span> - <span class='info'>[desc]</span>")
 		return FALSE
-		
+
 	if(master)
 		return usr.client.Click(master, location, control, params)
 

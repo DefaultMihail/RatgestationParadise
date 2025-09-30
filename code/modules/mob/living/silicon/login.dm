@@ -8,7 +8,4 @@
 		mind.remove_antag_datum(/datum/antagonist/changeling)
 		mind.remove_antag_datum(/datum/antagonist/vampire)
 		mind.remove_antag_datum(/datum/antagonist/thief)
-		SSticker.mode.remove_thrall(mind, 0)
-		SSticker.mode.remove_shadowling(mind)
-		SSticker.mode.remove_abductor(mind)
 	..()

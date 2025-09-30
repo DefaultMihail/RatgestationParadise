@@ -409,14 +409,6 @@
 /proc/is_monkeybasic(mob/living/carbon/human/target)
 	return ishuman(target) && target.dna.species.is_monkeybasic	// we deserve a runtime if a human has no DNA
 
-
-/proc/is_evolvedslime(mob/living/carbon/human/target)
-	if(!ishuman(target) || !istype(target.dna.species, /datum/species/slime))
-		return FALSE
-	var/datum/species/slime/species = target.dna.species
-	return species.evolved_slime
-
-
 /proc/spawn_atom_to_turf(spawn_type, target, amount, admin_spawn=FALSE, list/extra_args)
 	var/turf/T = get_turf(target)
 	if(!T)

@@ -222,7 +222,7 @@
 	icon_state = "knight_green"
 	item_state = "knight_green"
 	slowdown = 1
-	hide_tail_by_species = list(SPECIES_VULPKANIN)
+
 	sprite_sheets = list(
 		SPECIES_PLASMAMAN = 'icons/mob/clothing/species/plasmaman/suit.dmi',
 		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/suit.dmi'
@@ -613,7 +613,7 @@
 		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/suit.dmi',
 		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/suit.dmi'
 		)
-	hide_tail_by_species = list(SPECIES_VULPKANIN)
+
 
 /obj/item/clothing/head/hooded/drake
 	name = "drake helmet"
@@ -687,7 +687,7 @@
 		SPECIES_ASHWALKER_SHAMAN = 'icons/mob/clothing/species/unathi/suit.dmi',
 		SPECIES_DRACONOID = 'icons/mob/clothing/species/unathi/suit.dmi'
 		)
-	hide_tail_by_species = list(SPECIES_VULPKANIN)
+
 
 /obj/item/clothing/suit/armor/makeshift_armor
 	name = "makeshift armor"

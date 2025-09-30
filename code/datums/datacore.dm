@@ -248,7 +248,7 @@ GLOBAL_VAR_INIT(record_id_num, 1001)
 	preview_icon.Blend(temp, ICON_OVERLAY)
 
 	//Tail
-	if(H.body_accessory && (istype(H.body_accessory, /datum/body_accessory/tail) || istype(H.body_accessory, /datum/body_accessory/wing)))
+	if(H.body_accessory && (istype(H.body_accessory, /datum/body_accessory/tail)))
 		temp = new/icon("icon" = H.body_accessory.icon, "icon_state" = H.body_accessory.icon_state)
 		if(H.dna.species.bodyflags & HAS_SKIN_COLOR  && !(H.dna.species.bodyflags & HAS_ICON_SKIN_TONE))
 			temp.Blend(H.skin_colour, H.body_accessory.blend_mode)
@@ -302,10 +302,7 @@ GLOBAL_VAR_INIT(record_id_num, 1001)
 		var/icon/hair_s = new/icon("icon" = hair_style.icon, "icon_state" = "[hair_style.icon_state]_s")
 		// I'll want to make a species-specific proc for this sooner or later
 		// But this'll do for now
-		if(istype(head_organ.dna.species, /datum/species/slime))
-			hair_s.Blend("[H.skin_colour]A0", ICON_AND) //A0 = 160 alpha.
-		else
-			hair_s.Blend(head_organ.hair_colour, ICON_ADD)
+		hair_s.Blend(head_organ.hair_colour, ICON_ADD)
 
 		if(hair_style.secondary_theme)
 			var/icon/hair_secondary_s = new/icon("icon" = hair_style.icon, "icon_state" = "[hair_style.icon_state]_[hair_style.secondary_theme]_s")

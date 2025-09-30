@@ -641,10 +641,6 @@
 /datum/dna/gene/basic/strong/proc/add_strong_modifiers(mob/living/carbon/human/mutant)
 	mutant.physiology.tail_strength_mod *= 1.25
 	switch(mutant.dna.species.name)
-		if(SPECIES_VULPKANIN, SPECIES_DRASK, SPECIES_UNATHI)
-			mutant.physiology.grab_resist_mod *= 1.1
-			mutant.physiology.punch_damage_low += 1
-			mutant.physiology.punch_damage_high += 2
 		if(SPECIES_HUMAN)
 			mutant.physiology.grab_resist_mod *= 1.25
 			mutant.physiology.punch_damage_low += 3
@@ -660,10 +656,6 @@
 		species = mutant.dna.species
 	mutant.physiology.tail_strength_mod /= 1.25
 	switch(species.name)
-		if(SPECIES_VULPKANIN, SPECIES_DRASK, SPECIES_UNATHI)
-			mutant.physiology.grab_resist_mod /= 1.1
-			mutant.physiology.punch_damage_low -= 1
-			mutant.physiology.punch_damage_high -= 2
 		if(SPECIES_HUMAN)
 			mutant.physiology.grab_resist_mod /= 1.25
 			mutant.physiology.punch_damage_low -= 3

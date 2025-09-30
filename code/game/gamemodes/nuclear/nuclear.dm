@@ -249,8 +249,6 @@
 	U.hidden_uplink.uses = uplink_uses
 	synd_mob.equip_to_slot_or_del(U, ITEM_SLOT_BACKPACK)
 
-	if(synd_mob.dna.species)
-
 		/*
 		Incase anyone ever gets the burning desire to have nukeops with randomized apperances. -- Dave
 		synd_mob.gender = pick(MALE, FEMALE) // Randomized appearances for the nukeops.

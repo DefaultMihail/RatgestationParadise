@@ -673,28 +673,6 @@
 	else
 		..(speaker, message)
 
-/datum/language/abductor
-	name = "Псисвязь Абдукторов"
-	desc = "Абдукторы не способны к речи, но обладают псионической связью для связи с себе подобными."
-	speech_verbs = list("бормоч%(ет,ут)%")
-	ask_verbs = list("бормоч%(ет,ут)%")
-	exclaim_verbs = list("бормоч%(ет,ут)%")
-	colour = "abductor"
-	key = "aa"
-	flags = RESTRICTED | HIVEMIND | NOBABEL
-	follow = TRUE
-
-/datum/language/abductor/broadcast(mob/living/speaker, message, speaker_mask)
-	..(speaker,message,speaker.real_name)
-
-/datum/language/abductor/check_special_condition(mob/living/carbon/human/other, mob/living/carbon/human/speaker)
-	if(isabductor(other) && isabductor(speaker))
-		var/datum/species/abductor/A = speaker.dna.species
-		var/datum/species/abductor/A2 = other.dna.species
-		if(A.team == A2.team)
-			return TRUE
-	return FALSE
-
 /datum/language/abductor/golem
 	name = "Псисвязь Големов"
 	desc = "Големы могут общаться с себе подобными при помощи псионической связи."

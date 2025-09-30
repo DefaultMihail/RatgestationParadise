@@ -353,9 +353,6 @@
 	else // just a living non-clocker civil
 		to_chat(target, span_clocklarge("<b>\"You belong to me now.\"</b>"))
 		target.heal_overall_damage(50, 50)
-		if(isgolem(target))
-			target.mind.wipe_memory()
-			target.set_species(/datum/species/golem/clockwork)
 		SSticker.mode.add_clocker(target.mind)
 		target.Weaken(10 SECONDS) //Accept new power... and new information
 		target.EyeBlind(10 SECONDS)

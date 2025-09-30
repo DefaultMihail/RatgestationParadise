@@ -147,8 +147,6 @@
 		if("alien") //Beneficial, turns stuff into alien alloy which is useful to cargo and research. Also repairs atmos.
 			NewTerrainFloors = /turf/simulated/floor/mineral/abductor
 			NewTerrainWalls = /turf/simulated/wall/mineral/abductor
-			NewTerrainChairs = /obj/structure/bed/abductor //ayys apparently don't have chairs. An entire species of people who only recline.
-			NewTerrainTables = /obj/structure/table/abductor
 
 /obj/machinery/anomalous_crystal/theme_warp/ActivationReaction(mob/user, method)
 	if(..())
@@ -222,15 +220,6 @@
 			if(isturf(i))
 				new /obj/effect/temp_visual/cult/sparks(i)
 				continue
-			if(ishuman(i))
-				var/mob/living/carbon/human/H = i
-				if(H.stat == DEAD)
-					H.set_species(/datum/species/shadow)
-					H.revive()
-					//Free revives, but significantly limits your options for reviving except via the crystal
-					ADD_TRAIT(H, TRAIT_NO_CLONE, ANOMALOUS_CRYSTAL_TRAIT)
-					H.grab_ghost(force = TRUE)
-
 
 /obj/machinery/anomalous_crystal/helpers //Lets ghost spawn as helpful creatures that can only heal people slightly. Incredibly fragile and they can't converse with humans
 	activation_method = "touch"

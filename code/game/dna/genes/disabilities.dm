@@ -343,10 +343,6 @@
 /datum/dna/gene/disability/weak/proc/add_weak_modifiers(mob/living/carbon/human/mutant)
 	mutant.physiology.tail_strength_mod *= 0.75
 	switch(mutant.dna.species.name)
-		if(SPECIES_VULPKANIN, SPECIES_DRASK, SPECIES_UNATHI)
-			mutant.physiology.grab_resist_mod *= 0.75
-			mutant.physiology.punch_damage_low -= 3
-			mutant.physiology.punch_damage_high -= 4
 		if(SPECIES_HUMAN)
 			mutant.physiology.grab_resist_mod *= 0.9
 			mutant.physiology.punch_damage_low -= 1
@@ -362,10 +358,6 @@
 		species = mutant.dna.species
 	mutant.physiology.tail_strength_mod /= 0.75
 	switch(species.name)
-		if(SPECIES_VULPKANIN, SPECIES_DRASK, SPECIES_UNATHI)
-			mutant.physiology.grab_resist_mod /= 0.75
-			mutant.physiology.punch_damage_low += 3
-			mutant.physiology.punch_damage_high += 4
 		if(SPECIES_HUMAN)
 			mutant.physiology.grab_resist_mod /= 0.9
 			mutant.physiology.punch_damage_low += 1
@@ -403,9 +395,6 @@
 	block = GLOB.aphasiablock
 
 /datum/dna/gene/disability/aphasia/can_activate(mob/living/carbon/human/H, flags)
-	if(isplasmaman(H) || iswryn(H))
-		to_chat(H, span_warning("Вы чувствуете, что что-то не так, но не можете понять, что именно."))
-		return FALSE
 
 	return ..()
 

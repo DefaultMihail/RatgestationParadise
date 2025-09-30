@@ -57,13 +57,6 @@
 	id = /obj/item/card/id/syndicate/scientist
 	implants = list(/obj/item/implant/weapons_auth)
 
-/datum/outfit/space_base_syndicate/post_equip(mob/living/carbon/human/H)
-	H.faction |= "syndicate"
-
-
-		H.update_action_buttons_icon()
-		H.rejuvenate() //fix any damage taken by naked vox/plasmamen/etc
-
 /obj/effect/mob_spawn/human/space_base_syndicate/special(mob/living/carbon/human/H)
 	GLOB.human_names_list += H.real_name
 	SEND_SOUND(H, 'sound/effects/taipan_start.ogg')

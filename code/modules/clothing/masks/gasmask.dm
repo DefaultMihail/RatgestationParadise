@@ -543,7 +543,7 @@
 	item_state = "mime"
 	flags_inv = HIDEGLASSES
 	flags_cover = HIDENAME|MASKCOVERSMOUTH|MASKCOVERSEYES
-	species_restricted = list(SPECIES_HUMAN, SPECIES_MACNINEPERSON, SPECIES_SKRELL, SPECIES_SLIMEPERSON, SPECIES_DIONA, SPECIES_NUCLEATION)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_MACNINEPERSON)
 
 /obj/item/clothing/mask/gas/ghostface/equipped(mob/user, slot, initial)
 	if(ishuman(user))

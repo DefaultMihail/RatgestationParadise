@@ -57,10 +57,6 @@
 			to_chat(user, span_warning("The [name] is already occupied."))
 			return ATTACK_CHAIN_PROCEED
 
-		if(istype(brain, /obj/item/organ/internal/brain/crystal))
-			to_chat(user, span_warning("This brain is too malformed to be able to use with the [src]."))
-			return ATTACK_CHAIN_PROCEED
-
 		if(istype(brain, /obj/item/organ/internal/brain/golem))
 			to_chat(user, span_warning("You cannot find a way to plug [brain] into [src]."))
 			return ATTACK_CHAIN_PROCEED

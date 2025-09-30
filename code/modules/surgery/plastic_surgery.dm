@@ -59,15 +59,10 @@
 				names += id.registered_name
 				list_size--
 
-		if(!isabductor(user))
-			for(var/i in 1 to list_size)
-				names += random_name(target.gender, species_names)
-
-		else //Abductors get to pick fancy names
-			list_size-- //One less cause they get a normal name too
-			for(var/i in 1 to list_size)
-				names += "Subject [target.gender == MALE ? "I" : "O"]-[pick("A", "B", "C", "D", "E")]-[rand(10000, 99999)]"
-			names += random_name(target.gender, species_names) //give one normal name in case they want to do regular plastic surgery
+		list_size-- //One less cause they get a normal name too
+		for(var/i in 1 to list_size)
+			names += "Subject [target.gender == MALE ? "I" : "O"]-[pick("A", "B", "C", "D", "E")]-[rand(10000, 99999)]"
+		names += random_name(target.gender, species_names) //give one normal name in case they want to do regular plastic surgery
 		var/chosen_name = tgui_input_list(user, "Choose a new name to assign.", "Plastic Surgery", names)
 		if(!chosen_name)
 			return

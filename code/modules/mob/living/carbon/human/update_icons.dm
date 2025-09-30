@@ -368,9 +368,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 
 	// Base hair
 	var/mutable_appearance/img_hair = mutable_appearance(hair.icon, "[hair.icon_state]_s")
-	if(head_organ.dna.species.name == SPECIES_SLIMEPERSON)
-		img_hair.color = COLOR_MATRIX_OVERLAY("[skin_colour]A0")
-	else if(hair.do_colouration)
+	if(hair.do_colouration)
 		img_hair.color = COLOR_MATRIX_ADD(head_organ.hair_colour)
 	MA.overlays += img_hair
 
@@ -422,9 +420,7 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	var/icon/face_standing = icon('icons/mob/human_face.dmi', "bald_s")
 
 	var/icon/facial_s = icon(facial_hair.icon, "[facial_hair.icon_state]_s")
-	if(head_organ.dna.species.name == SPECIES_SLIMEPERSON) // I am el worstos
-		facial_s.Blend("[skin_colour]A0", ICON_AND)
-	else if(facial_hair.do_colouration)
+	if(facial_hair.do_colouration)
 		facial_s.Blend(head_organ.facial_colour, ICON_ADD)
 
 	if(facial_hair.secondary_theme)
@@ -952,11 +948,6 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 	var/obj/item/organ/external/wing/bodypart_wing = get_organ(BODY_ZONE_WING)
 	if(!bodypart_wing)
 		return
-
-	if(!istype(bodypart_wing.body_accessory, /datum/body_accessory/wing))
-		if(dna.species.optional_body_accessory)
-			return
-		bodypart_wing.body_accessory = GLOB.body_accessory_by_name[dna.species.default_bodyacc]
 
 	var/mutable_appearance/wings = mutable_appearance(bodypart_wing.body_accessory.icon, bodypart_wing.body_accessory.icon_state, layer = -WING_LAYER)
 	wings.pixel_x = bodypart_wing.body_accessory.pixel_x_offset

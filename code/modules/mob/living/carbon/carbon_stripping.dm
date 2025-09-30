@@ -21,10 +21,6 @@
 /datum/strippable_item/mob_item_slot/mask/get_body_action(atom/source, mob/user)
 	if(!ishuman(source))
 		return
-	var/mob/living/carbon/human/H = source
-	var/obj/item/organ/internal/headpocket/pocket = H.get_int_organ(/obj/item/organ/internal/headpocket)
-	if(istype(pocket) && pocket.pocket.master_item)
-		return "dislodge_headpocket"
 
 /datum/strippable_item/mob_item_slot/mask/get_alternate_actions(atom/source, mob/user)
 	var/obj/item/clothing/mask/muzzle/muzzle = get_item(source)
@@ -38,17 +34,6 @@
 		return
 	// Headpocket dislodging
 	if(action_key == "dislodge_headpocket")
-		var/mob/living/carbon/human/H = source
-		var/obj/item/organ/internal/headpocket/pocket = H.get_int_organ(/obj/item/organ/internal/headpocket)
-		if(!pocket.pocket.master_item)
-			return
-		user.visible_message(span_danger("[user] пыта[pluralize_ru(user.gender, "ет", "ют")]ся достать что-то из головного кармана [source]!"),
-							span_danger("Вы пытаетесь достать предмет из головного кармана [source]!"))
-		if(do_after(user, POCKET_STRIP_DELAY, source, max_interact_count = 1))
-			user.visible_message(span_danger("[user] доста[pluralize_ru(user.gender, "ёт", "ют")] что-то из головного кармана [source]!"),
-								span_danger("Вы достаёте предмет из головного кармана [source]!"))
-			pocket.empty_contents()
-			add_attack_logs(user, source, "Stripped of headpocket items", isLivingSSD(source) ? null : ATKLOG_ALL)
 		return
 
 	// Altering a muzzle

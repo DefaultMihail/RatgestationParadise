@@ -928,7 +928,7 @@ BLIND     // can't see anything
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
 	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 	flash_protect = FLASH_PROTECTION_WELDER
 	strip_delay = 50
 	put_on_delay = 50
@@ -960,7 +960,7 @@ BLIND     // can't see anything
 	put_on_delay = 80
 	resistance_flags = NONE
 	hide_tail_by_species = null
-	species_restricted = list("exclude", SPECIES_WRYN, "lesser form")
+	species_restricted = list("exclude", "lesser form")
 	faction_restricted = list("ashwalker")
 	undyeable = TRUE
 	var/obj/item/tank/jetpack/suit/jetpack = null

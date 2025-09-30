@@ -20,7 +20,7 @@
 		BODY_ZONE_CHEST,
 		BODY_ZONE_HEAD,
 	)
-	restricted_speciestypes = list(/datum/species/kidan, /datum/species/wryn, /datum/species/plasmaman)
+
 
 
 /datum/surgery/cavity_implant/soft

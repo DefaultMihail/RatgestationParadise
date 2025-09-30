@@ -795,7 +795,7 @@
 	flags_inv_transparent = HIDEGLOVES|HIDESHOES
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	allowed = list(/obj/item/clockwork, /obj/item/twohanded/ratvarian_spear, /obj/item/twohanded/clock_hammer, /obj/item/melee/clock_sword)
-	hide_tail_by_species = list(SPECIES_VULPKANIN)
+
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/clothing/species/unathi/suit.dmi',
 		SPECIES_VULPKANIN = 'icons/mob/clothing/species/vulpkanin/suit.dmi',
@@ -1392,24 +1392,6 @@
 		return ATTACK_CHAIN_BLOCKED_ALL
 	return ..()
 
-
-/obj/item/clockwork/shard/afterattack(atom/target, mob/user, proximity, params)
-	. = ..()
-	if(!ishuman(target) || !isclocker(user))
-		return
-	if(!proximity)
-		return
-	var/mob/living/carbon/human/human = target
-	if(human.stat == DEAD && isclocker(human)) // dead clocker
-		user.temporarily_remove_item_from_inventory(src)
-		qdel(src)
-		if(!human.client)
-			give_ghost(human)
-		else
-			human.revive()
-			human.set_species(/datum/species/golem/clockwork)
-			to_chat(human, "<span class='clocklarge'><b>\"You are back once again.\"</b></span>")
-
 /obj/item/clockwork/shard/pickup(mob/living/user)
 	. = ..()
 	if(!isclocker(user))
@@ -1417,22 +1399,6 @@
 		to_chat(user, "<span class='warning'>An overwhelming sense of nausea overpowers you!</span>")
 		user.Confused(20 SECONDS)
 		user.Jitter(12 SECONDS)
-
-/obj/item/clockwork/shard/proc/give_ghost(var/mob/living/carbon/human/golem)
-	set waitfor = FALSE
-	var/list/mob/dead/observer/candidates = SSghost_spawns.poll_candidates("Would you like to play as a Brass Golem?", ROLE_CLOCKER, TRUE, poll_time = 10 SECONDS, source = /obj/item/clockwork/clockslab)
-	if(length(candidates))
-		var/mob/dead/observer/C = pick(candidates)
-		golem.ghostize(FALSE)
-		golem.key = C.key
-		golem.revive()
-		golem.set_species(/datum/species/golem/clockwork)
-		log_game("[golem.key] has become Brass Golem.")
-		SEND_SOUND(golem, 'sound/ambience/antag/clockcult.ogg')
-	else
-		golem.visible_message("<span class='warning'>[golem] twitches as their body twists and rapidly changes the form!</span>")
-		new /obj/effect/mob_spawn/human/golem/clockwork(get_turf(golem))
-		golem.dust()
 
 /obj/effect/temp_visual/ratvar/reconstruct
 	icon = 'icons/effects/96x96.dmi'

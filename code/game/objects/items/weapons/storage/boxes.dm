@@ -67,15 +67,6 @@
 /obj/item/storage/box/survival/brigphys
 	icon_state = "box_brigphys"
 
-/obj/item/storage/box/survival_vox
-	icon_state = "box_vox"
-
-/obj/item/storage/box/survival_vox/populate_contents()
-	new /obj/item/clothing/mask/breath/vox(src)
-	new /obj/item/tank/internals/emergency_oxygen/nitrogen(src)
-	new /obj/item/storage/firstaid/crew(src)
-	new /obj/item/flashlight/flare/glowstick/blue(src)
-
 /obj/item/storage/box/survival_machine
 	icon_state = "box_machine"
 
@@ -447,21 +438,6 @@
 	name = "farwa cube box"
 	desc = "Drymate brand farwa cubes. Just add water!"
 	monkey_cube_type = /obj/item/reagent_containers/food/snacks/monkeycube/farwacube
-
-/obj/item/storage/box/monkeycubes/stokcubes
-	name = "stok cube box"
-	desc = "Drymate brand stok cubes. Just add water!"
-	monkey_cube_type = /obj/item/reagent_containers/food/snacks/monkeycube/stokcube
-
-/obj/item/storage/box/monkeycubes/neaeracubes
-	name = "neaera cube box"
-	desc = "Drymate brand neaera cubes. Just add water!"
-	monkey_cube_type = /obj/item/reagent_containers/food/snacks/monkeycube/neaeracube
-
-/obj/item/storage/box/monkeycubes/wolpincubes
-	name = "wolpin cube box"
-	desc = "Drymate brand wolpin cubes. Just add water!"
-	monkey_cube_type = /obj/item/reagent_containers/food/snacks/monkeycube/wolpincube
 
 /obj/item/storage/box/permits
 	name = "box of construction permits"

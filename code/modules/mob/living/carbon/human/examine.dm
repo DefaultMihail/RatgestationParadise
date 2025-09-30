@@ -38,10 +38,6 @@
 	var/examine_color = dna.species.flesh_color
 	if(skipjumpsuit && (skipface || HAS_TRAIT(src, TRAIT_NO_SPECIES_EXAMINE))) //either obscured or on the nospecies list
 		msg += "!\n"    //omit the species when examining
-	else if(displayed_species == SPECIES_SLIMEPERSON) //snowflakey because Slime People are defined as a plural
-		msg += ",<b><font color='[examine_color]'> слаймолюд</font></b>!\n"
-	else if(displayed_species == SPECIES_UNATHI) //DAMN YOU, VOWELS
-		msg += ",<b><font color='[examine_color]'> унатх</font></b>!\n"
 	else
 		msg += ",<b><font color='[examine_color]'> [lowertext(displayed_species)]</font></b>!\n"
 
@@ -350,7 +346,7 @@
 		if(HAS_TRAIT_FROM(src, TRAIT_AI_UNTRACKABLE, CHANGELING_TRAIT))
 			msg += "[p_they(TRUE)] [p_are()] moving [p_their()] body in an unnatural and blatantly inhuman manner.\n"
 
-	if(!(skipface || ( wear_mask && ( wear_mask.flags_inv & HIDENAME || wear_mask.flags_cover & MASKCOVERSMOUTH) ) ) && is_thrall(src) && in_range(user,src))
+	if(!(skipface || ( wear_mask && ( wear_mask.flags_inv & HIDENAME || wear_mask.flags_cover & MASKCOVERSMOUTH) ) ) && in_range(user,src))
 		msg += "Their features seem unnaturally tight and drawn.\n"
 
 	var/obj/item/organ/internal/cyberimp/tail/blade/implant = get_organ_slot(INTERNAL_ORGAN_TAIL_DEVICE)

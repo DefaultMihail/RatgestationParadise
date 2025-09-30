@@ -370,7 +370,7 @@
 	return devil
 
 /obj/effect/proc_holder/spell/dark_conversion/valid_target(mob/living/carbon/human/target, mob/user)
-	return target.mind && !isshadowperson(target)
+	return target.mind && !isskeleton(target)
 
 /obj/effect/proc_holder/spell/dark_conversion/cast(list/targets, mob/user = usr)
 	var/mob/living/carbon/human/human = targets[1]
@@ -389,7 +389,7 @@
 	make_shadow(human)
 
 /obj/effect/proc_holder/spell/dark_conversion/proc/make_shadow(mob/living/carbon/human/human)
-	human.set_species(/datum/species/shadow)
+	human.set_species(/datum/species/skeleton)
 	human.store_memory("Вы - создание тьмы. Старайтесь сохранить свою истинную форму и выполнить свои задания.", TRUE)
 
 	var/datum/objective/assassinate/kill = new

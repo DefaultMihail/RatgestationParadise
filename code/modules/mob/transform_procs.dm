@@ -267,9 +267,6 @@
 	if(istype(passed_mob, /mob/living/simple_animal/borer) && !jobban_isbanned(src, ROLE_BORER) && !jobban_isbanned(src, ROLE_SYNDICATE))
 		return TRUE
 
-	if(isnymph(passed_mob) && !jobban_isbanned(src, ROLE_NYMPH))
-		return TRUE
-
 	// Whitelist typecache. Alphabetical order please!
 	var/static/list/safe_respawn_typecache_whitelist = typecacheof(list(
 		/mob/living/simple_animal/butterfly,

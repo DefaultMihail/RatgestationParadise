@@ -148,16 +148,6 @@ GLOBAL_LIST_INIT(all_syndie_supply_groups, list(SYNDIE_SUPPLY_EMERGENCY,SYNDIE_S
 	containername = "weed control crate"
 	access = ACCESS_HYDROPONICS
 
-/datum/syndie_supply_packs/emergency/voxsupport
-	name = "Vox Life Support Supplies"
-	contains = list(/obj/item/clothing/mask/breath/vox,
-					/obj/item/clothing/mask/breath/vox,
-					/obj/item/tank/internals/emergency_oxygen/double/vox,
-					/obj/item/tank/internals/emergency_oxygen/double/vox)
-	cost = 500
-	containertype = /obj/structure/closet/crate/medical
-	containername = "vox life support supplies crate"
-
 /datum/syndie_supply_packs/emergency/plasmamansupport
 	name = "Plasmaman Supply Kit"
 	contains = list(/obj/item/clothing/under/plasmaman,
@@ -1095,24 +1085,6 @@ GLOBAL_LIST_INIT(all_syndie_supply_groups, list(SYNDIE_SUPPLY_EMERGENCY,SYNDIE_S
 	cost = 200
 	containername = "farwa crate"
 
-/datum/syndie_supply_packs/organic/wolpin
-	name = "Wolpin Crate"
-	contains = list (/obj/item/storage/box/monkeycubes/wolpincubes)
-	cost = 200
-	containername = "wolpin crate"
-
-/datum/syndie_supply_packs/organic/skrell
-	name = "Neaera Crate"
-	contains = list (/obj/item/storage/box/monkeycubes/neaeracubes)
-	cost = 200
-	containername = "neaera crate"
-
-/datum/syndie_supply_packs/organic/stok
-	name = "Stok Crate"
-	contains = list (/obj/item/storage/box/monkeycubes/stokcubes)
-	cost = 200
-	containername = "stok crate"
-
 /datum/syndie_supply_packs/organic/party
 	name = "Party Equipment Crate"
 	contains = list(/obj/item/storage/box/drinkingglasses,
@@ -1372,9 +1344,6 @@ GLOBAL_LIST_INIT(all_syndie_supply_groups, list(SYNDIE_SUPPLY_EMERGENCY,SYNDIE_S
 /datum/syndie_supply_packs/organic/hydroponics/exoticseeds
 	name = "Exotic Seeds Crate"
 	contains = list(/obj/item/seeds/nettle,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
 					/obj/item/seeds/nymph,
 					/obj/item/seeds/nymph,
 					/obj/item/seeds/nymph,

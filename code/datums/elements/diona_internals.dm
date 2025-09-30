@@ -27,7 +27,6 @@
     || !brain.brainmob)
 		return
 
-	nymph.random_name = FALSE
 	nymph.real_name = brain.brainmob.real_name
 	nymph.name = brain.brainmob.real_name
 

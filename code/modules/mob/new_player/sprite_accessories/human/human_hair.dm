@@ -89,7 +89,7 @@
 	name = "Pompadour"
 	icon_state = "pompadour"
 	unsuitable_gender = FEMALE
-	species_allowed = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_UNATHI)
+	species_allowed = list(SPECIES_HUMAN)
 	glasses_over = 1
 
 /datum/sprite_accessory/hair/quiff
@@ -114,19 +114,19 @@
 	name = "Beehive"
 	icon_state = "beehive"
 	unsuitable_gender = MALE
-	species_allowed = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_UNATHI)
+	species_allowed = list(SPECIES_HUMAN)
 
 /datum/sprite_accessory/hair/bobcurl
 	name = "Bobcurl"
 	icon_state = "bobcurl"
 	unsuitable_gender = MALE
-	species_allowed = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_UNATHI)
+	species_allowed = list(SPECIES_HUMAN)
 
 /datum/sprite_accessory/hair/bob
 	name = "Bob"
 	icon_state = "bobcut"
 	unsuitable_gender = MALE
-	species_allowed = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_UNATHI)
+	species_allowed = list(SPECIES_HUMAN)
 
 /datum/sprite_accessory/hair/bowl
 	name = "Bowl"
@@ -148,7 +148,7 @@
 	name = "Buzzcut"
 	icon_state = "buzzcut"
 	unsuitable_gender = FEMALE
-	species_allowed = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_UNATHI)
+	species_allowed = list(SPECIES_HUMAN)
 	glasses_over = 1
 
 /datum/sprite_accessory/hair/crew
@@ -217,7 +217,7 @@
 /datum/sprite_accessory/hair/mohawk
 	name = "Mohawk"
 	icon_state = "mohawk"
-	species_allowed = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_UNATHI)
+	species_allowed = list(SPECIES_HUMAN)
 	glasses_over = 1
 
 /datum/sprite_accessory/hair/jensen
@@ -252,7 +252,7 @@
 /datum/sprite_accessory/hair/spiky
 	name = "Spiky"
 	icon_state = "spikey"
-	species_allowed = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_UNATHI)
+	species_allowed = list(SPECIES_HUMAN)
 	glasses_over = 1
 
 /datum/sprite_accessory/hair/kusanagi

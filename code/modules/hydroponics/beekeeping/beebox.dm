@@ -24,8 +24,6 @@
 
 
 /mob/living/carbon/human/bee_friendly()
-	if(isdiona(src)) //bees pollinate plants, duh.
-		return TRUE
 	if(covered_with_thick_material(full_body_check = TRUE))
 		return TRUE
 	return FALSE

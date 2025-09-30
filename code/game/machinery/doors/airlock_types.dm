@@ -498,21 +498,6 @@
 	opacity = FALSE
 	glass = TRUE
 
-/obj/machinery/door/airlock/abductor
-	name = "alien airlock"
-	desc = "With humanity's current technological level, it could take years to hack this advanced airlock... or maybe we should give a screwdriver a try?"
-	icon = 'icons/obj/doors/airlocks/abductor/abductor_airlock.dmi'
-	overlays_file = 'icons/obj/doors/airlocks/abductor/overlays.dmi'
-	note_overlay_file = 'icons/obj/doors/airlocks/external/overlays.dmi'
-	assemblytype = /obj/structure/door_assembly/door_assembly_abductor
-	damage_deflection = 30
-	explosion_block = 3
-	hackProof = TRUE
-	aiControlDisabled = AICONTROLDISABLED_ON
-	normal_integrity = 700
-	security_level = 1
-	paintable = FALSE
-
 //////////////////////////////////
 /*
 	Cult Airlocks

@@ -124,7 +124,7 @@
 	if(prob(80))
 		pick_race = SPECIES_HUMAN
 	else
-		pick_race = pick(SPECIES_VULPKANIN, SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_DIONA, SPECIES_KIDAN, SPECIES_MOTH)
+		pick_race = SPECIES_TAJARAN
 	var/pick_sex
 	pick_sex = pick(FEMALE, MALE)
 	var/nam = random_name(gender = pick_sex, species = pick_race)

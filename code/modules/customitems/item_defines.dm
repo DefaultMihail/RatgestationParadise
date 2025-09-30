@@ -1030,9 +1030,6 @@
 
 /obj/item/fluff/pinapplehairgel/attack_self(mob/user)
 	var/mob/living/carbon/human/target = user
-	if(!istype(target) || !isslimeperson(target))
-		return
-
 	if(target.change_hair("Sasook Hair", 1))
 		to_chat(target, "<span class='notice'>You dump some of [src] on your head and style it around.</span>")
 
@@ -1455,28 +1452,6 @@
 		to_chat(user, "Your strange witch hat has now shapeshifted into it's [choice] form!")
 		return 1
 	..()
-
-/obj/item/fluff/zekemirror //phantasmicdream : Zeke Varloss
-	name = "engraved hand mirror"
-	desc = "A very classy hand mirror, with fancy detailing."
-	icon = 'icons/obj/custom_items.dmi'
-	lefthand_file = 'icons/mob/inhands/fluff_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/fluff_righthand.dmi'
-	icon_state = "hand_mirror"
-	attack_verb = list("стукнул")
-	hitsound = 'sound/weapons/tap.ogg'
-	force = 0
-	throwforce = 0
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/fluff/zekemirror/attack_self(mob/user)
-	var/mob/living/carbon/human/target = user
-	if(!istype(target) || !isskrell(target)) // It'd be strange to see other races with head tendrils.
-		return
-
-	if(target.change_hair("Zekes Tentacles", 1))
-		to_chat(target, "<span class='notice'>You take time to admire yourself in [src], brushing your tendrils down and revealing their true length.</span>")
-
 
 /obj/item/clothing/accessory/necklace/locket/fluff/fethasnecklace //Fethas: Sefra'neem
 	name = "Orange gemmed locket"

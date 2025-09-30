@@ -214,7 +214,7 @@
 	allow_gender_pick = FALSE
 	allow_name_pick = FALSE
 	allow_tts_pick = TRUE
-	var/list/pickable_species = list(SPECIES_HUMAN, SPECIES_VULPKANIN, SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_SKRELL, SPECIES_DIONA)
+	var/list/pickable_species = list(SPECIES_HUMAN, SPECIES_TAJARAN)
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
 	var/disable_pda = TRUE
 	var/disable_sensors = TRUE
@@ -769,19 +769,6 @@
 	head = /obj/item/clothing/head/beret/centcom/officer
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	id = /obj/item/card/id/centcom
-
-
-
-/obj/effect/mob_spawn/human/abductor
-	name = "abductor"
-	mob_name = "alien"
-	mob_species = /datum/species/abductor
-	outfit = /datum/outfit/abductorcorpse
-
-/datum/outfit/abductorcorpse
-	name = "Abductor Corpse"
-	uniform = /obj/item/clothing/under/color/grey
-	shoes = /obj/item/clothing/shoes/combat
 
 //For ghost bar.
 /obj/effect/mob_spawn/human/alive/space_bar_patron

@@ -109,7 +109,7 @@
 		victim.reagents.trans_to(src, (victim.reagents.total_volume) / victim.meatleft)
 		transfer_mob_blood_dna(victim)
 
-		if(!isplasmaman(victim) && !ismachineperson(victim))
+		if(!ismachineperson(victim))
 			reagents.add_reagent("nutriment", (victim.nutrition / 15) / initial(victim.meatleft))
 
 /obj/item/reagent_containers/food/snacks/meat/humanoid/human
@@ -884,19 +884,6 @@
 /obj/item/reagent_containers/food/snacks/monkeycube/farwacube
 	name = "farwa cube"
 	monkey_type = /datum/species/monkey/tajaran
-
-/obj/item/reagent_containers/food/snacks/monkeycube/wolpincube
-	name = "wolpin cube"
-	monkey_type = /datum/species/monkey/vulpkanin
-
-/obj/item/reagent_containers/food/snacks/monkeycube/stokcube
-	name = "stok cube"
-	monkey_type = /datum/species/monkey/unathi
-
-/obj/item/reagent_containers/food/snacks/monkeycube/neaeracube
-	name = "neaera cube"
-	monkey_type = /datum/species/monkey/skrell
-
 
 //////////////////////
 //		Eggs		//

@@ -127,24 +127,9 @@
 
 	normal_items = list(
 		/obj/item/organ/internal/eyes/tajaran = 175,
-		/obj/item/organ/internal/eyes/vulpkanin = 175,
-		/obj/item/organ/internal/headpocket = 175,
-		/obj/item/organ/internal/eyes/unathi = 175,
-		/obj/item/organ/internal/eyes/nian = 175,
-		/obj/item/organ/internal/liver/skrell = 175
 	)
 	hard_items = list(
-		/obj/item/organ/internal/kidneys/grey = 350,
-		/obj/item/organ/internal/liver/kidan = 350,
-		/obj/item/organ/internal/lungs/slime = 350,
-		/obj/item/organ/internal/liver/grey = 350,
 		/obj/item/organ/internal/heart/slime = 350,
-		/obj/item/organ/internal/lungs/unathi/ash_walker = 350,
-		/obj/item/organ/internal/eyes/unathi/ash_walker = 350,
-		/obj/item/organ/internal/eyes/unathi/ash_walker_shaman = 350,
-		/obj/item/organ/internal/lantern = 400,
-		/obj/item/organ/internal/wryn/glands = 700,
-		/obj/item/organ/internal/heart/plasmaman = 750
 	)
 	very_hard_items = list(
 		/obj/item/organ/internal/heart/cursed = 550,
@@ -269,7 +254,6 @@
 	very_hard_items = list(
 		/obj/item/gem/data = 450,
 		/obj/item/gem/void = 500,
-		/obj/effect/mob_spawn/human/ash_walker = 550,
 		/obj/item/gem/bloodstone = 650,
 	)
 	difficultly_flags = (QUEST_DIFFICULTY_EASY|QUEST_DIFFICULTY_NORMAL|QUEST_DIFFICULTY_HARD|QUEST_DIFFICULTY_VERY_HARD)

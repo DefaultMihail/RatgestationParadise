@@ -577,7 +577,7 @@
 	name = "shaman skull"
 	desc = "The skull of a long dead animal bolted to the front of a repurposed pan."
 	icon_state = "shamskull"
-	species_restricted = list(SPECIES_UNATHI, SPECIES_ASHWALKER_BASIC, SPECIES_ASHWALKER_SHAMAN, SPECIES_DRACONOID)
+
 
 /obj/item/clothing/head/scorched_skull
 	name = "scorched skull"

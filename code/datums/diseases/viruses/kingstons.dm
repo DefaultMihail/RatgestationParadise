@@ -67,7 +67,7 @@
 	cure_prob = 50
 	permeability_mod = 0.75
 	severity = BIOHAZARD
-	var/list/virspecies = list(/datum/species/human, /datum/species/tajaran, /datum/species/unathi,/datum/species/skrell, /datum/species/vulpkanin, /datum/species/diona)
+	var/list/virspecies = list(/datum/species/human, /datum/species/tajaran)
 	var/list/virsuffix = list("pox", "rot", "flu", "cough", "-gitis", "cold", "rash", "itch", "decay")
 	var/datum/species/chosentype
 	var/chosensuff

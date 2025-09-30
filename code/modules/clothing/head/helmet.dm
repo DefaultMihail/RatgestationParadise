@@ -420,7 +420,7 @@
 	sprite_sheets = list(
 		SPECIES_MONKEY = 'icons/mob/clothing/species/monkey/head.dmi'
 	)
-	species_restricted = list(SPECIES_HUMAN, SPECIES_SLIMEPERSON, SPECIES_SKELETON, SPECIES_NUCLEATION, SPECIES_MACNINEPERSON, SPECIES_DIONA, SPECIES_SHADOW_BASIC, SPECIES_MONKEY)
+	species_restricted = list(SPECIES_HUMAN, SPECIES_SKELETON, SPECIES_MACNINEPERSON)
 
 /obj/item/clothing/head/helmet/biker/Initialize(mapload)
 	. = ..()
